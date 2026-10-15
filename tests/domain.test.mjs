@@ -38,6 +38,11 @@ const testStages6 = [
 assert.equal(calculateProgress(testStages6).percentage, 100, '6 de 6 etapas aprobadas = 100%');
 console.log('     ✓ Progreso exacto validado para 0%, 17%, 50% y 100%.');
 
+// Test calculateRiskLevel
+assert.equal(calculateRiskLevel({ stages: [{ status: 'observado' }] }), 'Medio', 'Riesgo Medio si hay etapa observada');
+assert.equal(calculateRiskLevel({ stages: [{ status: 'aprobado' }], commitments: [] }), 'Completado', 'Riesgo Completado si todo aprobado');
+console.log('     ✓ Cálculo de nivel de riesgo validado.');
+
 // --- 2. Reglas de Máquina de Estados ---
 console.log('  2. Verificando máquina de estados y transiciones...');
 
