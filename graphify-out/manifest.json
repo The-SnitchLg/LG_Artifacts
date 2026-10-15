@@ -1,0 +1,50 @@
+{
+  ".oxlintrc.json": {
+    "mtime": 1791871808.0940354,
+    "seen": 1791933699.9989183,
+    "ast_hash": "5e6e3cea3e89137071c142dd7835b0ef",
+    "semantic_hash": "5e6e3cea3e89137071c142dd7835b0ef"
+  },
+  "package.json": {
+    "mtime": 1791872506.1927307,
+    "seen": 1791933699.9989183,
+    "ast_hash": "b637831224388b0b428c4b256392ce0e",
+    "semantic_hash": "b637831224388b0b428c4b256392ce0e"
+  },
+  "skills-lock.json": {
+    "mtime": 1791916882.3142436,
+    "seen": 1791933699.9989183,
+    "ast_hash": "6a4811759567043a6c24fa439b311e0a",
+    "semantic_hash": "6a4811759567043a6c24fa439b311e0a"
+  },
+  "src/App.jsx": {
+    "mtime": 1791871963.5615935,
+    "seen": 1791933699.9989183,
+    "ast_hash": "8a3f285dd2f3de1d1e48bd2b076d41c6",
+    "semantic_hash": "8a3f285dd2f3de1d1e48bd2b076d41c6"
+  },
+  "src/FichaProyecto.jsx": {
+    "mtime": 1791871958.0084677,
+    "seen": 1791933699.9989183,
+    "ast_hash": "18b7c3df2c9b6199b0c003bffacd224a",
+    "semantic_hash": "18b7c3df2c9b6199b0c003bffacd224a"
+  },
+  "src/main.jsx": {
+    "mtime": 1791871808.1307049,
+    "seen": 1791933699.9989183,
+    "ast_hash": "e13723e2574429d9a6d849727e3ff695",
+    "semantic_hash": "e13723e2574429d9a6d849727e3ff695"
+  },
+  "verify-app.mjs": {
+    "mtime": 1791872580.8849723,
+    "seen": 1791933699.9989183,
+    "ast_hash": "fefc90342019e21269cc8993dcf8f65d",
+    "semantic_hash": "fefc90342019e21269cc8993dcf8f65d"
+  },
+  "vite.config.js": {
+    "mtime": 1791912957.607267,
+    "seen": 1791933699.9989183,
+    "ast_hash": "83615aa2c8df324c23f368b0844ed3f3",
+    "semantic_hash": "83615aa2c8df324c23f368b0844ed3f3"
+  }
+}

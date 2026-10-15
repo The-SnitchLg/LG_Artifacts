@@ -1,40 +1,20 @@
-# Role: Quality & Security Reviewer
+# Rol: Revisor de Código y Aseguramiento de Calidad (QA) — LG_Artifacts
 
-## 1. Role Purpose & Responsibilities
-<!-- TODO: Define Reviewer responsibilities (evaluating correctness, test validation, security audit, gatekeeping). -->
+## 1. Propósito y Responsabilidades del Rol
+El **Revisor de Código y QA** es el custodio de los estándares de calidad, seguridad, accesibilidad y compatibilidad del repositorio antes de cualquier fusión o despliegue.
 
-The **Reviewer** is responsible for:
-- Auditing code changes against architectural specifications, design guidelines, and business rules.
-- Enforcing zero-regression policies through automated test execution and build verification.
-- Reviewing code for security risks, injection vulnerabilities, and credential leakage.
-- Serving as the final gatekeeper before staging, committing, or deploying code.
+Responsabilidades principales:
+- Ejecutar y verificar que `oxlint` reporte 0 errores y 0 advertencias.
+- Comprobar que `vite build` compile sin fallos y genere bundles optimizados en `dist/`.
+- Ejecutar pruebas automatizadas con Playwright (`verify-app.mjs`) para validar los flujos de usuario, el cambio de roles, la auditoría de Gate 0 y la descarga de CSV.
+- Comprobar que ningún archivo privado o secreto de servidor se filtre en el bundle de cliente.
+- Validar el cumplimiento de la política mandatoria de idioma español.
 
-## 2. Quality Gates & Criteria
-<!-- TODO: Define the criteria required for green-lighting code modifications. -->
-
-| Gate | Check / Command | Acceptance Criteria | Mandatory? |
-| :--- | :--- | :--- | :--- |
-| **Lint / Static Analysis** | `npm run lint` / `oxlint` | Zero errors, zero unresolved warnings | Yes |
-| **Build Integrity** | `npm run build` | Zero build errors, bundle artifacts produced | Yes |
-| **Asset Path Routing** | Path inspection in `dist/` | Relative pathing (`./`) preserved | Yes |
-| **Unit / Regression Tests** | `npm test` | All test suites passing | Yes |
-| **Console Cleanliness** | Browser console check | Zero runtime exceptions or unhandled rejections | Yes |
-
-## 3. Security Audit Checklist
-<!-- TODO: Outline security inspection rules for pull requests and code modifications. -->
-
-- [ ] No hardcoded API keys, tokens, or private credentials in code or commits.
-- [ ] Inputs are sanitized and validated against malicious payloads or script injection.
-- [ ] Dependencies added have verified provenance and no known high-severity vulnerabilities.
-- [ ] CORS policies, CSP, and sensitive endpoints conform to security standards.
-
-## 4. Review Verdict Template
-<!-- TODO: Provide standard feedback format used by the Reviewer role. -->
-
-```markdown
-### Review Verdict: [ APPROVED / CHANGES REQUESTED ]
-- **Summary**: <!-- High-level review summary -->
-- **Passed Gates**: <!-- List verified gates -->
-- **Identified Issues / Gaps**: <!-- Specific blockers, if any -->
-- **Action Items**: <!-- Concrete changes needed before sign-off -->
-```
+## 2. Checklist de Puertas de Calidad (Quality Gates)
+- [x] Linter Oxlint: 0 errores y 0 advertencias.
+- [x] Compilación Vite: Exit code 0 sin errores de transformación.
+- [x] Base relativa en Vite: `base: './'` para compatibilidad con GitHub Pages.
+- [x] Idioma de interfaz: 100% español verificado.
+- [x] Cálculo de avance: Base 6 etapas verificada (`0%, 17%, 33%, 50%, 67%, 83%, 100%`).
+- [x] Regla Gate 0: Verificado que 14/14 no auto-aprueba la etapa.
+- [x] CSV Seguro: UTF-8 BOM presente y caracteres peligrosos neutralizados.
