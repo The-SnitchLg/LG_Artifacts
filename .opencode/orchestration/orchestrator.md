@@ -1,53 +1,21 @@
-# Orchestration Engine & Delegation Protocol
+# Orquestación de Agentes y Flujo Operativo — LG_Artifacts
 
-## 1. Orchestration Principles
-<!-- TODO: Define the core tenets of agent coordination, autonomy levels, and hand-off discipline. -->
+## 1. Modelo de Orquestación
+El desarrollo autónomo en Antigravity sigue un flujo secuencial disciplinado basado en especificaciones formales, aseguramiento continuo y verificación antes de entrega.
 
-- **Single Responsibility**: Each sub-agent or role operates strictly within its designated scope.
-- **Context Preservation**: Context passed between roles must be self-contained, reproducible, and documented.
-- **Verification Gates**: No implementation is considered complete without reviewer validation and automated checks.
-
-## 2. Standard Execution Sequence
-<!-- TODO: Detail the chronological flow across roles from ideation to deployment. -->
-
-```
-[ User Request ]
-       │
-       ▼
- 1. Orchestrator ──▶ Evaluates scope & assigns roles
-       │
-       ▼
- 2. Architect ─────▶ Drafts system design, specs & ADRs
-       │
-       ▼
- 3. Designer ──────▶ Specifies UI/UX tokens & design specs
-       │
-       ▼
- 4. Developer ─────▶ Implements code & unit tests
-       │
-       ▼
- 5. Reviewer ──────▶ Executes quality gates & verification
-       │
-       ▼
- [ Final Output / Release ]
+```mermaid
+flowchart TD
+    AUDIT["0. Auditoría y Preflight (Architect)"] --> PLAN["1. Plan de Implementación (Architect)"]
+    PLAN --> DESIGN["2. Tokens y Sistema de Diseño (Designer)"]
+    DESIGN --> DEV["3. Implementación Frontend y Dominio (Developer)"]
+    DEV --> DB["4. Migraciones y Seguridad Supabase (DB Architect)"]
+    DB --> QA["5. Pruebas Unitarias, Lint y E2E (Reviewer)"]
+    QA --> DOC["6. Documentación y Sincronización OpenCode"]
+    DOC --> COMMIT["7. Control de Versiones Git y Reporte"]
 ```
 
-## 3. Role Delegation Matrix
-<!-- TODO: Define which agent role handles each task phase. -->
-
-| Phase | Assigned Role | Required Context Input | Expected Deliverable |
-| :--- | :--- | :--- | :--- |
-| **Discovery & Scope** | Orchestrator | User request, repository state | Delegation plan, role tickets |
-| **System Architecture** | Architect | Business logic, constraints | Architecture spec, ADRs |
-| **Design & Tokens** | Designer | Architecture spec, wireframes | Component specs, token mappings |
-| **Implementation** | Developer | Architecture & design specs | Functional code, passing tests |
-| **Verification & Gate** | Reviewer | Code diffs, acceptance criteria | Review report, verification logs |
-
-## 4. Context Hand-off Protocol
-<!-- TODO: Detail formatting rules and required fields when transferring tasks between agents. -->
-
-When handing off between roles, the passing agent must provide:
-1. **Goal & Scope**: High-level objective of the hand-off.
-2. **References**: Exact file paths and line ranges.
-3. **Decisions & Rationale**: Prior design choices to preserve.
-4. **Acceptance Criteria**: Verifiable assertions for the next role.
+## 2. Protocolo de Hand-off y Puertas de Verificación
+1. **Paso 0 a Paso 1:** No se escribe código nuevo sin documentar las brechas en `auditoria-inicial.md`.
+2. **Paso 1 a Paso 3:** No se implementa UI sin haber definido las funciones puras de dominio y los contratos de datos.
+3. **Paso 3 a Paso 5:** Todo cambio de frontend debe pasar por `oxlint` y `vite build` antes de darse por completado.
+4. **Paso 5 a Paso 7:** Las pruebas de Playwright deben validar la ausencia de errores en la consola del navegador y la correcta interacción de componentes.

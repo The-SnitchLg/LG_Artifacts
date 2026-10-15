@@ -1,38 +1,40 @@
-# Role: System Architect
+# Rol: Arquitecto de Software y Base de Datos — LG_Artifacts
 
-## 1. Role Purpose & Responsibilities
-<!-- TODO: Summarize the Architect role objectives (macro system design, technology evaluation, structural integrity). -->
+## 1. Propósito y Responsabilidades del Rol
+El **Arquitecto de Software** garantiza la coherencia estructural, la modularidad, la seguridad por diseño y el cumplimiento estricto del principio "Evolucionar, no reconstruir".
 
-The **Architect** is responsible for:
-- Defining the high-level application architecture and component hierarchy.
-- Choosing tech stack components, external libraries, and data schemas.
-- Establishing architectural decision records (ADRs) and structural guidelines.
-- Ensuring maintainability, modularity, and future scalability.
+Responsabilidades principales:
+- Delimitar el alcance del MVP en exactamente 6 etapas académicas, excluyendo sustentación y jurados.
+- Establecer la separación estricta entre el modo de demostración (fixtures locales) y el modo operativo con Supabase.
+- Diseñar el esquema de base de datos relacional de 12 tablas en Supabase con restricciones de integridad y Row Level Security (RLS).
+- Validar que ninguna decisión del Product Owner ni regla de la Matriz Maestra sea vulnerada silenciosamente.
 
-## 2. Technology Stack & Ecosystem
-<!-- TODO: Specify core frameworks, libraries, runtime environments, and tooling choices. -->
+## 2. Pila Tecnológica Homologada
+- **Framework Frontend:** React 19.2.8 + Vite 8.3.4 con base relativa (`base: './'`).
+- **Diseño y Estilos:** Tailwind CSS v4.3.3 con `@tailwindcss/vite` y tokens cálidos en `src/styles/tokens.css`.
+- **Linter y Calidad:** Oxlint 1.81.0 con estándares de pureza y hooks de React.
+- **Testing E2E:** Playwright 1.64.0 para pruebas de interacción visual y compatibilidad responsive.
+- **Base de Datos:** PostgreSQL 15+ en Supabase con 12 tablas relacionales y RLS estricto.
 
-- **Framework**: `<!-- TODO: e.g., React 19 + Vite -->`
-- **Styling**: `<!-- TODO: e.g., Tailwind CSS v4 -->`
-- **Language / Standards**: `<!-- TODO: e.g., ECMAScript modern / TypeScript -->`
-- **State Management**: `<!-- TODO: e.g., React Context / Local state hooks -->`
-- **Build & Bundler**: `<!-- TODO: e.g., Vite -->`
-
-## 3. Structural Diagrams & Component Boundaries
-<!-- TODO: Document component boundaries, data flow pipelines, or service layers. -->
+## 3. Diagrama de Arquitectura de Capas
 
 ```mermaid
 graph TD
-    <!-- TODO: Add Mermaid diagram illustrating module topology -->
-    A[Client UI Layer] --> B[Domain / Logic Services]
-    B --> C[Data Layer / State]
+    UI["Capa de Presentación UI (React 19 + Tailwind v4)"] --> DOMAIN["Capa de Dominio Puro (Stage Machine, Progress, Gate 0, CSV)"]
+    DOMAIN --> DATA["Capa de Datos Local (pilotData.js / 15 Proyectos)"]
+    DOMAIN -.->|Fase Operativa Futura con Auth| DB["Supabase PostgreSQL 15+ (12 Tablas + RLS + Storage Privado)"]
 ```
 
-## 4. Architectural Decision Records (ADRs)
-<!-- TODO: Track key architectural decisions with context, chosen alternatives, and consequences. -->
+## 4. Registro de Decisiones de Arquitectura (ADR)
 
-### ADR-001: <!-- TODO: Decision Title -->
-- **Status**: `<!-- TODO: Proposed / Accepted / Superseded -->`
-- **Context**: <!-- TODO: What problem was being solved? -->
-- **Decision**: <!-- TODO: What was chosen and why? -->
-- **Consequences**: <!-- TODO: Trade-offs and impact on future development -->
+### ADR-001: Reducción Estricta a 6 Etapas Académicas
+- **Estado:** Aceptado e Implementado.
+- **Contexto:** El prototipo previo contenía una séptima etapa ("Sustentación") y dividía el progreso entre 7.
+- **Decisión:** Se excluye la etapa de Sustentación por estar fuera del MVP. El denominador de avance es estrictamente 6.
+- **Consecuencias:** Alineación total con el PRD y la Matriz Maestra; avance calculado como `(aprobadas / 6) * 100`.
+
+### ADR-002: Aislamiento del Modo Demostración sin Exposición de Credenciales
+- **Estado:** Aceptado e Implementado.
+- **Contexto:** Se requiere desplegar una versión demostrativa en GitHub Pages sin autenticación previa.
+- **Decisión:** La demostración pública opera exclusivamente con fixtures en memoria local; se revoca el acceso a anon en Supabase y no se exponen service-role keys.
+- **Consecuencias:** Privacidad garantizada por diseño sin fugas de información académica real.
