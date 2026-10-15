@@ -1,0 +1,35 @@
+/* Variables de Diseno Institucional - Estetica Calida */
+:root {
+  --color-app-bg: #FAF7F2;
+  --color-surface: #FFFFFF;
+  --color-surface-muted: #F3ECE3;
+  --color-surface-hover: #EBE2D7;
+
+  --color-text: #253240;
+  --color-text-muted: #475569;
+  --color-text-light: #64748B;
+
+  --color-primary: #704733;
+  --color-primary-hover: #573524;
+  --color-accent: #A65C3D;
+  --color-accent-subtle: #F6EDE8;
+
+  --color-success: #21684F;
+  --color-success-bg: #EAF3EF;
+  --color-success-border: #A3D2BE;
+
+  --color-warning: #865A16;
+  --color-warning-bg: #FEF6E8;
+  --color-warning-border: #F3D298;
+
+  --color-danger: #9D3549;
+  --color-danger-bg: #FDF0F2;
+  --color-danger-border: #F5B5BF;
+
+  --color-locked: #64748B;
+  --color-locked-bg: #F1EFEA;
+  --color-locked-border: #D8D4CC;
+
+  --color-border: #D9CEC1;
+  --color-border-subtle: #EBE4DA;
+}
