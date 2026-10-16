@@ -3,16 +3,23 @@
 
 body {
   margin: 0;
-  background-color: var(--color-canvas);
-  color: var(--color-ink-primary);
-  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  min-height: 100%;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
 }
 
-/* Numeración tabular para alineación de datos */
+/* Numeración tabular para alineación de datos e indicadores */
 .font-tabular {
   font-variant-numeric: tabular-nums;
+}
+
+/* Tipografía Serif para Títulos Editoriales */
+.font-editorial {
+  font-family: Georgia, "Times New Roman", Cambria, serif;
 }
 
 /* Scrollbar estilizada y discreta */
@@ -21,14 +28,25 @@ body {
   height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-surface-muted);
+  background: var(--sand);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-border);
+  background: var(--line2);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-primary);
+  background: var(--brand);
+}
+
+/* Focus visible accesible WCAG 2.2 */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2.5px solid #8E4928;
+  outline-offset: 2px;
 }
 
 /* Animación sutil de entrada */
@@ -44,5 +62,17 @@ body {
 }
 
 .animate-fade-in-slide {
-  animation: fadeInSlide 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeInSlide 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Soporte para preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

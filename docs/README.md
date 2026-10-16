@@ -14,6 +14,8 @@ Todos los documentos reflejan las especificaciones de la **Matriz Maestra 2026**
   * Fronteras del MVP, refactorizaciones, hitos de desarrollo y matriz de criterios de aceptación (QA).
 * [Sistema de Diseño y Tokens UI](file:///C:/Users/larry/Documents/IA/docs/ux/sistema-diseno.md)
   * Paleta de colores cálida institucional, jerarquía tipográfica, componentes y pruebas de contraste WCAG 2.2 AA.
+* [Guía Maestra Visual UX/UI Completa](file:///C:/Users/larry/Documents/IA/GUIA_VISUAL_UX_UI.md)
+  * Recopilación integral de colores, diseño en 3 zonas, tokens, estados, componentes, responsive y capturas de pantalla.
 * [Modelo de Datos Relacional](file:///C:/Users/larry/Documents/IA/docs/database/modelo-datos.md)
   * Diagrama de entidad-relación (Mermaid), catálogo de las 12 entidades y restricciones de integridad.
 * [Arquitectura de Seguridad y Privacidad](file:///C:/Users/larry/Documents/IA/docs/database/seguridad.md)

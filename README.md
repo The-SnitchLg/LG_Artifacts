@@ -2,62 +2,67 @@
 
 Plataforma web académica para el seguimiento, supervisión y trazabilidad de trabajos de grado y tesis universitarias, basada en un ciclo riguroso de **6 etapas académicas**, la guía metodológica **Fase 0 (17 actividades)** y el protocolo de aseguramiento de calidad **Gate 0 (14 criterios)**.
 
-Diseñada con un estándar visual de **Espacio de Trabajo en 3 Zonas** (inspirado en Framer, Kira Learning y Gumloop), cálido, intuitivo y accesible (WCAG 2.2 AA) optimizado para entornos de escritorio institucional y dispositivos móviles.
+Diseñada bajo el sistema visual **Academic Flow 2.0** (inspirado en Framer, Kira Learning y Gumloop): cálido, intuitivo, accesible (WCAG 2.2 AA) y optimizado tanto para estaciones de trabajo institucionales como para dispositivos móviles.
 
 🌐 **Demo Desplegada en Vivo:** [https://the-snitchlg.github.io/LG_Artifacts/](https://the-snitchlg.github.io/LG_Artifacts/)
 
 ---
 
-## 1. Experiencia de Usuario y Espacio de Trabajo en 3 Zonas
+## 1. Experiencia de Usuario "Academic Flow 2.0"
 
-La plataforma implementa una disposición espacial ergonómica que maximiza la concentración y productividad del estudiante y el tutor:
+La plataforma proporciona espacios de trabajo especializados y adaptados a las responsabilidades de cada rol:
 
-* **Zona 1 — Navegación y Control Global (`TopNav`):** Identidad del proyecto, selector de rol simulado (*Estudiante*, *Tutor*, *Administrador*), alternador de vista (*Portafolio / Ficha*), exportador CSV sanitizado y disparador del panel contextual.
-* **Zona 2 — Lienzo Central de Investigación:**
-  * **Ficha Técnica Dublin Core:** Título, cohorte, línea temática, facultad, asesor, fechas y porcentaje global de avance `(etapas aprobadas / 6) * 100`.
-  * **Banner "Tu Siguiente Paso" (`NextStepBanner`):** Inspirado en Kira Learning, orienta inmediatamente al usuario según su rol hacia su hito o entrega requerida.
-  * **Ciclo de 6 Etapas (`StageStepper`):** Máquina de estados visual con rail táctil horizontal en móviles (390px) para navegación sin fricción.
-  * **Detalle de Etapa y Acciones (`StageDetail`):** Información metodológica, precondiciones de Gate 0 y botones de entrega o dictamen.
-  * **Repositorio de Evidencias (`EvidenceManager`):** Control y versionado de archivos inmutables por etapa.
-  * **Bitácora Cronológica y Acuerdos (`BitacoraSection`):** Historial inmutable de revisiones y compromisos con fechas límite.
-* **Zona 3 — Panel de Acompañamiento Contextual (`ContextDrawer`):**
-  * Inspirado en Gumloop, provee una barra lateral en escritorio (o drawer deslizable en móvil/tableta) con acceso permanente a 4 herramientas sin tapar la evidencia central:
-    1. **Bitácora Viva:** Registro de acuerdos y decisiones de asesoría.
-    2. **Compromisos Pactados:** Acuerdos entre estudiante y tutor con estados pendiente/cumplido.
-    3. **Gate 0 (14 Criterios):** Checklist de auditoría previo a habilitar la aprobación de la Etapa 1.
-    4. **Fase 0 (17 Pasos):** Pasos preparatorios de formulación de la investigación.
+### 1.1 Estructura Global
+* **Barra Lateral de Navegación (`RoleSidebar`):** Emblema institucional `LG`, navegación por rol, contador en tiempo real de pendientes de revisión, acceso a ayuda contextual y perfil simulado. En dispositivos móviles (<768px), se convierte en un cajón deslizable táctil (*off-canvas*) accesible mediante el menú hamburguesa.
+* **Cabecera de Control (`TopbarCompact`):** Breadcrumb dinámico de ubicación, insignia de modo demostración responsiva, acceso rápido a la ficha técnica del proyecto, exportador CSV compatible con Excel y selector de rol simulado (*Estudiante*, *Tutor*, *Administrador*).
+* **Panel Contextual Adaptable (`AdaptiveContextPanel`):** Cajón lateral deslizable (*slide-over drawer*) con trampa de foco accesible y cierre mediante tecla Escape o clic fuera. Permite consultar la ficha Dublin Core, la lista de 14 criterios de Gate 0, los 17 pasos de Fase 0, la bitácora inmutable de acuerdos y emitir dictámenes formales de aprobación u observación sin bloquear el espacio central.
+
+### 1.2 Espacios de Trabajo Especializados
+* **Espacio del Estudiante (`StudentWorkspace`):**
+  * Visualización clara del proyecto con metadatos Dublin Core (asesor, cohorte, línea temática).
+  * **Track de 6 Etapas:** Visualización de nodos en escritorio y banner táctil compacto en móvil (`Etapa N de 6`).
+  * **Tarjeta "Tu Siguiente Paso" (Kira Learning):** Orientación inmediata sobre la acción prioritaria requerida (preparar entrega, subsanar observaciones o continuar con la siguiente etapa).
+  * **Caja de Última Observación:** Cita directa con la retroalimentación y fecha límite fijada por el tutor.
+  * **Evidencia Actual y Próximos Compromisos:** Enlaces contextuales directos para agilizar el trabajo.
+* **Espacio del Tutor (`TutorWorkspace`):**
+  * **Bandeja Maestro-Detalle:** Columna izquierda con la cola de tesis asignadas, buscador instantáneo y badges de estado; columna derecha con el detalle completo de la entrega activa.
+  * **Pestañas de Revisión:** *Evidencia* (datos del archivo y botón de descarga), *Criterios* (checklist de los 14 criterios de Gate 0), *Observaciones* e *Historial*.
+  * **Barra Inferior de Dictamen Formal:** Botones de acción directa con confirmación en panel lateral: *"Solicitar cambios"* (con motivo obligatorio y fecha pactada) y *"Aprobar etapa"* (bloqueado en Etapa 1 si Gate 0 < 14).
+* **Espacio del Administrador (`AdminWorkspace`):**
+  * **Franja de Indicadores Clave:** Total de proyectos de grado (15), tutores activos (3) y porcentaje promedio de avance de la cohorte.
+  * **Controles de Filtrado:** Búsqueda en vivo por título, estudiante, ID o tutor, más filtros colapsables por etapa activa (1 a 6) y nivel de riesgo (Bajo, Medio, Alto).
+  * **Tabla Responsiva:** Cuadrícula con métricas en pantallas grandes (≥1024px) y tarjetas condensadas en pantallas medianas y móviles (<1024px) con navegación a la ficha completa.
 
 ---
 
 ## 2. Alcance del Piloto Institucional (Cohorte 2026-I)
 
-* **Capacidad:** 15 estudiantes investigadores, 15 proyectos de tesis y 3 tutores principales, más coordinación administrativa.
-* **Roles del Sistema:**
-  * **Estudiante:** Consulta de avance, documentación guiada de Fase 0, entrega de evidencias versionadas, subsanación de observaciones y revisión de compromisos.
-  * **Tutor:** Supervisión de proyectos asignados, certificación de criterios Gate 0, emisión de observaciones técnicas con motivo obligatorio y dictamen formal de aprobación de etapas.
-  * **Administrador:** Vista global de la cohorte, monitoreo de métricas, distribución de carga de asesoría y exportación consolidada.
-* **Ciclo de 6 Etapas Académicas:**
+* **Capacidad del Piloto:** 15 estudiantes investigadores, 15 proyectos de tesis y 3 tutores principales, más coordinación académica.
+* **Ciclo de 6 Etapas Académicas Obligatorias:**
   1. *Propuesta / Protocolo (Gate 0)*
   2. *Marco Teórico*
   3. *Metodología*
-  4. *Recolección*
-  5. *Análisis*
-  6. *Documento Final*
+  4. *Recolección de Información*
+  5. *Análisis y Resultados*
+  6. *Documento Final y Sustentación*
 * **Cálculo de Progreso:** `Progreso = (etapasAprobadas / 6) * 100` (valores normalizados: 0%, 17%, 33%, 50%, 67%, 83%, 100%).
-* **Regla Mandatoria de Gate 0:** La conformidad de los 14 criterios de Gate 0 es un prerrequisito para habilitar la opción de aprobación del tutor, pero **nunca aprueba automáticamente** la etapa. El dictamen es siempre un acto explícito y registrado del tutor.
+* **Regla Mandatoria de Gate 0:** La conformidad de los 14 criterios de Gate 0 es un prerrequisito indispensable para que el tutor pueda aprobar la Etapa 1, pero **14/14 criterios nunca aprueban automáticamente** la etapa. El dictamen es siempre un acto explícito, documentado y motivado por el tutor.
+* **Trazabilidad Inmutable:** Cada decisión, observación o entrega se registra cronológicamente en la bitácora con autor, fecha, notas y compromisos acordados.
 
 ---
 
 ## 3. Pila Tecnológica (Stack)
 
 * **Frontend:** React 19.2.8, React DOM, Vite 8.3.4.
-* **Estilos y Tokens:** Tailwind CSS 4.3.3 con variables CSS institucionales (`tokens.css`) inspiradas en papel de archivo y tipografía editorial.
-* **Calidad de Código y Linter:** Oxlint 1.81.0 con soporte de hooks de React y estándares de pureza.
+* **Transiciones y Motion:** `motion` 14.3.0 para transiciones de diseño fluidas.
+* **Iconografía:** `lucide-react` 1.55.0.
+* **Estilos y Tokens:** Tailwind CSS 4.3.3 con variables de diseño institucional (`tokens.css`) inspiradas en papel de archivo, tipografía editorial (`Georgia`, `font-editorial`) y números tabulares (`tabular-nums`).
+* **Calidad y Linter:** Oxlint 1.81.0 con soporte de hooks de React y validaciones de pureza de React Compiler (**0 errores, 0 advertencias**).
 * **Pruebas de Calidad:**
-  * *Unitarias / Dominio:* Vitest (`npm test`).
-  * *End-to-End y Responsive:* Playwright 1.64.0 (`verify-app.mjs`) validando resoluciones en 1440px, 1024px, 768px y 390px.
-* **Backend y Persistencia:** Supabase / PostgreSQL 15+ (migraciones versionadas, 12 tablas relacionales, triggers de auditoría y RLS restrictivo).
-* **Despliegue Continuo:** GitHub Pages vía GitHub Actions (`.github/workflows/deploy.yml`) con base relativa (`base: './'`).
+  * *Unitarias / Dominio:* Vitest (`npm test`) validando reglas de etapa, progreso, Gate 0 y sanitización CSV.
+  * *End-to-End y Responsive:* Playwright 1.64.0 (`verify-app.mjs`) validando resoluciones en 1440px, 1024px, 768px y 390px sin desbordamiento horizontal y con 0 errores de consola.
+* **Persistencia y Backend:** Supabase / PostgreSQL 15+ (migraciones versionadas, 12 tablas relacionales, triggers de auditoría y RLS restrictivo).
+* **Despliegue Continuo:** GitHub Pages mediante GitHub Actions (`.github/workflows/deploy.yml`) con base relativa (`base: './'`).
 
 ---
 
@@ -90,6 +95,9 @@ npm run build
 
 # 7. Vista previa de la compilación de producción
 npm run preview
+
+# 8. Ejecutar pruebas E2E y capturas multi-dispositivo con Playwright
+node verify-app.mjs
 ```
 
 ---
@@ -97,44 +105,46 @@ npm run preview
 ## 5. Estructura del Repositorio
 
 ```
-├── .agent/                  # Reglas de desarrollo (ponytail, graphify) y workflows
-├── .agents/skills/          # Habilidades instaladas (frontend-design, ui-ux-pro-max, taste-skill)
-├── .github/workflows/       # Canal de despliegue automatizado a GitHub Pages
-├── .opencode/               # Especificaciones, roles, contexto y orquestación
-├── docs/                    # Documentación formal de arquitectura, UX y base de datos
-│   ├── architecture/        # Auditoría inicial y decisiones de rediseño UX/UI
-│   ├── implementation/      # Plan de implementación por hitos
-│   ├── ux/                  # Sistema de diseño, paleta cálida y accesibilidad WCAG
-│   └── database/            # Modelo de datos relacional y políticas de seguridad
+├── docs/                     # Documentación arquitectónica, técnica y de UX
+│   ├── architecture/         # Informes de auditoría y rediseño Academic Flow 2.0
+│   ├── database/             # Esquema relacional y especificaciones de base de datos
+│   └── ux/                   # Guías visuales y flujos de usuario
+├── screenshots/              # Capturas automáticas multi-dispositivo (1440px, 1024px, 768px, 390px)
 ├── src/
-│   ├── components/          # Componentes transversales (NextStepBanner, ContextDrawer, StatusBadge)
-│   ├── data/                # Datos semilla de los 15 proyectos y catálogos Fase 0 / Gate 0
-│   ├── domain/              # Lógica pura: máquina de estados, progreso y exportador CSV
-│   ├── features/            # Componentes modulares por funcionalidad (UI)
-│   │   ├── bitacora/        # Bitácora cronológica y compromisos académicos
-│   │   ├── evidence/        # Gestión y versionado de archivos
-│   │   ├── gate0/           # Auditoría interactiva de los 14 criterios de Gate 0
-│   │   ├── navigation/      # Barra superior, selector de rol y banner de advertencia
-│   │   ├── phase0/          # Guía metodológica de 17 actividades de Fase 0
-│   │   ├── portfolio/       # Portafolio de proyectos para tutor y administrador
-│   │   ├── projects/        # Cabecera de proyecto con metadatos Dublin Core
-│   │   ├── review/          # Modal de dictamen y observaciones del tutor
-│   │   └── stages/          # Stepper de 6 etapas y panel de detalle
-│   ├── styles/              # Tokens CSS institucionales (tokens.css)
-│   ├── App.jsx              # Orquestador principal del espacio de trabajo en 3 zonas
-│   ├── index.css            # Importaciones de Tailwind y estilos globales
-│   └── main.jsx             # Punto de entrada de React
-├── supabase/                # Migraciones SQL, seed data y documentación de base de datos
-│   ├── migrations/          # 20261014000000_schema_inicial.sql (12 entidades y RLS)
-│   └── seed.sql             # Datos iniciales para pruebas en PostgreSQL
-├── verify-app.mjs           # Script de pruebas automatizadas con Playwright
-└── vite.config.js           # Configuración de Vite con base relativa para despliegue
+│   ├── components/           # Componentes base y diseño accesible
+│   │   ├── layout/           # RoleSidebar, TopbarCompact, AdaptiveContextPanel
+│   │   └── StatusBadge.jsx   # Pastillas semánticas accesibles WCAG 2.2 AA
+│   ├── data/                 # Datos del piloto (15 proyectos, Gate 0, Fase 0)
+│   ├── domain/               # Lógica pura de negocio (etapas, cálculo, Gate 0, CSV)
+│   ├── features/             # Módulos por responsabilidad
+│   │   ├── admin/            # AdminWorkspace (Cohorte, métricas, filtros)
+│   │   ├── student/          # StudentWorkspace (Avance, siguiente paso, evidencias)
+│   │   ├── tutor/            # TutorWorkspace (Bandeja maestro-detalle, dictámenes)
+│   │   ├── gate0/            # Modales y validadores de Gate 0
+│   │   ├── phase0/           # Guía metodológica de Fase 0
+│   │   └── review/           # Modal de dictamen del tutor
+│   ├── styles/               # Tokens de diseño editorial y Tailwind CSS
+│   ├── App.jsx               # Orquestador del espacio de trabajo por rol
+│   └── main.jsx              # Punto de entrada de React
+├── tests/                    # Pruebas unitarias de dominio (Vitest)
+├── verify-app.mjs            # Suite de verificación Playwright E2E y multi-resolución
+└── package.json              # Configuración de dependencias y scripts
 ```
 
 ---
 
-## 6. Fronteras de Seguridad y Privacidad
+## 6. Verificación de Accesibilidad (WCAG 2.2 AA)
 
-1. **Modo Demostración Aislado:** La versión pública desplegada en GitHub Pages opera de forma estática y aislada utilizando datos ficticios en memoria para garantizar que ninguna información confidencial de investigaciones reales quede expuesta en internet.
-2. **Sin Conexión Pública Anónima:** No se permite que un cliente anónimo acceda directamente a bases de datos operativas de proyectos sin autenticación formal.
-3. **Persistencia Privada Futura:** La persistencia operativa en Supabase está preparada con Row Level Security (RLS) estricto y Storage privado para cuando se habilite el módulo de autenticación con credenciales institucionales.
+* **Contraste de Color:** Todas las combinaciones de texto y fondo cumplen con el ratio mínimo de 4.5:1 para texto normal y 3:1 para elementos de interfaz gráfica.
+* **Navegación por Teclado:** Trampas de foco en paneles modulares y soporte nativo de la tecla `Escape` para cerrar diálogos y cajones.
+* **Modo de Movimiento Reducido:** Implementación de `@media (prefers-reduced-motion: reduce)` en `index.css` que desactiva transiciones y animaciones para usuarios con sensibilidad vestibular.
+* **Semántica y Lectores de Pantalla:** Atributos `aria-label`, `aria-modal`, `aria-expanded`, `aria-current` y roles ARIA semánticos en todos los elementos interactivos.
+
+---
+
+## 7. Licencia y Créditos
+
+Proyecto desarrollado como plataforma de seguimiento académico institucional para trabajos de grado de pregrado y posgrado.
+
+* **Desarrollo y Arquitectura:** The-SnitchLg / Antigravity AI
+* **Diseño UI/UX:** Inspirado en las directrices de diseño de Framer, Kira Learning y Gumloop.
