@@ -2,11 +2,34 @@
 
 Plataforma web académica para el seguimiento, supervisión y trazabilidad de trabajos de grado y tesis universitarias, basada en un ciclo riguroso de **6 etapas académicas**, la guía metodológica **Fase 0 (17 actividades)** y el protocolo de aseguramiento de calidad **Gate 0 (14 criterios)**.
 
-Diseñada con un estándar visual cálido, intuitivo y accesible (WCAG 2.2 AA) optimizado para entornos de escritorio institucional y dispositivos móviles.
+Diseñada con un estándar visual de **Espacio de Trabajo en 3 Zonas** (inspirado en Framer, Kira Learning y Gumloop), cálido, intuitivo y accesible (WCAG 2.2 AA) optimizado para entornos de escritorio institucional y dispositivos móviles.
+
+🌐 **Demo Desplegada en Vivo:** [https://the-snitchlg.github.io/LG_Artifacts/](https://the-snitchlg.github.io/LG_Artifacts/)
 
 ---
 
-## 1. Alcance del Piloto Institucional (Cohorte 2026-I)
+## 1. Experiencia de Usuario y Espacio de Trabajo en 3 Zonas
+
+La plataforma implementa una disposición espacial ergonómica que maximiza la concentración y productividad del estudiante y el tutor:
+
+* **Zona 1 — Navegación y Control Global (`TopNav`):** Identidad del proyecto, selector de rol simulado (*Estudiante*, *Tutor*, *Administrador*), alternador de vista (*Portafolio / Ficha*), exportador CSV sanitizado y disparador del panel contextual.
+* **Zona 2 — Lienzo Central de Investigación:**
+  * **Ficha Técnica Dublin Core:** Título, cohorte, línea temática, facultad, asesor, fechas y porcentaje global de avance `(etapas aprobadas / 6) * 100`.
+  * **Banner "Tu Siguiente Paso" (`NextStepBanner`):** Inspirado en Kira Learning, orienta inmediatamente al usuario según su rol hacia su hito o entrega requerida.
+  * **Ciclo de 6 Etapas (`StageStepper`):** Máquina de estados visual con rail táctil horizontal en móviles (390px) para navegación sin fricción.
+  * **Detalle de Etapa y Acciones (`StageDetail`):** Información metodológica, precondiciones de Gate 0 y botones de entrega o dictamen.
+  * **Repositorio de Evidencias (`EvidenceManager`):** Control y versionado de archivos inmutables por etapa.
+  * **Bitácora Cronológica y Acuerdos (`BitacoraSection`):** Historial inmutable de revisiones y compromisos con fechas límite.
+* **Zona 3 — Panel de Acompañamiento Contextual (`ContextDrawer`):**
+  * Inspirado en Gumloop, provee una barra lateral en escritorio (o drawer deslizable en móvil/tableta) con acceso permanente a 4 herramientas sin tapar la evidencia central:
+    1. **Bitácora Viva:** Registro de acuerdos y decisiones de asesoría.
+    2. **Compromisos Pactados:** Acuerdos entre estudiante y tutor con estados pendiente/cumplido.
+    3. **Gate 0 (14 Criterios):** Checklist de auditoría previo a habilitar la aprobación de la Etapa 1.
+    4. **Fase 0 (17 Pasos):** Pasos preparatorios de formulación de la investigación.
+
+---
+
+## 2. Alcance del Piloto Institucional (Cohorte 2026-I)
 
 * **Capacidad:** 15 estudiantes investigadores, 15 proyectos de tesis y 3 tutores principales, más coordinación administrativa.
 * **Roles del Sistema:**
@@ -25,18 +48,20 @@ Diseñada con un estándar visual cálido, intuitivo y accesible (WCAG 2.2 AA) o
 
 ---
 
-## 2. Pila Tecnológica (Stack)
+## 3. Pila Tecnológica (Stack)
 
 * **Frontend:** React 19.2.8, React DOM, Vite 8.3.4.
-* **Estilos y Tokens:** Tailwind CSS 4.3.3 con `@tailwindcss/vite` y variables CSS institucionales (`tokens.css`).
+* **Estilos y Tokens:** Tailwind CSS 4.3.3 con variables CSS institucionales (`tokens.css`) inspiradas en papel de archivo y tipografía editorial.
 * **Calidad de Código y Linter:** Oxlint 1.81.0 con soporte de hooks de React y estándares de pureza.
-* **Pruebas End-to-End y Accesibilidad:** Playwright 1.64.0 para pruebas de interacción y validación visual.
+* **Pruebas de Calidad:**
+  * *Unitarias / Dominio:* Vitest (`npm test`).
+  * *End-to-End y Responsive:* Playwright 1.64.0 (`verify-app.mjs`) validando resoluciones en 1440px, 1024px, 768px y 390px.
 * **Backend y Persistencia:** Supabase / PostgreSQL 15+ (migraciones versionadas, 12 tablas relacionales, triggers de auditoría y RLS restrictivo).
 * **Despliegue Continuo:** GitHub Pages vía GitHub Actions (`.github/workflows/deploy.yml`) con base relativa (`base: './'`).
 
 ---
 
-## 3. Instalación y Ejecución Local
+## 4. Instalación y Ejecución Local
 
 ### Prerrequisitos
 * Node.js v20 o superior.
@@ -57,27 +82,32 @@ npm run dev
 # 4. Ejecutar el análisis estático de código (linter)
 npm run lint
 
-# 5. Compilar para producción
+# 5. Ejecutar pruebas unitarias de dominio
+npm test
+
+# 6. Compilar para producción
 npm run build
 
-# 6. Vista previa de la compilación de producción
+# 7. Vista previa de la compilación de producción
 npm run preview
 ```
 
 ---
 
-## 4. Estructura del Repositorio
+## 5. Estructura del Repositorio
 
 ```
 ├── .agent/                  # Reglas de desarrollo (ponytail, graphify) y workflows
+├── .agents/skills/          # Habilidades instaladas (frontend-design, ui-ux-pro-max, taste-skill)
 ├── .github/workflows/       # Canal de despliegue automatizado a GitHub Pages
 ├── .opencode/               # Especificaciones, roles, contexto y orquestación
 ├── docs/                    # Documentación formal de arquitectura, UX y base de datos
-│   ├── architecture/        # Auditoría inicial y decisiones técnicas
+│   ├── architecture/        # Auditoría inicial y decisiones de rediseño UX/UI
 │   ├── implementation/      # Plan de implementación por hitos
 │   ├── ux/                  # Sistema de diseño, paleta cálida y accesibilidad WCAG
 │   └── database/            # Modelo de datos relacional y políticas de seguridad
 ├── src/
+│   ├── components/          # Componentes transversales (NextStepBanner, ContextDrawer, StatusBadge)
 │   ├── data/                # Datos semilla de los 15 proyectos y catálogos Fase 0 / Gate 0
 │   ├── domain/              # Lógica pura: máquina de estados, progreso y exportador CSV
 │   ├── features/            # Componentes modulares por funcionalidad (UI)
@@ -90,8 +120,8 @@ npm run preview
 │   │   ├── projects/        # Cabecera de proyecto con metadatos Dublin Core
 │   │   ├── review/          # Modal de dictamen y observaciones del tutor
 │   │   └── stages/          # Stepper de 6 etapas y panel de detalle
-│   ├── styles/              # Tokens CSS institucionales
-│   ├── App.jsx              # Orquestador principal de estado y vistas
+│   ├── styles/              # Tokens CSS institucionales (tokens.css)
+│   ├── App.jsx              # Orquestador principal del espacio de trabajo en 3 zonas
 │   ├── index.css            # Importaciones de Tailwind y estilos globales
 │   └── main.jsx             # Punto de entrada de React
 ├── supabase/                # Migraciones SQL, seed data y documentación de base de datos
@@ -103,7 +133,7 @@ npm run preview
 
 ---
 
-## 5. Fronteras de Seguridad y Privacidad
+## 6. Fronteras de Seguridad y Privacidad
 
 1. **Modo Demostración Aislado:** La versión pública desplegada en GitHub Pages opera de forma estática y aislada utilizando datos ficticios en memoria para garantizar que ninguna información confidencial de investigaciones reales quede expuesta en internet.
 2. **Sin Conexión Pública Anónima:** No se permite que un cliente anónimo acceda directamente a bases de datos operativas de proyectos sin autenticación formal.

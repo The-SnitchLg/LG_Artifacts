@@ -11,6 +11,8 @@ import Phase0Modal from './features/phase0/Phase0Modal.jsx';
 import TutorReviewModal from './features/review/TutorReviewModal.jsx';
 import EvidenceManager from './features/evidence/EvidenceManager.jsx';
 import BitacoraSection from './features/bitacora/BitacoraSection.jsx';
+import NextStepBanner from './components/NextStepBanner.jsx';
+import ContextDrawer from './components/ContextDrawer.jsx';
 import { exportProjectToCSV, downloadCSV } from './domain/csvExporter.js';
 import { validateGate0 } from './domain/gate0Validator.js';
 
@@ -22,10 +24,11 @@ export default function App() {
   const [selectedProjectId, setSelectedProjectId] = useState('PRJ-01');
   const [activeStageId, setActiveStageId] = useState(1);
 
-  // 2. Modals & Notifications
+  // 2. Modals, Drawers & Notifications
   const [isGate0ModalOpen, setIsGate0ModalOpen] = useState(false);
   const [isPhase0ModalOpen, setIsPhase0ModalOpen] = useState(false);
   const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
+  const [isContextDrawerOpen, setIsContextDrawerOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState(null);
 
   // Toast Helper
@@ -241,12 +244,14 @@ export default function App() {
     showToast('Ficha y bitácora exportadas exitosamente en formato CSV (.csv).');
   };
 
+  const pendingCommitments = (currentProject.commitments || []).filter(c => c.status === 'pendiente').length;
+
   return (
-    <div className="min-h-screen bg-[#FAF7F2] text-[#253240] flex flex-col font-sans">
+    <div className="min-h-screen bg-[#FBF9F5] text-[#1C1917] flex flex-col font-sans">
       {/* Toast Notification Container */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 max-w-md bg-[#253240] text-white px-4 py-3 rounded-xl shadow-xl border border-[#354558] flex items-center gap-3 animate-fade-in">
-          <span className="w-5 h-5 rounded-full bg-[#21684F] text-white flex items-center justify-center font-bold text-xs shrink-0">
+        <div className="fixed bottom-6 right-6 z-50 max-w-md bg-[#1E293B] text-white px-4 py-3 rounded-2xl shadow-editorial-lg border border-slate-700 flex items-center gap-3 animate-fade-in-slide">
+          <span className="w-5 h-5 rounded-full bg-[#059669] text-white flex items-center justify-center font-bold text-xs shrink-0">
             ✓
           </span>
           <span className="text-xs sm:text-sm font-medium">{toastMessage}</span>
@@ -264,10 +269,12 @@ export default function App() {
         onViewChange={setCurrentView}
         onExportCSV={handleExportCSV}
         selectedProjectTitle={currentProject.title}
+        onToggleDrawer={() => setIsContextDrawerOpen(true)}
+        pendingCount={pendingCommitments}
       />
 
-      {/* Main Content Area */}
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 py-6 w-full flex-1">
+      {/* Main Workspace (Alternative B: 3 Zones) */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6 w-full flex-1">
         {currentView === 'portafolio' ? (
           <ProjectPortfolio
             projects={projects}
@@ -276,67 +283,105 @@ export default function App() {
             role={role}
           />
         ) : (
-          <div className="space-y-6">
-            {/* 1. Project Header Card (Dublin Core & 6-Stage Progress) */}
-            <ProjectHeader
-              project={currentProject}
-              onBackToPortfolio={() => setCurrentView('portafolio')}
-            />
+          <div className="flex flex-col xl:flex-row gap-6 items-start">
+            {/* Zone 2: Central Research Canvas */}
+            <div className="flex-1 min-w-0 space-y-6 w-full">
+              {/* 1. Dublin Core Project Header */}
+              <ProjectHeader
+                project={currentProject}
+                onBackToPortfolio={() => setCurrentView('portafolio')}
+              />
 
-            {/* 2. 6-Stage Stepper Machine */}
-            <StageStepper
-              stages={currentProject.stages}
-              activeStageId={activeStageId}
-              onSelectStage={setActiveStageId}
-              onOpenGate0={() => setIsGate0ModalOpen(true)}
-              onOpenPhase0={() => setIsPhase0ModalOpen(true)}
-            />
+              {/* 2. Next Step Guidance Banner (Kira Learning) */}
+              <NextStepBanner
+                role={role}
+                activeStage={activeStage}
+                isGate0Compliant={gate0Analysis.isFullyCompliant}
+                gate0CompletedCount={gate0Analysis.completedCount}
+                onStudentUploadEvidence={handleStudentUploadEvidence}
+                onOpenReviewModal={() => setIsReviewModalOpen(true)}
+                onOpenGate0={() => setIsGate0ModalOpen(true)}
+              />
 
-            {/* 3. Active Stage Detail & Actions */}
-            <StageDetail
-              stage={activeStage}
-              role={role}
-              onOpenGate0={() => setIsGate0ModalOpen(true)}
-              onOpenPhase0={() => setIsPhase0ModalOpen(true)}
-              onOpenReviewModal={() => setIsReviewModalOpen(true)}
-              onStudentUploadEvidence={handleStudentUploadEvidence}
-              isGate0Compliant={gate0Analysis.isFullyCompliant}
-              gate0CompletedCount={gate0Analysis.completedCount}
-            />
+              {/* 3. 6-Stage Stepper Machine with Mobile Touch Rail */}
+              <StageStepper
+                stages={currentProject.stages}
+                activeStageId={activeStageId}
+                onSelectStage={setActiveStageId}
+                onOpenGate0={() => setIsGate0ModalOpen(true)}
+                onOpenPhase0={() => setIsPhase0ModalOpen(true)}
+              />
 
-            {/* 4. Evidence Repository & Version Management */}
-            <EvidenceManager
-              evidences={currentProject.evidences || []}
-              activeStageId={activeStage.id}
-              role={role}
-              onUploadEvidence={handleStudentUploadEvidence}
-              onShowToast={showToast}
-            />
+              {/* 4. Active Stage Detail & Action Hub */}
+              <StageDetail
+                stage={activeStage}
+                role={role}
+                onOpenGate0={() => setIsGate0ModalOpen(true)}
+                onOpenPhase0={() => setIsPhase0ModalOpen(true)}
+                onOpenReviewModal={() => setIsReviewModalOpen(true)}
+                onStudentUploadEvidence={handleStudentUploadEvidence}
+                isGate0Compliant={gate0Analysis.isFullyCompliant}
+                gate0CompletedCount={gate0Analysis.completedCount}
+              />
 
-            {/* 5. Bitácora & Academic Commitments */}
-            <BitacoraSection
-              decisionLog={currentProject.decisionLog || []}
-              commitments={currentProject.commitments || []}
-              role={role}
-              onAddCommitment={handleAddCommitment}
-            />
+              {/* 5. Evidence Repository & Version Management */}
+              <EvidenceManager
+                evidences={currentProject.evidences || []}
+                activeStageId={activeStage.id}
+                role={role}
+                onUploadEvidence={handleStudentUploadEvidence}
+                onShowToast={showToast}
+              />
+
+              {/* 6. Comprehensive Bitácora & Commitments */}
+              <BitacoraSection
+                decisionLog={currentProject.decisionLog || []}
+                commitments={currentProject.commitments || []}
+                role={role}
+                onAddCommitment={handleAddCommitment}
+              />
+            </div>
+
+            {/* Zone 3: Persistent Context Companion (Desktop >= 1280px Gumloop pattern) */}
+            <div className="hidden xl:block">
+              <ContextDrawer
+                isInline={true}
+                project={currentProject}
+                role={role}
+                onToggleGateItem={handleToggleGateItem}
+                onTogglePhase0Step={handleTogglePhase0Step}
+                onAddCommitment={handleAddCommitment}
+              />
+            </div>
           </div>
         )}
       </main>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-[#D9CEC1] py-6 px-4 text-center text-xs text-[#64748B]">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+      <footer className="bg-white border-t border-[#D8CEBF] py-6 px-4 text-center text-xs text-[#57534E]">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           <p>
             Plataforma de Seguimiento Académico de Trabajos de Grado &bull; Piloto 2026-I
           </p>
-          <p className="text-[11px]">
-            Estándar Metodológico Fase 0 &bull; Protocolo de Salida Gate 0 &bull; Interfaz 100% en Español
+          <p className="text-[11px] text-[#8F8881]">
+            Espacio de Trabajo en 3 Zonas &bull; Protocolo Gate 0 (14 Criterios) &bull; Guía Fase 0 (17 Pasos) &bull; 100% en Español
           </p>
         </div>
       </footer>
 
-      {/* Modals */}
+      {/* Slide-over Context Drawer (for mobile/tablet or direct toggle) */}
+      <ContextDrawer
+        isOpen={isContextDrawerOpen}
+        onClose={() => setIsContextDrawerOpen(false)}
+        isInline={false}
+        project={currentProject}
+        role={role}
+        onToggleGateItem={handleToggleGateItem}
+        onTogglePhase0Step={handleTogglePhase0Step}
+        onAddCommitment={handleAddCommitment}
+      />
+
+      {/* Dialog Modals */}
       <Gate0Modal
         isOpen={isGate0ModalOpen}
         onClose={() => setIsGate0ModalOpen(false)}
