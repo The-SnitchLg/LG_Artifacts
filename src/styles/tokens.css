@@ -1,66 +1,71 @@
 /* ==========================================================================
-   TOKENS DE DISEÑO INSTITUCIONAL — PLATAFORMA DE SEGUIMIENTO ACADÉMICO
-   Inspiración: Framer (calidez editorial) + Kira (claridad) + Gumloop (espacio)
+   TOKENS DE DISEÑO INSTITUCIONAL — ACADEMIC FLOW (LG_ARTIFACTS 2.0)
+   Inspiración: Framer (artesanía editorial) + Kira (guía activa) + Gumloop (ergonomía)
    ========================================================================== */
 
 :root {
-  /* Lienzo y Superficies de Trabajo (Paleta cálida de papel de archivo) */
+  /* Lienzo y Superficies de Trabajo */
+  --bg: #FBF9F5;
+  --surface: #FFFFFF;
+  --sand: #F5F1EA;
+  --hover: #EFE9DF;
+  --surface-subtle: #F7F4EE;
+
+  /* Compatibilidad con variables previas */
   --color-app-bg: #FBF9F5;
   --color-canvas: #FBF9F5;
   --color-surface: #FFFFFF;
   --color-surface-muted: #F5F1EA;
   --color-surface-hover: #EFE9DF;
-  --color-surface-subtle: #F7F4EE;
-  --color-surface-elevated: #FFFFFF;
 
   /* Tinta y Textos (Warm Charcoal / Piedra Natural) */
+  --ink: #1C1917;
+  --muted: #57534E;
+  --light: #6A625B;
   --color-text: #1C1917;
   --color-ink-primary: #1C1917;
   --color-ink-secondary: #57534E;
-  --color-ink-muted: #8F8881;
-  --color-text-muted: #57534E;
-  --color-text-light: #78716C;
+  --color-ink-muted: #6A625B;
 
   /* Identidad Institucional y Acentos */
+  --brand: #6E432F;
+  --brand-hover: #553323;
+  --accent: #8E4928;
   --color-primary: #6E432F;
   --color-primary-hover: #553323;
   --color-accent: #8E4928;
-  --color-accent-subtle: #F6EDE8;
-  --color-brand-navy: #1E293B;
-  --color-brand-accent: #2563EB;
 
-  /* Semántica Académica (Kira Learning) */
-  --color-success: #059669;
-  --color-success-bg: #EDF7F2;
-  --color-success-border: #9CD5BE;
-
-  --color-warning: #D97706;
-  --color-warning-bg: #FFFBEB;
-  --color-warning-border: #FCD34D;
-
-  --color-danger: #DC2626;
-  --color-danger-bg: #FEF2F2;
-  --color-danger-border: #FCA5A5;
-
-  --color-locked: #64748B;
-  --color-locked-bg: #F1EFEA;
-  --color-locked-border: #D8D4CC;
-
-  /* Bordes y Divisiones Orgánicas */
+  /* Líneas y Bordes Orgánicos */
+  --line: #E8E1D5;
+  --line2: #D8CEBF;
   --color-border: #D8CEBF;
   --color-border-subtle: #E8E1D5;
-  --color-border-focus: #6E432F;
 
-  /* Radios Geométricos Consistentes */
-  --radius-xs: 4px;
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
-  --radius-xl: 20px;
-  --radius-pill: 9999px;
+  /* Semántica Académica (Contrastes WCAG 2.2 AA Auditados) */
+  --green: #146C4F;
+  --green-bg: #EDF7F2;
+  --color-success: #146C4F;
+  --color-success-bg: #EDF7F2;
 
-  /* Sombras Editoriales Framer */
-  --shadow-editorial-sm: 0 1px 2px rgba(28, 25, 23, 0.04);
-  --shadow-editorial-md: 0 1px 3px rgba(28, 25, 23, 0.05), 0 4px 12px rgba(28, 25, 23, 0.03);
-  --shadow-editorial-lg: 0 4px 6px -1px rgba(28, 25, 23, 0.06), 0 10px 24px -3px rgba(28, 25, 23, 0.05);
+  --amber: #8A4B08;
+  --amber-bg: #FFFBEB;
+  --color-warning: #8A4B08;
+  --color-warning-bg: #FFFBEB;
+
+  --red: #B42318;
+  --red-bg: #FEF2F2;
+  --color-danger: #B42318;
+  --color-danger-bg: #FEF2F2;
+
+  --pending: #475569;
+  --pending-bg: #F1EFEA;
+  --color-locked: #475569;
+  --color-locked-bg: #F1EFEA;
+
+  /* Medidas de Maquetación */
+  --sidebar-w: 236px;
+  --sidebar-collapsed-w: 68px;
+  --topbar-h: 61px;
+  --shadow: 0 8px 32px rgba(28, 25, 23, 0.035);
+  --shadow-editorial: 0 1px 3px rgba(28, 25, 23, 0.05), 0 4px 12px rgba(28, 25, 23, 0.03);
 }

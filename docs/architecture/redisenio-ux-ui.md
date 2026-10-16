@@ -1,88 +1,93 @@
 # INFORME DE REDISEÑO UX/UI — PLATAFORMA DE SEGUIMIENTO ACADÉMICO LG_ARTIFACTS
-**Fase 2: Ejecución, Arquitectura de 3 Zonas e Implementación Frontend**
+**Versión 2.0: Arquitectura "Academic Flow" — Espacios de Trabajo Especializados por Rol**
 
 ---
 
 ## 1. Resumen Ejecutivo de la Intervención
 
-En cumplimiento de la directriz **"Evolucionar, nunca reconstruir"**, se ejecutó la modernización visual y de experiencia de usuario de la plataforma de seguimiento académico, adoptando la **Alternativa B: Espacio de Trabajo en 3 Zonas**, que fusiona:
-* **Calidez y Artesanía Editorial (Framer):** Paleta de papel de archivo (`#FBF9F5`), texto en carbón cálido (`#1C1917`), bordes orgánicos sutiles y micro-sombras de una sola capa.
-* **Orientación Pedagógica Activa (Kira Learning):** Inclusión del componente `NextStepBanner` que comunica con claridad inmediata al estudiante y tutor la acción requerida.
-* **Espacio de Trabajo en 3 Zonas (Gumloop):** Incorporación del `ContextDrawer` lateral como acompañamiento continuo (Bitácora, Compromisos, Gate 0 y Fase 0) sin ocluir el lienzo de trabajo central.
+En cumplimiento estricto del principio rector **"Evolucionar, nunca reconstruir"**, se consolidó el rediseño integral de la plataforma de seguimiento académico bajo la propuesta aprobada **Academic Flow 2.0**.
+
+Esta arquitectura combina lo mejor de tres paradigmas de diseño de clase mundial:
+1. **Framer (Artesanía Visual y Tipografía Editorial):** Paleta cálida basada en papel de archivo pergamino (`#FBF9F5`), acentos en marrón editorial (`#6E432F`), terracota sobrio (`#8E4928`), bordes sutiles de libro (`#E8E1D5`) y tipografía con variantes Georgia/serif (`font-editorial`) y números tabulares (`tabular-nums`).
+2. **Kira Learning (Orientación Pedagógica Activa):** Navegación guiada orientada a objetivos claros con tarjetas de acción destacadas (*"Tu Siguiente Paso"*) que eliminan la incertidumbre del estudiante e indican al tutor qué entrega requiere atención prioritaria.
+3. **Gumloop (Espacio de Trabajo Ergonómico y Paneles Contextuales):** Estructura de barra lateral persistente (`RoleSidebar`), cabecera de control minimalista (`TopbarCompact`) y panel lateral deslizable adaptable (`AdaptiveContextPanel`) para consultar especificaciones, bitácoras y dictámenes sin tapar la evidencia central.
 
 ---
 
-## 2. Cumplimiento de Restricciones y Reglas de Negocio
+## 2. Cumplimiento de Reglas Académicas y Restricciones de Negocio
 
-Todas las reglas de negocio del MVP se preservaron intactas:
-1. **6 Etapas Académicas Obligatorias:**
-   * Etapa 1: Propuesta / Protocolo
-   * Etapa 2: Marco Teórico
-   * Etapa 3: Metodología
-   * Etapa 4: Recolección
-   * Etapa 5: Análisis
-   * Etapa 6: Documento Final
-2. **Cálculo de Avance:** Fórmula estricta `(etapas aprobadas / 6) * 100`.
-3. **Control Gate 0 (14 Criterios):** Validación independiente. Los 14 criterios conformes habilitan la aprobación técnica pero **no aprueban automáticamente la etapa**.
-4. **Guía Metodológica Fase 0 (17 Pasos):** Registro y seguimiento interactivo.
-5. **Aislamiento de Lógica:** Cero alteraciones en `src/domain/` ni en los esquemas de datos de `src/data/`.
-6. **Política de Lenguaje:** 100% de la interfaz, botones, tooltips y mensajes en español nativo.
+Todas las reglas de negocio del MVP se mantienen 100% íntegras y verificadas:
+1. **Exactamente 6 Etapas Académicas Obligatorias:**
+   * Etapa 1: *Propuesta / Protocolo (Gate 0)*
+   * Etapa 2: *Marco Teórico*
+   * Etapa 3: *Metodología*
+   * Etapa 4: *Recolección de Información*
+   * Etapa 5: *Análisis y Resultados*
+   * Etapa 6: *Documento Final y Sustentación*
+2. **Cálculo Riguroso de Progreso:** Fórmula estricta `(etapasAprobadas / 6) * 100` con normalización matemática (0%, 17%, 33%, 50%, 67%, 83%, 100%).
+3. **Protocolo Gate 0 (14 Criterios Obligatorios):** Verificación independiente requerida para la aprobación de la Etapa 1. Conforme a la regla institucional, **14/14 criterios nunca aprueban automáticamente** la etapa; la aprobación es siempre un acto explícito, documentado y motivado por el tutor.
+4. **Guía Metodológica Fase 0 (17 Actividades):** Registro interactivo no vinculante a la compuerta Gate 0.
+5. **Aislamiento del Dominio:** Se preservó intacto el código de `src/domain/` (`stageRules.js`, `progressCalculator.js`, `gate0Validator.js`, `csvExporter.js`) y `src/data/` (`pilotData.js`, `gate0Catalog.js`, `phase0Catalog.js`).
+6. **Política de Lenguaje Estricta:** 100% de la interfaz de usuario, navegación, etiquetas, botones, diálogos, estados vacíos, tooltips y reportes en **Español (es)** profesional.
 
 ---
 
-## 3. Arquitectura del Espacio de Trabajo en 3 Zonas
+## 3. Arquitectura del Espacio de Trabajo Academic Flow 2.0
 
 ```
-┌────────────────────────────────────────────────────────────────────────┐
-│ TOPNAV: Marca + Selector de Rol Simulado + Vista + Exportar CSV        │
-├─────────────────────────────────────────┬──────────────────────────────┤
-│ ZONA 2: LIENZO CENTRAL DE INVESTIGACIÓN │ ZONA 3: PANEL CONTEXTUAL     │
-│                                         │ (Acompañamiento Persistente) │
-│ • Ficha Dublin Core y Avance Global     │                              │
-│ • Banner "Tu Siguiente Paso" (Kira)     │ • Bitácora Viva              │
-│ • Stepper de 6 Etapas (Rail móvil 390px)│ • Compromisos Pactados       │
-│ • Detalle de Etapa y Acciones por Rol   │ • Criterios Gate 0 (14)      │
-│ • Repositorio de Evidencias y Versiones │ • Actividades Fase 0 (17)    │
-│ • Historial de Decisiones y Trazabilidad│                              │
-└─────────────────────────────────────────┴──────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│ RoleSidebar (236px) │ TopbarCompact (61px) — Breadcrumb, Rol, Demo Chip, Info, CSV    │
+│                     ├──────────────────────────────────────────────────────────────────┤
+│ • Emblema LG        │ LIENZO DE TRABAJO ESPECIALIZADO SEGÚN ROL                        │
+│ • Espacio por rol   │                                                                  │
+│   - Estudiante      │ • Estudiante: StudentWorkspace                                   │
+│   - Tutor           │   - Ficha de proyecto y track de 6 etapas (rail en móvil)       │
+│   - Administrador   │   - Tarjeta "Tu Siguiente Paso" (Kira Learning)                  │
+│ • Ayuda Contextual  │   - Evidencia actual + Próximo compromiso + Última observación   │
+│ • Perfil Simulado   │                                                                  │
+│                     │ • Tutor: TutorWorkspace (Bandeja Maestro-Detalle)                │
+│                     │   - Columna izquierda: Cola de entregas con buscador             │
+│                     │   - Columna derecha: Pestañas Evidencia, Criterios (Gate 0 14), │
+│                     │     Observaciones, Historial + Barra fija de dictamen            │
+│                     │                                                                  │
+│                     │ • Administrador: AdminWorkspace                                  │
+│                     │   - Franja métrica (15 proyectos, 3 tutores, % avance promedio)  │
+│                     │   - Filtros por etapa activa y nivel de riesgo                   │
+│                     │   - Tabla responsiva de la cohorte con acceso a ficha            │
+├─────────────────────┴──────────────────────────────────────────────────────────────────┤
+│ AdaptiveContextPanel (Cajón Lateral Deslizable de 448px)                               │
+│ Acceso instantáneo a: Ficha Dublin Core, Criterios Gate 0, Guía Fase 0, Evidencias,    │
+│ Bitácora y formularios de dictamen formal (Observar / Aprobar etapa con foco atrapado) │
+└────────────────────────────────────────────────────────────────────────────────────────┘
 ```
-
-* **Escritorio Amplio (≥1280px / 1440px):** La Zona 2 y la Zona 3 se despliegan en paralelo. El tutor puede verificar los 14 criterios de Gate 0 en el panel derecho mientras lee las evidencias en el lienzo central.
-* **Tabletas y Móviles (<1280px / 390px):** La Zona 3 se convierte en un *Slide-over Drawer* accesible mediante el botón *"Acompañamiento"* del `TopNav`, preservando el 100% de la pantalla para el contenido principal.
 
 ---
 
-## 4. Inventario de Componentes Creados y Modificados
+## 4. Componentes Clave Creados e Integrados
 
-### Componentes Creados
-* `src/components/StatusBadge.jsx`: Insignia de estado semántica accesible (WCAG 2.2 AA) para etapas y niveles de riesgo.
-* `src/components/NextStepBanner.jsx`: Directriz visual de tareas personalizada para Estudiante, Tutor y Administrador.
-* `src/components/ContextDrawer.jsx`: Panel lateral deslizable / embebido de 4 pestañas para la Zona 3.
-
-### Componentes Modificados
-* `src/styles/tokens.css` e `index.css`: Extensión de variables de color de papel de archivo, tipografía con números tabulares (`tabular-nums`) y sombras suaves.
-* `src/features/navigation/TopNav.jsx`: Rediseño editorial descongestionado con disparador de panel contextual.
-* `src/features/stages/StageStepper.jsx`: Rail horizontal táctil para móvil (390px) que elimina el quiebre de etiquetas.
-* `src/features/projects/ProjectHeader.jsx`: Tarjeta Dublin Core de alta elegancia con barra de progreso de 6 etapas.
-* `src/features/portfolio/ProjectPortfolio.jsx`: Cuadrícula de tarjetas de investigación con métricas agregadas y filtros visuales.
-* `src/features/stages/StageDetail.jsx`: Área de trabajo con llamadas claras de acción.
-* `src/features/evidence/EvidenceManager.jsx`: Lista limpia de versiones y descarga inmutable.
-* `src/features/review/TutorReviewModal.jsx`: Diálogo con pestañas claras para "Observar" o "Aprobar".
-* `src/features/bitacora/BitacoraSection.jsx`: Tabla de acuerdos y timeline de decisiones inmutables.
-* `src/features/gate0/Gate0Modal.jsx` y `Phase0Modal.jsx`: Modales actualizados con diseño institucional.
-* `src/App.jsx`: Orquestación del layout en 3 zonas con compatibilidad completa de estado.
+| Componente | Archivo | Responsabilidad |
+| :--- | :--- | :--- |
+| **`RoleSidebar`** | `src/components/layout/RoleSidebar.jsx` | Barra lateral de navegación fija (desktop) y cajón off-canvas con backdrop táctil (móvil) con conteo de pendientes de revisión y perfil de rol. |
+| **`TopbarCompact`** | `src/components/layout/TopbarCompact.jsx` | Cabecera minimalista con menú hamburguesa, breadcrumb dinámico, chip de demostración responsivo, botón de ficha académica, exportación CSV y selector de rol. |
+| **`AdaptiveContextPanel`** | `src/components/layout/AdaptiveContextPanel.jsx` | Panel contextual deslizable tipo drawer con trampa de foco y tecla Escape, gestionando Gate 0 (14 ítems), Fase 0 (17 pasos), bitácora y dictámenes. |
+| **`StudentWorkspace`** | `src/features/student/StudentWorkspace.jsx` | Espacio de trabajo centrado en el estudiante: track interactivo de 6 etapas, tarjeta de siguiente paso, última observación, evidencia actual y compromisos. |
+| **`TutorWorkspace`** | `src/features/tutor/TutorWorkspace.jsx` | Bandeja maestro-detalle para tutores con búsqueda instantánea, visor de evidencia, checklist de 14 criterios de Gate 0 y acciones de aprobación u observación. |
+| **`AdminWorkspace`** | `src/features/admin/AdminWorkspace.jsx` | Panel de supervisión de cohorte con franja de indicadores clave, filtros dinámicos por etapa y riesgo, y tabla responsiva (card en móvil/tableta, grid en desktop). |
+| **`StatusBadge`** | `src/components/StatusBadge.jsx` | Pastillas semánticas de estado con contraste validado WCAG 2.2 AA (Verde `#146C4F` en `#EDF7F2`, Ámbar `#8A4B08` en `#FFFBEB`, Rojo `#B42318` en `#FEF2F2`, Pizarra `#475569` en `#F1EFEA`). |
 
 ---
 
 ## 5. Resultados de Verificación y Pruebas Multi-Dispositivo
 
-| Prueba | Herramienta | Resultado | Observaciones |
+La suite automatizada de Playwright (`verify-app.mjs`) y el pipeline de calidad confirmaron el 100% de cumplimiento:
+
+| Dimensión | Herramienta | Resultado | Detalle |
 | :--- | :--- | :--- | :--- |
-| **Linting de Calidad** | Oxlint (`npx oxlint src`) | **0 Errores, 0 Warnings** | Código limpio y conforme a estándares. |
-| **Pruebas de Dominio** | Vitest (`npm test`) | **4/4 Pasadas (100% OK)** | Avance `(aprobadas/6)*100`, máquina de estados, Gate 0 y sanitización CSV validadas. |
-| **Compilación de Producción** | Vite (`npm run build`) | **Exitoso (486 ms)** | Bundle optimizado en `dist/` sin errores de assets. |
-| **Pruebas E2E y Visuales** | Playwright (`verify-app.mjs`) | **Exitoso (100% OK)** | Cero errores de consola, 15 proyectos en portafolio, 14 criterios Gate 0, 17 pasos Fase 0. |
-| **Resolución 1440px** | Playwright Viewport | **Exitoso** | Espacio en 3 zonas visible simultáneamente (`screenshot_workspace_3zones.png`). |
-| **Resolución 1024px** | Playwright Viewport | **Exitoso** | Adaptación fluida con Drawer deslizable (`screenshot_tablet_1024.png`). |
-| **Resolución 768px** | Playwright Viewport | **Exitoso** | Formato tableta vertical balanceado (`screenshot_tablet_768.png`). |
-| **Resolución 390px** | Playwright Viewport | **Exitoso** | Rail horizontal táctil en stepper sin desbordamiento de pantalla (`screenshot_mobile_390.png`). |
+| **Linter Estático** | Oxlint (`npx oxlint src`) | **0 Errores, 0 Warnings** | 30 archivos analizados con reglas de pureza de React Compiler. |
+| **Pruebas de Dominio** | Vitest (`npm test`) | **4/4 Suites (100% OK)** | Avance sobre 6 etapas, máquina de estados, Gate 0 y sanitización CSV con UTF-8 BOM. |
+| **Compilación Vite** | Vite (`npm run build`) | **Exitoso (693 ms)** | Bundle optimizado en `dist/` sin advertencias de dependencias. |
+| **Escritorio (1440x900)** | Playwright E2E | **Exitoso (Sin overflow)** | Capturas generadas: `desktop_tutor_1440.png`, `desktop_student_1440.png`, `desktop_admin_1440.png`. |
+| **Tableta Paisaje (1024x768)** | Playwright E2E | **Exitoso (Sin overflow)** | `tablet_1024.png` con layout proporcional y navegación compacta. |
+| **Tableta Retrato (768x1024)** | Playwright E2E | **Exitoso (Sin overflow)** | `tablet_768.png` con adaptación de tabla a tarjetas y sin desbordamiento. |
+| **Móvil (390x844)** | Playwright E2E | **Exitoso (Sin overflow)** | `mobile_390.png` y `mobile_390_nav_open.png` con menú táctil y banner de etapa. |
+| **Consola del Navegador** | Listener de consola | **0 Errores** | Cero errores de JavaScript o advertencias en tiempo de ejecución. |
