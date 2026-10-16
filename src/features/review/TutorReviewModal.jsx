@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 
+/**
+ * TutorReviewModal — Modal de Dictamen Formal y Evaluación del Tutor
+ * Provee interfaces explícitas y diferenciadas para observar o aprobar una etapa.
+ */
 export default function TutorReviewModal({
   isOpen,
   onClose,
@@ -42,7 +46,7 @@ export default function TutorReviewModal({
 
   const handleApproveSubmit = () => {
     if (activeStage.id === 1 && !isGate0Compliant) {
-      setErrorMessage(`No se puede aprobar la Etapa 1: Debe verificar los 14 criterios de Gate 0 (actualmente ${gate0CompletedCount}/14).`);
+      setErrorMessage(`No se puede aprobar la Etapa 1: Debe certificar los 14 criterios de Gate 0 (actualmente ${gate0CompletedCount}/14).`);
       return;
     }
 
@@ -56,18 +60,18 @@ export default function TutorReviewModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-6 overflow-y-auto animate-fade-in">
-      <div className="bg-white rounded-2xl max-w-xl w-full shadow-2xl border border-[#D9CEC1] overflow-hidden">
+    <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center p-3 sm:p-6 overflow-y-auto animate-fade-in">
+      <div className="bg-white rounded-2xl max-w-xl w-full shadow-2xl border border-[#D8CEBF] overflow-hidden">
         {/* Header */}
-        <div className="bg-[#FAF7F2] p-5 sm:p-6 border-b border-[#D9CEC1] flex items-start justify-between gap-4">
+        <div className="bg-[#FBF9F5] p-5 sm:p-6 border-b border-[#D8CEBF] flex items-start justify-between gap-4">
           <div>
-            <span className="text-[11px] font-bold uppercase tracking-wider text-[#704733] bg-[#F3ECE3] px-2 py-0.5 rounded border border-[#D9CEC1]">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-[#6E432F] bg-[#F5F1EA] px-2.5 py-0.5 rounded-full border border-[#D8CEBF]">
               Dictamen del Tutor
             </span>
-            <h3 className="text-lg font-bold text-[#253240] mt-1">
+            <h3 className="text-lg font-bold text-[#1C1917] mt-1 tracking-tight">
               Revisión y Decisión: {activeStage.name}
             </h3>
-            <p className="text-xs text-[#475569] mt-0.5">
+            <p className="text-xs text-[#57534E] mt-0.5">
               Dictaminador: <strong>{tutorName}</strong> &bull; Etapa #{activeStage.id}
             </p>
           </div>
@@ -75,7 +79,7 @@ export default function TutorReviewModal({
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 rounded-lg text-[#64748B] hover:text-[#253240] hover:bg-[#F3ECE3] transition-colors"
+            className="p-1.5 rounded-lg text-[#57534E] hover:text-[#1C1917] hover:bg-[#F5F1EA] transition-colors"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <line x1="18" y1="6" x2="6" y2="18" />
@@ -85,141 +89,165 @@ export default function TutorReviewModal({
         </div>
 
         {/* Mode Selector */}
-        <div className="p-6 space-y-4">
-          <div className="grid grid-cols-2 gap-2 p-1 bg-[#FAF7F2] rounded-xl border border-[#D9CEC1]">
-            <button
-              type="button"
-              onClick={() => { setReviewMode('observe'); setErrorMessage(''); }}
-              className={`py-2 text-xs font-bold rounded-lg transition-all ${
-                reviewMode === 'observe'
-                  ? 'bg-[#9D3549] text-white shadow-xs'
-                  : 'text-[#475569] hover:text-[#253240]'
-              }`}
-            >
-              Pedir Cambios / Observar
-            </button>
-            <button
-              type="button"
-              onClick={() => { setReviewMode('approve'); setErrorMessage(''); }}
-              className={`py-2 text-xs font-bold rounded-lg transition-all ${
-                reviewMode === 'approve'
-                  ? 'bg-[#21684F] text-white shadow-xs'
-                  : 'text-[#475569] hover:text-[#253240]'
-              }`}
-            >
-              Aprobar Etapa Formalmente
-            </button>
-          </div>
+        <div className="p-4 bg-[#F5F1EA] border-b border-[#D8CEBF] flex gap-2">
+          <button
+            type="button"
+            onClick={() => {
+              setReviewMode('observe');
+              setErrorMessage('');
+            }}
+            className={`flex-1 py-2 px-3 text-xs font-semibold rounded-xl transition-all ${
+              reviewMode === 'observe'
+                ? 'bg-white text-[#DC2626] border border-[#FCA5A5] shadow-xs'
+                : 'text-[#57534E] hover:text-[#1C1917]'
+            }`}
+          >
+            Solicitar Cambios / Observar
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setReviewMode('approve');
+              setErrorMessage('');
+            }}
+            className={`flex-1 py-2 px-3 text-xs font-semibold rounded-xl transition-all ${
+              reviewMode === 'approve'
+                ? 'bg-white text-[#059669] border border-[#9CD5BE] shadow-xs'
+                : 'text-[#57534E] hover:text-[#1C1917]'
+            }`}
+          >
+            Aprobar Etapa Formalmente
+          </button>
+        </div>
 
+        {/* Modal Body */}
+        <div className="p-5 sm:p-6 space-y-4 text-xs">
           {errorMessage && (
-            <div className="p-3 bg-[#FDF0F2] text-[#9D3549] text-xs rounded-lg border border-[#F5B5BF] flex items-center gap-2">
+            <div className="p-3 bg-[#FEF2F2] border border-[#FCA5A5] rounded-xl text-[#DC2626] font-medium flex items-center gap-2">
               <span>⚠️</span>
               <span>{errorMessage}</span>
             </div>
           )}
 
-          {/* Form for Observation Mode */}
-          {reviewMode === 'observe' && (
-            <div className="space-y-3">
+          {reviewMode === 'observe' ? (
+            <div className="space-y-4">
               <div>
-                <label className="block text-xs font-bold text-[#253240] mb-1">
-                  Observaciones Técnicas y Cambios Requeridos (Obligatorio):
+                <label className="block text-[11px] font-semibold text-[#57534E] mb-1">
+                  Observaciones Metodológicas y de Contenido (Obligatorio):
                 </label>
                 <textarea
-                  rows="4"
+                  rows={4}
                   value={observationText}
                   onChange={(e) => setObservationText(e.target.value)}
-                  placeholder="Detalle los puntos metodológicos que el estudiante debe subsanar..."
-                  className="w-full p-3 text-xs rounded-lg border border-[#D9CEC1] bg-[#FAF7F2] text-[#253240] focus:bg-white focus:outline-hidden focus:ring-1 focus:ring-[#9D3549]"
-                ></textarea>
+                  placeholder="Detalla las correcciones requeridas en el documento antes de proceder con la aprobación..."
+                  className="w-full p-3 rounded-xl border border-[#D8CEBF] bg-[#FBF9F5] text-[#1C1917] focus:bg-white focus:outline-hidden focus:ring-1 focus:ring-[#DC2626] leading-relaxed"
+                />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#475569] mb-1">
-                  Fecha Límite para Subsanación:
+                <label className="block text-[11px] font-semibold text-[#57534E] mb-1">
+                  Fecha Límite Pactada para Subsanación:
                 </label>
                 <input
                   type="date"
                   value={deadline}
                   onChange={(e) => setDeadline(e.target.value)}
-                  className="w-full p-2 text-xs rounded-lg border border-[#D9CEC1] bg-[#FAF7F2] text-[#253240]"
+                  className="w-full p-2.5 rounded-xl border border-[#D8CEBF] bg-[#FBF9F5] text-[#1C1917]"
                 />
               </div>
 
-              <div className="pt-2">
-                <button
-                  type="button"
-                  onClick={handleObserveSubmit}
-                  className="w-full py-2.5 px-4 rounded-lg bg-[#9D3549] text-white text-xs font-bold hover:bg-[#832c3d] transition-colors shadow-xs"
-                >
-                  Registrar Observación y Cambiar Estado a "Observado"
-                </button>
+              <div className="p-3 bg-[#FFFBEB] rounded-xl border border-[#FCD34D] text-[11px] text-[#D97706]">
+                Al solicitar cambios, el estado de la etapa pasará a <strong>'Observado'</strong> y el nivel de riesgo del proyecto se ajustará automáticamente a <strong>'Medio'</strong> en la matriz de seguimiento.
               </div>
             </div>
-          )}
-
-          {/* Form for Approval Mode */}
-          {reviewMode === 'approve' && (
-            <div className="space-y-3">
+          ) : (
+            <div className="space-y-4">
               {activeStage.id === 1 && !isGate0Compliant && (
-                <div className="p-3 bg-[#FEF6E8] text-[#865A16] text-xs rounded-lg border border-[#F3D298] space-y-1">
-                  <p className="font-bold">⚠️ Requisito de Gate 0 Pendiente</p>
-                  <p>La Etapa 1 cuenta actualmente con {gate0CompletedCount}/14 criterios conformes. Para dictaminar la aprobación debe verificar todos los 14 criterios en la auditoría.</p>
+                <div className="p-3.5 bg-[#FEF2F2] border border-[#FCA5A5] rounded-xl text-xs space-y-1">
+                  <div className="font-bold text-[#DC2626] flex items-center gap-1.5">
+                    <span>⛔ Bloqueo de Regla de Negocio: Gate 0 Incompleto</span>
+                  </div>
+                  <p className="text-[#57534E]">
+                    Actualmente hay <strong>{gate0CompletedCount} de 14</strong> criterios conformes. No es posible dictaminar la aprobación formal de la Etapa 1 hasta verificar el 100% de Gate 0.
+                  </p>
                 </div>
               )}
 
               <div>
-                <label className="block text-xs font-bold text-[#253240] mb-1">
-                  Dictamen Oficial de Aprobación:
+                <label className="block text-[11px] font-semibold text-[#57534E] mb-1">
+                  Notas de Dictamen y Mérito Académico:
                 </label>
                 <textarea
-                  rows="3"
+                  rows={3}
                   value={approvalNotes}
                   onChange={(e) => setApprovalNotes(e.target.value)}
-                  className="w-full p-3 text-xs rounded-lg border border-[#D9CEC1] bg-[#FAF7F2] text-[#253240] focus:bg-white focus:outline-hidden focus:ring-1 focus:ring-[#21684F]"
-                ></textarea>
+                  className="w-full p-3 rounded-xl border border-[#D8CEBF] bg-[#FBF9F5] text-[#1C1917] focus:bg-white focus:outline-hidden focus:ring-1 focus:ring-[#059669] leading-relaxed"
+                />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-semibold text-[#475569] mb-1">
+                  <label className="block text-[11px] font-semibold text-[#57534E] mb-1">
                     Próximo Hito Académico:
                   </label>
                   <input
                     type="text"
                     value={nextMilestone}
                     onChange={(e) => setNextMilestone(e.target.value)}
-                    className="w-full p-2 text-xs rounded-lg border border-[#D9CEC1] bg-[#FAF7F2] text-[#253240]"
+                    className="w-full p-2.5 rounded-xl border border-[#D8CEBF] bg-[#FBF9F5] text-[#1C1917]"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-[#475569] mb-1">
-                    Fecha Límite Próxima:
+                  <label className="block text-[11px] font-semibold text-[#57534E] mb-1">
+                    Fecha Objetivo Siguiente Hito:
                   </label>
                   <input
                     type="date"
                     value={deadline}
                     onChange={(e) => setDeadline(e.target.value)}
-                    className="w-full p-2 text-xs rounded-lg border border-[#D9CEC1] bg-[#FAF7F2] text-[#253240]"
+                    className="w-full p-2.5 rounded-xl border border-[#D8CEBF] bg-[#FBF9F5] text-[#1C1917]"
                   />
                 </div>
               </div>
 
-              <div className="pt-2">
-                <button
-                  type="button"
-                  onClick={handleApproveSubmit}
-                  disabled={activeStage.id === 1 && !isGate0Compliant}
-                  className={`w-full py-2.5 px-4 rounded-lg text-xs font-bold transition-colors shadow-xs ${
-                    activeStage.id === 1 && !isGate0Compliant
-                      ? 'bg-slate-300 text-slate-500 cursor-not-allowed'
-                      : 'bg-[#21684F] text-white hover:bg-[#184f3c]'
-                  }`}
-                >
-                  Dictaminar Aprobación Formal y Habilitar Siguiente Etapa
-                </button>
+              <div className="p-3 bg-[#EDF7F2] rounded-xl border border-[#9CD5BE] text-[11px] text-[#059669]">
+                La aprobación formal asentará la fecha de hoy, liberará la siguiente etapa del ciclo académico y registrará la decisión en la bitácora inmutable.
               </div>
             </div>
+          )}
+        </div>
+
+        {/* Modal Footer */}
+        <div className="p-4 bg-[#FBF9F5] border-t border-[#D8CEBF] flex items-center justify-end gap-2">
+          <button
+            type="button"
+            onClick={onClose}
+            className="px-4 py-2 text-xs font-semibold rounded-xl text-[#57534E] hover:bg-[#F5F1EA] transition-colors"
+          >
+            Cancelar
+          </button>
+
+          {reviewMode === 'observe' ? (
+            <button
+              type="button"
+              onClick={handleObserveSubmit}
+              className="px-4 py-2 text-xs font-semibold rounded-xl bg-[#DC2626] text-white hover:bg-[#b91c1c] transition-colors shadow-xs"
+            >
+              Emitir Observaciones
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={handleApproveSubmit}
+              disabled={activeStage.id === 1 && !isGate0Compliant}
+              className={`px-4 py-2 text-xs font-semibold rounded-xl transition-all shadow-xs ${
+                activeStage.id === 1 && !isGate0Compliant
+                  ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                  : 'bg-[#059669] text-white hover:bg-[#047857]'
+              }`}
+            >
+              Confirmar Aprobación Formal
+            </button>
           )}
         </div>
       </div>

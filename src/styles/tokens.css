@@ -1,35 +1,66 @@
-/* Variables de Diseno Institucional - Estetica Calida */
+/* ==========================================================================
+   TOKENS DE DISEÑO INSTITUCIONAL — PLATAFORMA DE SEGUIMIENTO ACADÉMICO
+   Inspiración: Framer (calidez editorial) + Kira (claridad) + Gumloop (espacio)
+   ========================================================================== */
+
 :root {
-  --color-app-bg: #FAF7F2;
+  /* Lienzo y Superficies de Trabajo (Paleta cálida de papel de archivo) */
+  --color-app-bg: #FBF9F5;
+  --color-canvas: #FBF9F5;
   --color-surface: #FFFFFF;
-  --color-surface-muted: #F3ECE3;
-  --color-surface-hover: #EBE2D7;
+  --color-surface-muted: #F5F1EA;
+  --color-surface-hover: #EFE9DF;
+  --color-surface-subtle: #F7F4EE;
+  --color-surface-elevated: #FFFFFF;
 
-  --color-text: #253240;
-  --color-text-muted: #475569;
-  --color-text-light: #64748B;
+  /* Tinta y Textos (Warm Charcoal / Piedra Natural) */
+  --color-text: #1C1917;
+  --color-ink-primary: #1C1917;
+  --color-ink-secondary: #57534E;
+  --color-ink-muted: #8F8881;
+  --color-text-muted: #57534E;
+  --color-text-light: #78716C;
 
-  --color-primary: #704733;
-  --color-primary-hover: #573524;
-  --color-accent: #A65C3D;
+  /* Identidad Institucional y Acentos */
+  --color-primary: #6E432F;
+  --color-primary-hover: #553323;
+  --color-accent: #8E4928;
   --color-accent-subtle: #F6EDE8;
+  --color-brand-navy: #1E293B;
+  --color-brand-accent: #2563EB;
 
-  --color-success: #21684F;
-  --color-success-bg: #EAF3EF;
-  --color-success-border: #A3D2BE;
+  /* Semántica Académica (Kira Learning) */
+  --color-success: #059669;
+  --color-success-bg: #EDF7F2;
+  --color-success-border: #9CD5BE;
 
-  --color-warning: #865A16;
-  --color-warning-bg: #FEF6E8;
-  --color-warning-border: #F3D298;
+  --color-warning: #D97706;
+  --color-warning-bg: #FFFBEB;
+  --color-warning-border: #FCD34D;
 
-  --color-danger: #9D3549;
-  --color-danger-bg: #FDF0F2;
-  --color-danger-border: #F5B5BF;
+  --color-danger: #DC2626;
+  --color-danger-bg: #FEF2F2;
+  --color-danger-border: #FCA5A5;
 
   --color-locked: #64748B;
   --color-locked-bg: #F1EFEA;
   --color-locked-border: #D8D4CC;
 
-  --color-border: #D9CEC1;
-  --color-border-subtle: #EBE4DA;
+  /* Bordes y Divisiones Orgánicas */
+  --color-border: #D8CEBF;
+  --color-border-subtle: #E8E1D5;
+  --color-border-focus: #6E432F;
+
+  /* Radios Geométricos Consistentes */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-pill: 9999px;
+
+  /* Sombras Editoriales Framer */
+  --shadow-editorial-sm: 0 1px 2px rgba(28, 25, 23, 0.04);
+  --shadow-editorial-md: 0 1px 3px rgba(28, 25, 23, 0.05), 0 4px 12px rgba(28, 25, 23, 0.03);
+  --shadow-editorial-lg: 0 4px 6px -1px rgba(28, 25, 23, 0.06), 0 10px 24px -3px rgba(28, 25, 23, 0.05);
 }

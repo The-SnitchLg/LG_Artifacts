@@ -1,6 +1,11 @@
 import React from 'react';
 import { calculateProgress } from '../../domain/progressCalculator.js';
+import StatusBadge from '../../components/StatusBadge.jsx';
 
+/**
+ * ProjectHeader — Ficha Técnica Dublin Core con Avance de 6 Etapas
+ * Tipografía de alto contraste y metadatos de supervisión académica.
+ */
 export default function ProjectHeader({
   project,
   onBackToPortfolio
@@ -8,60 +13,54 @@ export default function ProjectHeader({
   const { approvedCount, percentage } = calculateProgress(project.stages);
 
   return (
-    <div className="bg-white rounded-2xl border border-[#D9CEC1] shadow-sm overflow-hidden">
-      {/* Top Banner with Academic Navy/Brown gradient */}
-      <div className="bg-gradient-to-r from-[#253240] via-[#354558] to-[#253240] text-white p-6 sm:p-7">
-        <div className="flex flex-col sm:flex-row justify-between items-start gap-4">
-          <div className="space-y-2 max-w-3xl">
+    <div className="bg-white rounded-2xl border border-[#D8CEBF] shadow-editorial-sm overflow-hidden">
+      {/* Institutional Header Banner */}
+      <div className="bg-[#1E293B] text-white p-5 sm:p-7">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-4">
+          <div className="space-y-2.5 max-w-3xl">
+            {/* Badges / Navigation */}
             <div className="flex flex-wrap items-center gap-2">
               <button
                 type="button"
                 onClick={onBackToPortfolio}
-                className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-white/10 hover:bg-white/20 text-[#FAF7F2] border border-white/20 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-white/10 hover:bg-white/20 text-[#FBF9F5] border border-white/20 transition-colors"
               >
                 &larr; Volver al Portafolio
               </button>
-              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-[#A65C3D]/30 text-[#FAF7F2] border border-[#A65C3D]/50">
+              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-[#8E4928]/40 text-[#FBF9F5] border border-[#8E4928]/60">
                 {project.institutionalId}
               </span>
-              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-[#21684F]/30 text-[#FAF7F2] border border-[#21684F]/40">
+              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-[#059669]/30 text-[#FBF9F5] border border-[#059669]/40">
                 Cohorte {project.cohort}
               </span>
-              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-white/10 text-[#FAF7F2]">
-                Estándar Dublin Core
+              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-white/10 text-slate-300">
+                Dublin Core Metadatos
               </span>
             </div>
 
+            {/* Title */}
             <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white leading-snug">
               {project.title}
             </h1>
 
-            <p className="text-xs sm:text-sm text-slate-200 flex items-center gap-1.5">
-              <span>{project.thematicLine}</span> &bull; <span>{project.department}</span>
+            <p className="text-xs sm:text-sm text-slate-300 flex items-center gap-2">
+              <span>{project.thematicLine}</span>
+              <span>&bull;</span>
+              <span>{project.department}</span>
             </p>
           </div>
 
           {/* Target Date and Risk Card */}
-          <div className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/15 text-right min-w-[170px] self-stretch sm:self-auto space-y-1">
-            <div className="text-[10px] font-semibold text-slate-300 uppercase tracking-wider">
+          <div className="bg-white/10 backdrop-blur-md rounded-xl p-3.5 border border-white/15 text-left md:text-right min-w-[190px] self-stretch md:self-auto space-y-1 shrink-0">
+            <span className="text-[10px] font-semibold text-slate-300 uppercase tracking-wider block">
               Fecha Objetivo de Conclusión
-            </div>
-            <div className="text-xs sm:text-sm font-bold text-amber-200">
+            </span>
+            <div className="text-sm font-bold text-amber-200 font-mono">
               {project.targetDate}
             </div>
-            <div className="pt-1 flex items-center justify-end gap-1.5 text-[11px]">
+            <div className="pt-1.5 flex items-center md:justify-end gap-2 text-[11px]">
               <span className="text-slate-300">Riesgo:</span>
-              <span
-                className={`font-bold px-2 py-0.5 rounded text-[10px] ${
-                  project.riskLevel === 'Alto'
-                    ? 'bg-[#9D3549] text-white'
-                    : project.riskLevel === 'Medio'
-                    ? 'bg-[#865A16] text-white'
-                    : 'bg-[#21684F] text-white'
-                }`}
-              >
-                {project.riskLevel}
-              </span>
+              <StatusBadge type="risk" value={project.riskLevel} />
             </div>
           </div>
         </div>
@@ -71,10 +70,10 @@ export default function ProjectHeader({
           <div>
             <span className="text-slate-400 block text-[11px]">Estudiante Investigador</span>
             <span className="font-semibold text-white flex items-center gap-1.5 mt-0.5">
-              <span className="w-2 h-2 rounded-full bg-[#A3D2BE]"></span>
+              <span className="w-2 h-2 rounded-full bg-[#9CD5BE]"></span>
               {project.student}
             </span>
-            <span className="text-[10px] text-slate-300 block">{project.studentEmail}</span>
+            <span className="text-[10px] text-slate-300 block font-mono">{project.studentEmail}</span>
           </div>
 
           <div>
@@ -89,33 +88,51 @@ export default function ProjectHeader({
           <div>
             <span className="text-slate-400 block text-[11px]">Protocolo Metodológico</span>
             <span className="font-semibold text-white mt-0.5 block">17 Actividades Fase 0</span>
-            <span className="text-[10px] text-slate-300 block">Guía de Investigación</span>
+            <span className="text-[10px] text-slate-300 block">Investigación Preparatoria</span>
           </div>
 
           <div>
             <span className="text-slate-400 block text-[11px]">Control de Salida</span>
             <span className="font-semibold text-white mt-0.5 block">Gate 0 (14 Criterios)</span>
-            <span className="text-[10px] text-slate-300 block">Auditoría Previa a Etapa 2</span>
+            <span className="text-[10px] text-slate-300 block">Precondición Etapa 2</span>
           </div>
         </div>
       </div>
 
-      {/* Reactive Global Progress Bar (Exact denominator 6) */}
-      <div className="p-5 sm:p-6 bg-[#FAF7F2] border-t border-[#D9CEC1]">
-        <div className="flex items-center justify-between text-xs font-semibold text-[#253240] mb-2">
-          <span className="flex items-center gap-2">
-            <span>Avance Global del Trabajo de Grado</span>
-            <span className="text-[#475569] font-normal text-[11px]">
-              ({approvedCount} de 6 etapas académicas aprobadas)
-            </span>
-          </span>
-          <span className="text-[#21684F] font-bold text-sm">{percentage}%</span>
+      {/* 6-Stage Progress Indicator Bar */}
+      <div className="p-4 sm:p-5 bg-white border-t border-[#E8E1D5] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+        <div className="flex items-center gap-3 w-full sm:w-auto">
+          <div className="w-10 h-10 rounded-xl bg-[#F5F1EA] text-[#6E432F] flex items-center justify-center font-bold text-sm shrink-0 border border-[#D8CEBF]">
+            {approvedCount}/6
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="font-bold text-[#1C1917] text-sm">
+                Avance Académico Global: {percentage}%
+              </span>
+              <span className="text-[10px] text-[#57534E]">
+                ({approvedCount} de 6 etapas aprobadas)
+              </span>
+            </div>
+            <p className="text-[11px] text-[#57534E]">
+              Fórmula de cohorte: (etapas aprobadas / 6) &times; 100
+            </p>
+          </div>
         </div>
-        <div className="w-full bg-[#EBE4DA] rounded-full h-3 overflow-hidden p-0.5">
-          <div
-            className="bg-gradient-to-r from-[#704733] to-[#21684F] h-2 rounded-full transition-all duration-500 ease-out"
-            style={{ width: `${percentage}%` }}
-          ></div>
+
+        {/* Visual Progress Bar */}
+        <div className="w-full sm:w-64 space-y-1">
+          <div className="w-full bg-[#E8E1D5] rounded-full h-2.5 overflow-hidden">
+            <div
+              className="bg-[#059669] h-2.5 rounded-full transition-all duration-500"
+              style={{ width: `${percentage}%` }}
+            ></div>
+          </div>
+          <div className="flex justify-between text-[10px] text-[#8F8881] font-mono">
+            <span>0%</span>
+            <span>50%</span>
+            <span>100%</span>
+          </div>
         </div>
       </div>
     </div>

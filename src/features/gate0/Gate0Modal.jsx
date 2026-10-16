@@ -1,5 +1,9 @@
 import React from 'react';
 
+/**
+ * Gate0Modal — Diálogo Modal de Auditoría de Criterios Gate 0 (14 Criterios)
+ * Protocolo de verificación obligatoria para la Etapa 1.
+ */
 export default function Gate0Modal({
   isOpen,
   onClose,
@@ -22,23 +26,27 @@ export default function Gate0Modal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-6 overflow-y-auto animate-fade-in">
-      <div className="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] flex flex-col shadow-2xl border border-[#D9CEC1] overflow-hidden">
+    <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center p-3 sm:p-6 overflow-y-auto animate-fade-in">
+      <div className="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] flex flex-col shadow-2xl border border-[#D8CEBF] overflow-hidden">
         {/* Modal Header */}
-        <div className="bg-[#FAF7F2] p-5 sm:p-6 border-b border-[#D9CEC1] flex items-start justify-between gap-4">
+        <div className="bg-[#FBF9F5] p-5 sm:p-6 border-b border-[#D8CEBF] flex items-start justify-between gap-4">
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#704733] bg-[#F3ECE3] px-2 py-0.5 rounded border border-[#D9CEC1]">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#6E432F] bg-[#F5F1EA] px-2.5 py-0.5 rounded-full border border-[#D8CEBF]">
                 Protocolo de Calidad
               </span>
-              <span className="text-[11px] font-semibold text-[#21684F] bg-[#EAF3EF] px-2.5 py-0.5 rounded-full border border-[#A3D2BE]">
+              <span className={`text-[11px] font-semibold px-2.5 py-0.5 rounded-full border font-mono ${
+                isAllCompleted
+                  ? 'bg-[#EDF7F2] text-[#059669] border-[#9CD5BE]'
+                  : 'bg-[#FFFBEB] text-[#D97706] border-[#FCD34D]'
+              }`}>
                 {completedCount}/14 Conformes
               </span>
             </div>
-            <h3 className="text-lg font-bold text-[#253240] mt-1">
+            <h3 className="text-lg font-bold text-[#1C1917] mt-1 tracking-tight">
               Auditoría de Salida Gate 0 — Etapa 1
             </h3>
-            <p className="text-xs text-[#475569] mt-0.5">
+            <p className="text-xs text-[#57534E] mt-0.5">
               Verificación metodológica y formal obligatoria antes de habilitar la aprobación del Protocolo de Tesis.
             </p>
           </div>
@@ -46,7 +54,7 @@ export default function Gate0Modal({
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 rounded-lg text-[#64748B] hover:text-[#253240] hover:bg-[#F3ECE3] transition-colors"
+            className="p-1.5 rounded-lg text-[#57534E] hover:text-[#1C1917] hover:bg-[#F5F1EA] transition-colors"
             title="Cerrar ventana"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -57,90 +65,62 @@ export default function Gate0Modal({
         </div>
 
         {/* Business Rule Notice Banner */}
-        <div className="bg-[#FAF7F2] px-6 py-3 border-b border-[#EBE4DA] text-xs text-[#704733] flex items-center gap-2.5">
-          <span className="font-bold text-sm">⚖</span>
-          <div>
-            <span className="font-bold">Regla Académica Institucional:</span> Alcanzar 14/14 criterios conformes habilita el botón de dictamen del tutor, pero <strong>nunca aprueba la etapa automáticamente</strong>. El tutor debe dictaminar de forma manual y explícita.
-          </div>
+        <div className="bg-[#FBF9F5] px-6 py-3 border-b border-[#E8E1D5] text-xs text-[#6E432F] flex items-center gap-2.5">
+          <span className="font-bold text-sm">ℹ️</span>
+          <span>
+            <strong>Regla de Negocio:</strong> Completar los 14 criterios es una condición técnica necesaria que habilita la aprobación, pero <strong>no aprueba automáticamente la etapa</strong>. El tutor debe dictaminar la decisión por separado.
+          </span>
         </div>
 
         {/* Criteria Checklist */}
-        <div className="p-6 overflow-y-auto space-y-3 flex-1">
+        <div className="p-6 overflow-y-auto space-y-3 flex-1 text-xs">
           {gate0Items.map((item) => (
             <div
               key={item.id}
               onClick={() => handleCheckboxClick(item.id)}
               className={`p-3.5 rounded-xl border transition-all flex items-start gap-3 cursor-pointer ${
                 item.checked
-                  ? 'bg-[#EAF3EF]/40 border-[#A3D2BE]'
-                  : 'bg-white border-[#D9CEC1] hover:border-[#704733]/50'
+                  ? 'bg-[#EDF7F2]/40 border-[#9CD5BE]'
+                  : 'bg-white border-[#D8CEBF] hover:border-[#6E432F]/50'
               }`}
             >
               <input
                 type="checkbox"
                 checked={item.checked}
-                onChange={() => {}} // Controlled via parent onClick
-                className="mt-0.5 w-4 h-4 rounded text-[#21684F] focus:ring-[#21684F] border-[#D9CEC1]"
+                onChange={() => {}} // Controlled by parent onClick
+                className="mt-1 h-4 w-4 rounded text-[#059669] focus:ring-0 cursor-pointer"
               />
-              <div className="flex-1 space-y-1">
-                <div className="flex items-center justify-between text-xs">
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono font-bold text-[#704733] text-[11px] bg-[#F3ECE3] px-1.5 py-0.2 rounded">
-                      {item.id}
-                    </span>
-                    <span className="text-[10px] uppercase font-bold text-[#64748B]">
-                      {item.category}
-                    </span>
-                  </div>
-                  <span
-                    className={`font-semibold text-[10px] px-2 py-0.5 rounded ${
-                      item.checked
-                        ? 'bg-[#EAF3EF] text-[#21684F]'
-                        : 'bg-[#FDF0F2] text-[#9D3549]'
-                    }`}
-                  >
-                    {item.checked ? 'Conforme' : 'Pendiente'}
+              <div className="space-y-0.5">
+                <div className="flex items-center gap-2">
+                  <span className="font-mono text-[10px] font-bold text-[#6E432F] bg-[#F5F1EA] px-1.5 py-0.2 rounded">
+                    {item.code}
+                  </span>
+                  <span className="font-bold text-[#1C1917] text-xs">
+                    {item.title}
                   </span>
                 </div>
-
-                <p className="text-xs font-semibold text-[#253240] leading-snug">
-                  {item.label}
+                <p className="text-[#57534E] text-[11px] leading-relaxed">
+                  {item.description}
                 </p>
-
-                <div className="text-[11px] text-[#64748B] flex flex-wrap gap-x-4">
-                  <span>Hoja: <strong className="text-[#475569]">{item.evidenceSheet || 'Fase 0'}</strong></span>
-                  {item.suggestedCheck && (
-                    <span>Verificación: <span className="italic">{item.suggestedCheck}</span></span>
-                  )}
-                </div>
               </div>
             </div>
           ))}
         </div>
 
         {/* Modal Footer */}
-        <div className="bg-[#FAF7F2] p-4 sm:p-5 border-t border-[#D9CEC1] flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="text-xs text-[#475569]">
-            {isAllCompleted ? (
-              <span className="text-[#21684F] font-bold">
-                ✔ 14/14 criterios completados. El tutor puede proceder con la aprobación formal.
-              </span>
-            ) : (
-              <span>
-                Faltan <strong>{14 - completedCount} criterios</strong> para completar el protocolo.
-              </span>
-            )}
-          </div>
-
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={onClose}
-              className="px-4 py-2 text-xs font-semibold rounded-lg bg-[#253240] text-white hover:bg-[#1a232d] transition-colors"
-            >
-              Cerrar Auditoría
-            </button>
-          </div>
+        <div className="bg-[#FBF9F5] p-4 border-t border-[#D8CEBF] flex items-center justify-between">
+          <span className="text-xs text-[#57534E]">
+            {role === 'tutor'
+              ? 'Haga clic en cada criterio para certificar su conformidad.'
+              : 'Solo el tutor asignado puede certificar los criterios. Modo consulta.'}
+          </span>
+          <button
+            type="button"
+            onClick={onClose}
+            className="px-4 py-2 bg-[#1E293B] text-white text-xs font-semibold rounded-xl hover:bg-slate-700 transition-colors shadow-xs"
+          >
+            Cerrar Auditoría
+          </button>
         </div>
       </div>
     </div>

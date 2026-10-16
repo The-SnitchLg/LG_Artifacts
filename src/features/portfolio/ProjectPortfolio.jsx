@@ -1,6 +1,11 @@
 import React, { useState, useMemo } from 'react';
 import { TUTORS } from '../../data/pilotData.js';
+import StatusBadge from '../../components/StatusBadge.jsx';
 
+/**
+ * ProjectPortfolio — Vista de Portafolio Institucional (15 Trabajos de Grado)
+ * Tarjetas de investigación editorial con filtros dinámicos y métricas de supervisión.
+ */
 export default function ProjectPortfolio({
   projects,
   selectedProjectId,
@@ -29,47 +34,53 @@ export default function ProjectPortfolio({
     });
   }, [projects, searchTerm, stageFilter, riskFilter, tutorFilter]);
 
-  // Metric summaries for admin/tutor
+  // Métricas agregadas
   const totalProjects = projects.length;
   const avgProgress = Math.round(
     projects.reduce((acc, p) => {
       const approved = p.stages.filter(s => s.status === 'aprobado').length;
       return acc + (approved / 6) * 100;
-    }, 0) / totalProjects
+    }, 0) / (totalProjects || 1)
   );
+  const highRiskCount = projects.filter(p => p.riskLevel === 'Alto').length;
 
   return (
     <div className="space-y-6">
       {/* Portfolio Header & Stats Card */}
-      <div className="bg-white rounded-2xl border border-[#D9CEC1] p-6 shadow-sm">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-5 border-b border-[#EBE4DA]">
+      <div className="bg-white rounded-2xl border border-[#D8CEBF] p-5 sm:p-6 shadow-editorial-sm">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 pb-5 border-b border-[#E8E1D5]">
           <div>
-            <h1 className="text-xl font-bold text-[#253240] flex items-center gap-2">
+            <h1 className="text-xl font-bold text-[#1C1917] flex items-center gap-2 tracking-tight">
               <span>Portafolio de Trabajos de Grado</span>
-              <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-[#F3ECE3] text-[#704733] border border-[#D9CEC1]">
+              <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-[#F5F1EA] text-[#6E432F] border border-[#D8CEBF]">
                 Cohorte 2026-I &bull; {totalProjects} Proyectos
               </span>
             </h1>
-            <p className="text-xs text-[#475569] mt-1">
+            <p className="text-xs text-[#57534E] mt-1">
               Supervisión académica, seguimiento de las 6 etapas y avance consolidado del piloto institucional.
-              <span className="ml-2 font-semibold text-[#704733]">
-                (Modo activo: {role === 'tutor' ? 'Tutor Asignado' : role === 'estudiante' ? 'Estudiante Investigador' : 'Coordinación Administrador'})
+              <span className="ml-2 font-semibold text-[#6E432F]">
+                (Modo: {role === 'tutor' ? 'Tutor Asignado' : role === 'estudiante' ? 'Estudiante Investigador' : 'Coordinación Administrador'})
               </span>
             </p>
           </div>
 
-          <div className="flex items-center gap-4 text-xs">
-            <div className="bg-[#FAF7F2] p-3 rounded-xl border border-[#D9CEC1] text-center min-w-[100px]">
-              <span className="text-[10px] uppercase font-bold text-[#475569] block">Total Piloto</span>
-              <span className="text-base font-extrabold text-[#704733]">{totalProjects} tesis</span>
+          {/* Metric Badges */}
+          <div className="flex flex-wrap items-center gap-3 text-xs w-full lg:w-auto">
+            <div className="bg-[#FBF9F5] p-3 rounded-xl border border-[#D8CEBF] text-center min-w-[95px] flex-1 sm:flex-none">
+              <span className="text-[10px] uppercase font-bold text-[#57534E] block">Tesis Piloto</span>
+              <span className="text-base font-extrabold text-[#6E432F] font-tabular">{totalProjects}</span>
             </div>
-            <div className="bg-[#FAF7F2] p-3 rounded-xl border border-[#D9CEC1] text-center min-w-[100px]">
-              <span className="text-[10px] uppercase font-bold text-[#475569] block">Avance Promedio</span>
-              <span className="text-base font-extrabold text-[#21684F]">{avgProgress}%</span>
+            <div className="bg-[#FBF9F5] p-3 rounded-xl border border-[#D8CEBF] text-center min-w-[95px] flex-1 sm:flex-none">
+              <span className="text-[10px] uppercase font-bold text-[#57534E] block">Avance Medio</span>
+              <span className="text-base font-extrabold text-[#059669] font-tabular">{avgProgress}%</span>
             </div>
-            <div className="bg-[#FAF7F2] p-3 rounded-xl border border-[#D9CEC1] text-center min-w-[100px]">
-              <span className="text-[10px] uppercase font-bold text-[#475569] block">Tutores Activos</span>
-              <span className="text-base font-extrabold text-[#253240]">3 docentes</span>
+            <div className="bg-[#FBF9F5] p-3 rounded-xl border border-[#D8CEBF] text-center min-w-[95px] flex-1 sm:flex-none">
+              <span className="text-[10px] uppercase font-bold text-[#57534E] block">Riesgo Alto</span>
+              <span className="text-base font-extrabold text-[#DC2626] font-tabular">{highRiskCount}</span>
+            </div>
+            <div className="bg-[#FBF9F5] p-3 rounded-xl border border-[#D8CEBF] text-center min-w-[95px] flex-1 sm:flex-none">
+              <span className="text-[10px] uppercase font-bold text-[#57534E] block">Tutores</span>
+              <span className="text-base font-extrabold text-[#1E293B] font-tabular">3</span>
             </div>
           </div>
         </div>
@@ -77,22 +88,22 @@ export default function ProjectPortfolio({
         {/* Filters and Search Bar */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 pt-4 text-xs">
           <div>
-            <label className="block text-[11px] font-semibold text-[#475569] mb-1">Buscar por texto:</label>
+            <label className="block text-[11px] font-semibold text-[#57534E] mb-1">Buscar por texto:</label>
             <input
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Título, estudiante, código..."
-              className="w-full px-3 py-2 rounded-lg border border-[#D9CEC1] bg-[#FAF7F2] text-[#253240] focus:bg-white focus:outline-hidden focus:ring-1 focus:ring-[#704733]"
+              className="w-full px-3 py-2 rounded-xl border border-[#D8CEBF] bg-[#FBF9F5] text-[#1C1917] focus:bg-white focus:outline-hidden focus:ring-1 focus:ring-[#6E432F]"
             />
           </div>
 
           <div>
-            <label className="block text-[11px] font-semibold text-[#475569] mb-1">Filtrar por Etapa Activa:</label>
+            <label className="block text-[11px] font-semibold text-[#57534E] mb-1">Filtrar por Etapa Activa:</label>
             <select
               value={stageFilter}
               onChange={(e) => setStageFilter(e.target.value)}
-              className="w-full px-3 py-2 rounded-lg border border-[#D9CEC1] bg-[#FAF7F2] text-[#253240] focus:bg-white focus:outline-hidden"
+              className="w-full px-3 py-2 rounded-xl border border-[#D8CEBF] bg-[#FBF9F5] text-[#1C1917] focus:bg-white focus:outline-hidden"
             >
               <option value="all">Todas las etapas (1 a 6)</option>
               <option value="1">Etapa 1: Propuesta / Protocolo</option>
@@ -105,11 +116,11 @@ export default function ProjectPortfolio({
           </div>
 
           <div>
-            <label className="block text-[11px] font-semibold text-[#475569] mb-1">Filtrar por Tutor:</label>
+            <label className="block text-[11px] font-semibold text-[#57534E] mb-1">Filtrar por Tutor:</label>
             <select
               value={tutorFilter}
               onChange={(e) => setTutorFilter(e.target.value)}
-              className="w-full px-3 py-2 rounded-lg border border-[#D9CEC1] bg-[#FAF7F2] text-[#253240] focus:bg-white focus:outline-hidden"
+              className="w-full px-3 py-2 rounded-xl border border-[#D8CEBF] bg-[#FBF9F5] text-[#1C1917] focus:bg-white focus:outline-hidden"
             >
               <option value="all">Todos los tutores (3)</option>
               {TUTORS.map(t => (
@@ -119,11 +130,11 @@ export default function ProjectPortfolio({
           </div>
 
           <div>
-            <label className="block text-[11px] font-semibold text-[#475569] mb-1">Riesgo Académico:</label>
+            <label className="block text-[11px] font-semibold text-[#57534E] mb-1">Riesgo Académico:</label>
             <select
               value={riskFilter}
               onChange={(e) => setRiskFilter(e.target.value)}
-              className="w-full px-3 py-2 rounded-lg border border-[#D9CEC1] bg-[#FAF7F2] text-[#253240] focus:bg-white focus:outline-hidden"
+              className="w-full px-3 py-2 rounded-xl border border-[#D8CEBF] bg-[#FBF9F5] text-[#1C1917] focus:bg-white focus:outline-hidden"
             >
               <option value="all">Todos los niveles</option>
               <option value="Bajo">Riesgo Bajo</option>
@@ -145,61 +156,53 @@ export default function ProjectPortfolio({
           return (
             <div
               key={project.id}
-              className={`bg-white rounded-xl border p-5 transition-all flex flex-col justify-between shadow-xs ${
+              className={`bg-white rounded-2xl border p-5 transition-all flex flex-col justify-between shadow-editorial-sm ${
                 isSelected
-                  ? 'border-[#704733] ring-2 ring-[#704733]/20 bg-[#FAF7F2]/40'
-                  : 'border-[#D9CEC1] hover:border-[#704733]/50 hover:shadow-md'
+                  ? 'border-[#6E432F] ring-2 ring-[#6E432F]/15 bg-[#FBF9F5]/40'
+                  : 'border-[#D8CEBF] hover:border-[#6E432F]/50 hover:shadow-editorial-md'
               }`}
             >
               <div className="space-y-3">
                 {/* Badges bar */}
                 <div className="flex items-center justify-between text-[11px]">
-                  <span className="font-mono font-bold text-[#704733] bg-[#F3ECE3] px-2 py-0.5 rounded border border-[#D9CEC1]">
+                  <span className="font-mono font-bold text-[#6E432F] bg-[#F5F1EA] px-2 py-0.5 rounded border border-[#D8CEBF]">
                     {project.institutionalId}
                   </span>
-                  <span
-                    className={`font-bold px-2 py-0.5 rounded text-[10px] ${
-                      project.riskLevel === 'Alto'
-                        ? 'bg-[#FDF0F2] text-[#9D3549] border border-[#F5B5BF]'
-                        : project.riskLevel === 'Medio'
-                        ? 'bg-[#FEF6E8] text-[#865A16] border border-[#F3D298]'
-                        : 'bg-[#EAF3EF] text-[#21684F] border border-[#A3D2BE]'
-                    }`}
-                  >
-                    Riesgo {project.riskLevel}
-                  </span>
+                  <StatusBadge type="risk" value={project.riskLevel} />
                 </div>
 
                 {/* Title */}
-                <h3 className="font-bold text-[#253240] text-sm leading-snug line-clamp-2">
+                <h3 className="font-bold text-[#1C1917] text-sm leading-snug line-clamp-2">
                   {project.title}
                 </h3>
 
                 {/* Student & Tutor Info */}
-                <div className="text-xs text-[#475569] space-y-1 pt-1 border-t border-[#EBE4DA]">
+                <div className="text-xs text-[#57534E] space-y-1 pt-1.5 border-t border-[#E8E1D5]">
                   <div className="flex items-center justify-between">
-                    <span className="text-[11px] text-[#64748B]">Estudiante:</span>
-                    <strong className="text-[#253240]">{project.student}</strong>
+                    <span className="text-[11px] text-[#8F8881]">Estudiante:</span>
+                    <strong className="text-[#1C1917]">{project.student}</strong>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-[11px] text-[#64748B]">Tutor:</span>
-                    <span className="text-[#253240] font-medium">{project.tutor}</span>
+                    <span className="text-[11px] text-[#8F8881]">Tutor:</span>
+                    <span className="text-[#1C1917] font-medium">{project.tutor}</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-[11px] text-[#64748B]">Etapa Actual:</span>
-                    <span className="text-[#704733] font-semibold">#{activeStage.id} {activeStage.name.split('(')[0]}</span>
+                    <span className="text-[11px] text-[#8F8881]">Etapa Actual:</span>
+                    <span className="text-[#6E432F] font-semibold">
+                      #{activeStage.id} {activeStage.name.split('(')[0]}
+                    </span>
                   </div>
                 </div>
 
                 {/* Progress bar */}
                 <div className="pt-2">
-                  <div className="flex items-center justify-between text-[11px] font-semibold text-[#475569] mb-1">
+                  <div className="flex items-center justify-between text-[11px] font-semibold text-[#57534E] mb-1">
                     <span>Avance ({approvedCount}/6 etapas)</span>
-                    <span className="text-[#21684F] font-bold">{progressPct}%</span>
+                    <span className="text-[#059669] font-bold font-tabular">{progressPct}%</span>
                   </div>
-                  <div className="w-full bg-[#EBE4DA] rounded-full h-2 overflow-hidden">
+                  <div className="w-full bg-[#E8E1D5] rounded-full h-2 overflow-hidden">
                     <div
-                      className="bg-[#21684F] h-2 rounded-full transition-all duration-300"
+                      className="bg-[#059669] h-2 rounded-full transition-all duration-300"
                       style={{ width: `${progressPct}%` }}
                     ></div>
                   </div>
@@ -207,11 +210,11 @@ export default function ProjectPortfolio({
               </div>
 
               {/* Action Button */}
-              <div className="pt-4 mt-3 border-t border-[#EBE4DA]">
+              <div className="pt-4 mt-3 border-t border-[#E8E1D5]">
                 <button
                   type="button"
                   onClick={() => onSelectProject(project.id)}
-                  className="w-full py-2 px-3 text-xs font-semibold rounded-lg bg-[#704733] text-white hover:bg-[#573524] transition-colors flex items-center justify-center gap-1.5 shadow-xs"
+                  className="w-full py-2 px-3 text-xs font-semibold rounded-xl bg-[#6E432F] text-white hover:bg-[#553323] transition-colors flex items-center justify-center gap-1.5 shadow-xs"
                 >
                   <span>Abrir Ficha de Seguimiento</span>
                   <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -225,9 +228,9 @@ export default function ProjectPortfolio({
       </div>
 
       {filteredProjects.length === 0 && (
-        <div className="bg-white rounded-xl border border-[#D9CEC1] p-10 text-center space-y-2">
-          <p className="text-sm font-semibold text-[#253240]">No se encontraron proyectos con los filtros seleccionados.</p>
-          <p className="text-xs text-[#475569]">Intente ajustar los términos de búsqueda o restablecer los filtros de etapa y riesgo.</p>
+        <div className="bg-white rounded-2xl border border-[#D8CEBF] p-10 text-center space-y-2">
+          <p className="text-sm font-semibold text-[#1C1917]">No se encontraron proyectos con los filtros seleccionados.</p>
+          <p className="text-xs text-[#57534E]">Ajusta los términos de búsqueda o restablece los filtros de etapa y riesgo.</p>
         </div>
       )}
     </div>

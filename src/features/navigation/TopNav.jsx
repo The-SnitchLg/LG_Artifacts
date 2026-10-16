@@ -1,55 +1,78 @@
 import React from 'react';
 
+/**
+ * TopNav — Barra de Navegación Editorial Descongestionada
+ * Estética Framer con separación limpia de marca, roles simulados y acciones globales.
+ */
 export default function TopNav({
   role,
   onRoleChange,
   currentView,
   onViewChange,
   onExportCSV,
-  selectedProjectTitle
+  selectedProjectTitle,
+  onToggleDrawer,
+  pendingCount = 0
 }) {
   return (
-    <header className="bg-white border-b border-[#D9CEC1] sticky top-0 z-40 shadow-xs">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex flex-col sm:flex-row items-center justify-between gap-4">
-        {/* Brand / Logo */}
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-lg bg-[#704733] text-white flex items-center justify-center font-bold text-base shadow-sm">
-            LG
-          </div>
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-[#253240] text-base leading-tight">
-                Seguimiento Académico
-              </span>
-              <span className="text-[10px] font-semibold uppercase tracking-wider bg-[#F3ECE3] text-[#704733] px-2 py-0.5 rounded border border-[#D9CEC1]">
-                Piloto 2026-I
-              </span>
+    <header className="bg-white/95 backdrop-blur-md border-b border-[#D8CEBF] sticky top-0 z-40 shadow-editorial-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-col md:flex-row items-center justify-between gap-3">
+        {/* Brand & Project Identity */}
+        <div className="flex items-center justify-between w-full md:w-auto">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-[#6E432F] text-white flex items-center justify-center font-bold text-sm shadow-editorial-sm shrink-0">
+              LG
             </div>
-            <p className="text-xs text-[#475569] leading-tight flex items-center gap-1.5">
-              <span>Trabajos de Grado &bull; 6 Etapas &bull; Gate 0</span>
-              {currentView === 'ficha' && selectedProjectTitle && (
-                <span className="hidden lg:inline text-[11px] text-[#704733] font-medium bg-[#FAF7F2] px-2 py-0.2 rounded border border-[#D9CEC1] max-w-[280px] truncate">
-                  Ficha activa: {selectedProjectTitle}
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold text-[#1C1917] text-base leading-tight tracking-tight">
+                  Seguimiento Académico
                 </span>
-              )}
-            </p>
+                <span className="text-[10px] font-semibold uppercase tracking-wider bg-[#F5F1EA] text-[#6E432F] px-2 py-0.5 rounded-full border border-[#D8CEBF]">
+                  Piloto 2026-I
+                </span>
+              </div>
+              <p className="text-xs text-[#57534E] leading-tight flex items-center gap-1.5 mt-0.5">
+                <span>6 Etapas &bull; Gate 0 &bull; 15 Tesis</span>
+                {currentView === 'ficha' && selectedProjectTitle && (
+                  <span className="hidden xl:inline text-[11px] text-[#6E432F] font-medium bg-[#FBF9F5] px-2 py-0.2 rounded border border-[#D8CEBF] max-w-[240px] truncate">
+                    {selectedProjectTitle}
+                  </span>
+                )}
+              </p>
+            </div>
           </div>
+
+          {/* Mobile Drawer Trigger */}
+          {currentView === 'ficha' && onToggleDrawer && (
+            <button
+              type="button"
+              onClick={onToggleDrawer}
+              className="md:hidden inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-[#F5F1EA] text-[#6E432F] border border-[#D8CEBF]"
+              title="Abrir panel de acompañamiento contextual"
+            >
+              <span>Panel</span>
+              {pendingCount > 0 && (
+                <span className="w-2 h-2 rounded-full bg-[#D97706]"></span>
+              )}
+            </button>
+          )}
         </div>
 
         {/* Center / Right: Role Switcher & Navigation Actions */}
-        <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 w-full sm:w-auto">
-          {/* Role Switcher */}
-          <div className="flex items-center gap-1.5 bg-[#FAF7F2] p-1 rounded-lg border border-[#D9CEC1]">
-            <span className="text-[11px] font-semibold text-[#475569] px-2 hidden md:inline">
-              Rol Simulado:
+        <div className="flex flex-wrap items-center justify-center md:justify-end gap-2.5 w-full md:w-auto">
+          {/* Simulated Role Segmented Control */}
+          <div className="flex items-center gap-1 bg-[#F5F1EA] p-1 rounded-xl border border-[#D8CEBF]">
+            <span className="text-[11px] font-semibold text-[#57534E] px-2 hidden lg:inline">
+              Rol:
             </span>
             <button
               type="button"
               onClick={() => onRoleChange('estudiante')}
-              className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
+              className={`px-3 py-1 text-xs font-semibold rounded-lg transition-all ${
                 role === 'estudiante'
-                  ? 'bg-[#704733] text-white shadow-xs'
-                  : 'text-[#475569] hover:text-[#253240] hover:bg-[#F3ECE3]'
+                  ? 'bg-white text-[#1C1917] shadow-xs'
+                  : 'text-[#57534E] hover:text-[#1C1917]'
               }`}
             >
               Estudiante
@@ -57,10 +80,10 @@ export default function TopNav({
             <button
               type="button"
               onClick={() => onRoleChange('tutor')}
-              className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
+              className={`px-3 py-1 text-xs font-semibold rounded-lg transition-all ${
                 role === 'tutor'
-                  ? 'bg-[#704733] text-white shadow-xs'
-                  : 'text-[#475569] hover:text-[#253240] hover:bg-[#F3ECE3]'
+                  ? 'bg-white text-[#1C1917] shadow-xs'
+                  : 'text-[#57534E] hover:text-[#1C1917]'
               }`}
             >
               Tutor
@@ -68,25 +91,25 @@ export default function TopNav({
             <button
               type="button"
               onClick={() => onRoleChange('admin')}
-              className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-all ${
+              className={`px-3 py-1 text-xs font-semibold rounded-lg transition-all ${
                 role === 'admin'
-                  ? 'bg-[#704733] text-white shadow-xs'
-                  : 'text-[#475569] hover:text-[#253240] hover:bg-[#F3ECE3]'
+                  ? 'bg-white text-[#1C1917] shadow-xs'
+                  : 'text-[#57534E] hover:text-[#1C1917]'
               }`}
             >
               Administrador
             </button>
           </div>
 
-          {/* View Toggle (Portafolio vs Ficha) */}
-          <div className="inline-flex rounded-lg border border-[#D9CEC1] overflow-hidden">
+          {/* View Toggle */}
+          <div className="inline-flex rounded-xl border border-[#D8CEBF] bg-[#F5F1EA] p-1">
             <button
               type="button"
               onClick={() => onViewChange('portafolio')}
-              className={`px-3 py-1.5 text-xs font-medium transition-colors ${
+              className={`px-3 py-1 text-xs font-semibold rounded-lg transition-all ${
                 currentView === 'portafolio'
-                  ? 'bg-[#253240] text-white'
-                  : 'bg-white text-[#475569] hover:bg-[#F3ECE3]'
+                  ? 'bg-[#1E293B] text-white shadow-xs'
+                  : 'text-[#57534E] hover:text-[#1C1917]'
               }`}
             >
               Portafolio (15)
@@ -94,13 +117,13 @@ export default function TopNav({
             <button
               type="button"
               onClick={() => onViewChange('ficha')}
-              className={`px-3 py-1.5 text-xs font-medium transition-colors ${
+              className={`px-3 py-1 text-xs font-semibold rounded-lg transition-all ${
                 currentView === 'ficha'
-                  ? 'bg-[#253240] text-white'
-                  : 'bg-white text-[#475569] hover:bg-[#F3ECE3]'
+                  ? 'bg-[#1E293B] text-white shadow-xs'
+                  : 'text-[#57534E] hover:text-[#1C1917]'
               }`}
             >
-              Ficha del Proyecto
+              Ficha
             </button>
           </div>
 
@@ -108,7 +131,7 @@ export default function TopNav({
           <button
             type="button"
             onClick={onExportCSV}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#EAF3EF] text-[#21684F] hover:bg-[#d8ece3] border border-[#A3D2BE] transition-colors shadow-xs"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#EDF7F2] text-[#059669] hover:bg-[#d8ece3] border border-[#9CD5BE] transition-colors shadow-xs"
             title="Exportar reporte institucional en formato CSV compatible con Excel"
           >
             <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -116,8 +139,25 @@ export default function TopNav({
               <polyline points="7 10 12 15 17 10" />
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
-            <span>Exportar CSV</span>
+            <span className="hidden sm:inline">Exportar CSV</span>
+            <span className="sm:hidden">CSV</span>
           </button>
+
+          {/* Context Drawer Button (Desktop) */}
+          {currentView === 'ficha' && onToggleDrawer && (
+            <button
+              type="button"
+              onClick={onToggleDrawer}
+              className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#F5F1EA] text-[#6E432F] hover:bg-[#EFE9DF] border border-[#D8CEBF] transition-colors shadow-xs"
+              title="Ver bitácora, compromisos y protocolos en panel contextual"
+            >
+              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                <line x1="15" y1="3" x2="15" y2="21" />
+              </svg>
+              <span>Acompañamiento</span>
+            </button>
+          )}
         </div>
       </div>
     </header>
