@@ -6,10 +6,10 @@
     "semantic_hash": "5e6e3cea3e89137071c142dd7835b0ef"
   },
   "package.json": {
-    "mtime": 1792040963.2548819,
-    "seen": 1792126584.7917814,
-    "ast_hash": "675d4af0b464b39b6f9fee8264dc278f",
-    "semantic_hash": "675d4af0b464b39b6f9fee8264dc278f"
+    "mtime": 1792174503.9597983,
+    "seen": 1792174535.73911,
+    "ast_hash": "3ebc944b765802ff1e529151398a72b9",
+    "semantic_hash": "3ebc944b765802ff1e529151398a72b9"
   },
   "skills-lock.json": {
     "mtime": 1792126399.7265995,
@@ -18,10 +18,10 @@
     "semantic_hash": "7cdaf4a71d2b83bf2094f8958489e4ca"
   },
   "src/App.jsx": {
-    "mtime": 1792126399.7276034,
-    "seen": 1792126584.7917814,
-    "ast_hash": "f031fe7e9858f6182581b7cb0fce70a6",
-    "semantic_hash": "f031fe7e9858f6182581b7cb0fce70a6"
+    "mtime": 1792174503.976809,
+    "seen": 1792174535.73911,
+    "ast_hash": "d69339c9b9a5d2bb389cc76696a771cd",
+    "semantic_hash": "d69339c9b9a5d2bb389cc76696a771cd"
   },
   "src/FichaProyecto.jsx": {
     "mtime": 1792040963.2846227,
@@ -36,10 +36,10 @@
     "semantic_hash": "e13723e2574429d9a6d849727e3ff695"
   },
   "verify-app.mjs": {
-    "mtime": 1792040963.3266633,
-    "seen": 1792126584.792777,
-    "ast_hash": "e264116791a33fd29af8c68e78630f57",
-    "semantic_hash": "e264116791a33fd29af8c68e78630f57"
+    "mtime": 1792174503.983852,
+    "seen": 1792174535.74887,
+    "ast_hash": "6f8ea95b5ffce9ca6c72970b0f4354f8",
+    "semantic_hash": "6f8ea95b5ffce9ca6c72970b0f4354f8"
   },
   "vite.config.js": {
     "mtime": 1791912957.607267,
@@ -846,9 +846,45 @@
     "semantic_hash": "f6b80c55149a173708f1ee733303ff6a"
   },
   "src/components/StatusBadge.jsx": {
-    "mtime": 1792126399.7296033,
-    "seen": 1792126584.7917814,
-    "ast_hash": "4c8234d32f1a45e0e604e81f42bef399",
-    "semantic_hash": "4c8234d32f1a45e0e604e81f42bef399"
+    "mtime": 1792174503.9777231,
+    "seen": 1792174535.74015,
+    "ast_hash": "dd32453d96c785f044a338d362f84f98",
+    "semantic_hash": "dd32453d96c785f044a338d362f84f98"
+  },
+  "src/components/layout/AdaptiveContextPanel.jsx": {
+    "mtime": 1792174503.9777231,
+    "seen": 1792174535.74015,
+    "ast_hash": "ab639cbeb5811944ab38f99c9a1d27ed",
+    "semantic_hash": "ab639cbeb5811944ab38f99c9a1d27ed"
+  },
+  "src/components/layout/RoleSidebar.jsx": {
+    "mtime": 1792174503.9789767,
+    "seen": 1792174535.74015,
+    "ast_hash": "03ae9d1d1aa7987ba93a49d900a6cc2a",
+    "semantic_hash": "03ae9d1d1aa7987ba93a49d900a6cc2a"
+  },
+  "src/components/layout/TopbarCompact.jsx": {
+    "mtime": 1792174503.9789767,
+    "seen": 1792174535.74015,
+    "ast_hash": "f361639747d46dfb51e9ef93198f4e3a",
+    "semantic_hash": "f361639747d46dfb51e9ef93198f4e3a"
+  },
+  "src/features/admin/AdminWorkspace.jsx": {
+    "mtime": 1792174503.9804938,
+    "seen": 1792174535.741524,
+    "ast_hash": "11d538a4980207d8e456881796b75764",
+    "semantic_hash": "11d538a4980207d8e456881796b75764"
+  },
+  "src/features/student/StudentWorkspace.jsx": {
+    "mtime": 1792174503.9810295,
+    "seen": 1792174535.74735,
+    "ast_hash": "6399dbbfc65fbc775c1eea0d50953d20",
+    "semantic_hash": "6399dbbfc65fbc775c1eea0d50953d20"
+  },
+  "src/features/tutor/TutorWorkspace.jsx": {
+    "mtime": 1792174503.982047,
+    "seen": 1792174535.74735,
+    "ast_hash": "462d748fa7e089de4d5669e227b6e9de",
+    "semantic_hash": "462d748fa7e089de4d5669e227b6e9de"
   }
 }
