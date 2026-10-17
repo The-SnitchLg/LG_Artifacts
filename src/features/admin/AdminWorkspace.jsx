@@ -1,6 +1,8 @@
 import React, { useState, useMemo } from 'react';
-import { Search, Filter, Download, ArrowRight, BarChart3 } from 'lucide-react';
-import StatusBadge from '../../components/StatusBadge.jsx';
+import { Search, Filter, Download, BarChart3 } from 'lucide-react';
+import ProjectTable from '../projects/ProjectTable.jsx';
+import Term from '../../components/Term.jsx';
+import { getCurrentStage } from '../../domain/progressCalculator.js';
 
 /**
  * AdminWorkspace — Panel de Supervisión y Cohorte para Administradores (Academic Flow 2.0)
@@ -9,7 +11,7 @@ import StatusBadge from '../../components/StatusBadge.jsx';
 export default function AdminWorkspace({
   projects,
   onSelectProject,
-  onOpenDrawer,
+  onOpenPanorama,
   onExportCSV
 }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -31,7 +33,7 @@ export default function AdminWorkspace({
       const matchText = (p.title + ' ' + p.student + ' ' + p.institutionalId + ' ' + p.tutor).toLowerCase();
       const matchSearch = matchText.includes(searchTerm.toLowerCase());
 
-      const activeSt = p.stages.find(s => s.status === 'en_revision' || s.status === 'observado') || p.stages[0];
+      const activeSt = getCurrentStage(p.stages);
       const matchStage = stageFilter === 'all' || String(activeSt.id) === stageFilter;
       const matchRisk = riskFilter === 'all' || p.riskLevel === riskFilter;
 
@@ -43,57 +45,57 @@ export default function AdminWorkspace({
     <div className="space-y-6 animate-fade-in">
       {/* Eyebrow & View Header */}
       <div>
-        <p className="text-[10px] uppercase font-bold tracking-widest text-[#887668] mb-1">
+        <p className="text-[10px] uppercase font-bold tracking-widest text-(--light) mb-1">
           SEGUIMIENTO INSTITUCIONAL &bull; PILOTO DEMO
         </p>
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
-            <h1 className="font-editorial font-bold text-2xl sm:text-3xl text-[#30251F] tracking-tight">
+            <h1 className="font-editorial text-3xl sm:text-4xl text-(--brand) tracking-tight">
               Proyectos de grado
             </h1>
-            <p className="text-xs text-[#57534E] mt-0.5">
+            <p className="text-xs text-(--muted) mt-0.5">
               Consulta el estado de la cohorte y los responsables de seguimiento.
             </p>
           </div>
           <button
             type="button"
-            onClick={() => onOpenDrawer('Indicadores de seguimiento')}
-            className="text-xs font-bold text-[#6E432F] hover:underline self-start sm:self-auto flex items-center gap-1.5"
+            onClick={onOpenPanorama}
+            className="text-xs font-bold text-(--brand) hover:underline self-start sm:self-auto flex items-center gap-1.5"
           >
-            <BarChart3 className="w-4 h-4 text-[#6E432F]" />
-            <span>Ver indicadores &rarr;</span>
+            <BarChart3 className="w-4 h-4 text-(--brand)" />
+            <span>Ver panorama &rarr;</span>
           </button>
         </div>
       </div>
 
       {/* Overview Strip */}
       <div className="flex flex-wrap gap-2.5 items-center">
-        <div className="px-3.5 py-2 bg-white border border-[#E8E1D5] rounded-xl text-xs text-[#716459] shadow-xs">
-          <strong className="font-editorial font-bold text-sm text-[#6E432F] mr-1">{totalProjects}</strong>
+        <div className="px-3.5 py-2 bg-white border border-(--line) rounded-(--radius) text-xs text-(--light)">
+          <strong className="font-editorial font-bold text-sm text-(--brand) mr-1">{totalProjects}</strong>
           proyectos del piloto
         </div>
-        <div className="px-3.5 py-2 bg-white border border-[#E8E1D5] rounded-xl text-xs text-[#716459] shadow-xs">
-          <strong className="font-editorial font-bold text-sm text-[#6E432F] mr-1">3</strong>
+        <div className="px-3.5 py-2 bg-white border border-(--line) rounded-(--radius) text-xs text-(--light)">
+          <strong className="font-editorial font-bold text-sm text-(--brand) mr-1">3</strong>
           tutores asignados
         </div>
-        <div className="px-3.5 py-2 bg-white border border-[#E8E1D5] rounded-xl text-xs text-[#716459] shadow-xs">
-          Cohorte <strong className="font-editorial font-bold text-sm text-[#6E432F] ml-1">2026-I</strong>
+        <div className="px-3.5 py-2 bg-white border border-(--line) rounded-(--radius) text-xs text-(--light)">
+          Cohorte <strong className="font-editorial font-bold text-sm text-(--brand) ml-1">2026-1</strong>
         </div>
-        <div className="px-3.5 py-2 bg-white border border-[#E8E1D5] rounded-xl text-xs text-[#716459] shadow-xs">
-          Avance promedio: <strong className="font-editorial font-bold text-sm text-[#146C4F] ml-1">{avgProgress}%</strong>
+        <div className="px-3.5 py-2 bg-white border border-(--line) rounded-(--radius) text-xs text-(--light)">
+          Avance promedio: <strong className="font-editorial font-bold text-sm text-(--green) ml-1">{avgProgress}%</strong>
         </div>
       </div>
 
       {/* Admin Tools Bar */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+      <div data-tour="filtros" className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
         <div className="relative flex-1 max-w-md">
-          <Search className="w-4 h-4 text-[#8F8881] absolute left-3 top-2.5" />
+          <Search className="w-4 h-4 text-(--light) absolute left-3 top-2.5" />
           <input
             type="search"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Buscar proyecto, estudiante o tutor..."
-            className="w-full pl-9 pr-3 py-2 text-xs rounded-xl border border-[#D8CEBF] bg-white text-[#1C1917] focus:outline-hidden"
+            className="w-full pl-9 pr-3 py-2 text-xs rounded-(--radius) border border-(--line2) bg-white text-(--ink) focus:outline-hidden"
           />
         </div>
 
@@ -101,7 +103,7 @@ export default function AdminWorkspace({
           <button
             type="button"
             onClick={() => setShowFilters(!showFilters)}
-            className="px-3.5 py-2 text-xs font-bold text-[#6E432F] bg-white border border-[#D8CEBF] hover:bg-[#F5F1EA] rounded-xl transition-colors shadow-xs flex items-center gap-1.5"
+            className="px-3.5 py-2 text-xs font-bold text-(--brand) bg-white border border-(--line2) hover:bg-(--sand) rounded-(--radius) transition-colors flex items-center gap-1.5"
           >
             <Filter className="w-3.5 h-3.5" />
             <span>{showFilters ? 'Ocultar filtros' : 'Filtros'}</span>
@@ -110,7 +112,7 @@ export default function AdminWorkspace({
           <button
             type="button"
             onClick={onExportCSV}
-            className="px-3.5 py-2 text-xs font-bold text-[#146C4F] bg-[#EDF7F2] border border-[#9CD5BE] hover:bg-[#d8ece3] rounded-xl transition-colors shadow-xs flex items-center gap-1.5"
+            className="px-3.5 py-2 text-xs font-bold text-(--green) bg-(--green-bg) border border-(--green-line) hover:bg-(--green-line) rounded-(--radius) transition-colors flex items-center gap-1.5"
           >
             <Download className="w-3.5 h-3.5" />
             <span>Exportar CSV</span>
@@ -120,13 +122,13 @@ export default function AdminWorkspace({
 
       {/* Collapsible Filter Panel */}
       {showFilters && (
-        <div className="p-4 bg-white rounded-xl border border-[#E8E1D5] shadow-xs grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs animate-fade-in">
+        <div className="p-4 bg-white rounded-(--radius) border border-(--line) grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs animate-fade-in">
           <div>
-            <label className="block text-[11px] font-bold text-[#57534E] mb-1">Filtrar por Etapa Activa:</label>
+            <label className="block text-[11px] font-bold text-(--muted) mb-1">Filtrar por Etapa Activa:</label>
             <select
               value={stageFilter}
               onChange={(e) => setStageFilter(e.target.value)}
-              className="w-full p-2 rounded-lg border border-[#D8CEBF] bg-[#FBF9F5] text-[#1C1917]"
+              className="w-full p-2 rounded-(--radius) border border-(--line2) bg-(--bg) text-(--ink)"
             >
               <option value="all">Todas las etapas (1 a 6)</option>
               <option value="1">Etapa 1: Propuesta / Protocolo</option>
@@ -139,86 +141,29 @@ export default function AdminWorkspace({
           </div>
 
           <div>
-            <label className="block text-[11px] font-bold text-[#57534E] mb-1">Filtrar por Riesgo Académico:</label>
+            <label className="block text-[11px] font-bold text-(--muted) mb-1">Filtrar por <Term id="riesgo">riesgo</Term> académico:</label>
             <select
               value={riskFilter}
               onChange={(e) => setRiskFilter(e.target.value)}
-              className="w-full p-2 rounded-lg border border-[#D8CEBF] bg-[#FBF9F5] text-[#1C1917]"
+              className="w-full p-2 rounded-(--radius) border border-(--line2) bg-(--bg) text-(--ink)"
             >
               <option value="all">Todos los niveles</option>
               <option value="Bajo">Riesgo Bajo</option>
               <option value="Medio">Riesgo Medio</option>
               <option value="Alto">Riesgo Alto</option>
+              <option value="Completado">Completado</option>
             </select>
           </div>
         </div>
       )}
 
-      {/* Projects Table Card */}
-      <section className="bg-white rounded-2xl border border-[#E8E1D5] shadow-sm overflow-hidden">
-        {/* Table Header */}
-        <div className="hidden lg:grid grid-cols-12 gap-3 p-3.5 px-5 bg-[#F7F3EE] border-b border-[#E8E1D5] text-[11px] font-bold text-[#796F65] uppercase tracking-wider">
-          <span className="col-span-5">Proyecto / Estudiante</span>
-          <span className="col-span-3">Etapa Activa</span>
-          <span className="col-span-2">Tutor Asignado</span>
-          <span className="col-span-2 text-right">Estado</span>
-        </div>
+      <ProjectTable
+        projects={filteredProjects}
+        onOpen={onSelectProject}
+        emptyText="No se encontraron proyectos con los filtros aplicados."
+      />
 
-        {/* Table Rows */}
-        <div className="divide-y divide-[#E8E1D5]">
-          {filteredProjects.map((p) => {
-            const activeSt = p.stages.find(s => s.status === 'en_revision' || s.status === 'observado') || p.stages[0];
-            return (
-              <div
-                key={p.id}
-                onClick={() => onSelectProject(p.id)}
-                className="p-4 sm:px-5 hover:bg-[#FBF6F0] transition-colors cursor-pointer flex flex-col lg:grid lg:grid-cols-12 lg:items-center gap-2 lg:gap-3 text-xs"
-              >
-                {/* Column 1: Project & Student */}
-                <div className="lg:col-span-5 min-w-0">
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono text-[10px] font-bold text-[#6E432F] bg-[#F5F1EA] px-1.5 py-0.2 rounded border border-[#D8CEBF]">
-                      {p.institutionalId}
-                    </span>
-                    <strong className="font-editorial text-sm text-[#1C1917] truncate leading-tight">
-                      {p.title}
-                    </strong>
-                  </div>
-                  <small className="text-[11px] text-[#7A7068] block mt-0.5">
-                    {p.student} &bull; {p.thematicLine}
-                  </small>
-                </div>
-
-                {/* Column 2: Active Stage */}
-                <div className="lg:col-span-3 text-[#57534E] text-xs">
-                  <span className="lg:hidden font-bold text-[11px] text-[#8F8881] mr-1">Etapa:</span>
-                  <span>Etapa {activeSt.id} &bull; {activeSt.name.split('(')[0]}</span>
-                </div>
-
-                {/* Column 3: Tutor */}
-                <div className="lg:col-span-2 text-[#57534E] text-xs">
-                  <span className="lg:hidden font-bold text-[11px] text-[#8F8881] mr-1">Tutor:</span>
-                  <span>{p.tutor}</span>
-                </div>
-
-                {/* Column 4: Status Badge & Chevron */}
-                <div className="lg:col-span-2 flex items-center justify-between lg:justify-end gap-2 pt-1 lg:pt-0">
-                  <StatusBadge type="stage" value={activeSt.status} />
-                  <ArrowRight className="w-4 h-4 text-[#8F8881] shrink-0" />
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {filteredProjects.length === 0 && (
-          <div className="p-10 text-center text-xs text-[#57534E]">
-            No se encontraron proyectos coincidentes con los filtros aplicados.
-          </div>
-        )}
-      </section>
-
-      <p className="text-[11px] text-[#8F8881]">
+      <p className="text-[11px] text-(--light)">
         Datos ficticios para supervisión y demostración académica. No equivalen al seguimiento real de la cohorte.
       </p>
     </div>

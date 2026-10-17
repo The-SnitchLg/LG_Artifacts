@@ -7,37 +7,37 @@ export const STAGE_DEFINITIONS = [
   {
     id: 1,
     name: 'Propuesta / Protocolo (Gate 0)',
-    description: 'Definicion rigurosa del problema, 14 criterios del protocolo y viabilidad metodologica.',
+    description: 'Definición rigurosa del problema, 14 criterios del protocolo y viabilidad metodológica.',
     hasGate0Audit: true
   },
   {
     id: 2,
     name: 'Marco Teórico',
-    description: 'Revision sistematica de literatura y fundamentacion del estado del arte.',
+    description: 'Revisión sistemática de literatura y fundamentación del estado del arte.',
     hasGate0Audit: false
   },
   {
     id: 3,
     name: 'Metodología',
-    description: 'Diseno muestral, instrumentos validados y protocolo de recoleccion.',
+    description: 'Diseño muestral, instrumentos validados y protocolo de recolección.',
     hasGate0Audit: false
   },
   {
     id: 4,
     name: 'Recolección',
-    description: 'Levantamiento empirico de datos primarios o corpus documental.',
+    description: 'Levantamiento empírico de datos primarios o corpus documental.',
     hasGate0Audit: false
   },
   {
     id: 5,
     name: 'Análisis',
-    description: 'Procesamiento estadistico, cualitativo y triangulacion de hallazgos.',
+    description: 'Procesamiento estadístico, cualitativo y triangulación de hallazgos.',
     hasGate0Audit: false
   },
   {
     id: 6,
     name: 'Documento Final',
-    description: 'Redaccion academica integral, conclusiones y verificacion de originalidad.',
+    description: 'Redacción académica integral, conclusiones y verificación de originalidad.',
     hasGate0Audit: false
   }
 ];
@@ -70,7 +70,7 @@ export function canTransition({
       return { allowed: false, reason: 'Solo el estudiante o tutor pueden cargar evidencias.' };
     }
     if (stageNumber > 1 && !previousStageApproved) {
-      return { allowed: false, reason: 'No se puede habilitar una etapa si la anterior no esta aprobada.' };
+      return { allowed: false, reason: 'No se puede habilitar una etapa si la anterior no está aprobada.' };
     }
     return { allowed: true };
   }
@@ -95,7 +95,7 @@ export function canTransition({
       return { allowed: false, reason: 'Solo el tutor asignado puede emitir observaciones.' };
     }
     if (!hasObservation) {
-      return { allowed: false, reason: 'Es obligatorio registrar una observacion y motivo no vacio.' };
+      return { allowed: false, reason: 'Es obligatorio registrar una observación con su motivo.' };
     }
     return { allowed: true };
   }
@@ -123,5 +123,72 @@ export function canTransition({
     return { allowed: true };
   }
 
-  return { allowed: false, reason: 'Transicion de estado no permitida por las reglas de flujo academico.' };
+  return { allowed: false, reason: 'Transición de estado no permitida por las reglas del flujo académico.' };
+}
+
+/**
+ * Acciones disponibles sobre una etapa para el rol actual.
+ * Centraliza en un solo lugar las reglas de canTransition para que la interfaz
+ * (botones habilitados/deshabilitados) y los manejadores de App.jsx usen la misma fuente.
+ * Fase 1 · feat/aplicar-reglas-de-transicion-de-etapas (ver docs/CAMBIOS.md).
+ *
+ * @returns {{ upload: {allowed:boolean, reason?:string},
+ *             approve: {allowed:boolean, reason?:string},
+ *             requestChanges: {allowed:boolean, reason?:string} }}
+ */
+export function getStageActions({ stages = [], stageId, role, isGate0Compliant = false }) {
+  const stage = stages.find(s => s.id === stageId);
+  if (!stage) {
+    const none = { allowed: false, reason: 'Etapa no encontrada.' };
+    return { upload: none, approve: none, requestChanges: none };
+  }
+
+  const previous = stages.find(s => s.id === stageId - 1);
+  const previousStageApproved = stageId === 1 || previous?.status === STAGE_STATUS.APROBADO;
+
+  // Entregar evidencia
+  let upload;
+  if (role !== 'estudiante') {
+    upload = { allowed: false, reason: 'Solo el estudiante entrega evidencias.' };
+  } else if (stage.status === STAGE_STATUS.APROBADO) {
+    upload = { allowed: false, reason: 'Esta etapa ya fue aprobada por el tutor.' };
+  } else if (stage.status === STAGE_STATUS.EN_REVISION) {
+    // Mientras está en revisión se permite reemplazar la entrega con una nueva versión.
+    upload = { allowed: true };
+  } else {
+    upload = canTransition({
+      currentStatus: stage.status,
+      targetStatus: STAGE_STATUS.EN_REVISION,
+      actorRole: role,
+      stageNumber: stageId,
+      previousStageApproved
+    });
+  }
+
+  // Aprobar etapa
+  const approve = stage.status === STAGE_STATUS.PENDIENTE
+    ? { allowed: false, reason: 'La etapa aún no tiene una entrega para revisar.' }
+    : stage.status === STAGE_STATUS.APROBADO
+      ? { allowed: false, reason: 'La etapa ya está aprobada.' }
+      : canTransition({
+          currentStatus: stage.status,
+          targetStatus: STAGE_STATUS.APROBADO,
+          actorRole: role,
+          stageNumber: stageId,
+          isGate0Compliant,
+          previousStageApproved
+        });
+
+  // Solicitar cambios (la observación no vacía la exige el formulario)
+  const requestChanges = stage.status !== STAGE_STATUS.EN_REVISION
+    ? { allowed: false, reason: 'Solo se pueden solicitar cambios sobre una entrega en revisión.' }
+    : canTransition({
+          currentStatus: stage.status,
+          targetStatus: STAGE_STATUS.OBSERVADO,
+          actorRole: role,
+          stageNumber: stageId,
+          hasObservation: true
+        });
+
+  return { upload, approve, requestChanges };
 }
