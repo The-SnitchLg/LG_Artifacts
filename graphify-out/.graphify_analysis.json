@@ -1,74 +1,78 @@
 {
   "communities": {
     "0": [
-      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_apply_reasoning",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_build_style_lookup",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_extract_results",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_find_reasoning_rule",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_generate",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_init",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_load_landing_patterns",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_load_reasoning",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_load_styles",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_multi_domain_search",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_resolve_style",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_select_best_match",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_259",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_268",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_321",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_358",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_366",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_409",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_446",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_451",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_91",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_resolve_dial",
-      "agents_skills_ui_ux_pro_max_scripts_reasoning_contract",
-      "agents_skills_ui_ux_pro_max_scripts_reasoning_contract_apply_decision_rules",
-      "agents_skills_ui_ux_pro_max_scripts_reasoning_contract_object_without_duplicates",
-      "agents_skills_ui_ux_pro_max_scripts_reasoning_contract_parse_decision_rules",
-      "agents_skills_ui_ux_pro_max_scripts_reasoning_contract_rationale_102",
-      "agents_skills_ui_ux_pro_max_scripts_reasoning_contract_rationale_2",
-      "agents_skills_ui_ux_pro_max_scripts_reasoning_contract_rationale_68",
-      "agents_skills_ui_ux_pro_max_scripts_reasoning_contract_validate_action",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testreasoningmatch",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testreasoningmatch_test_known_category_matches_exactly",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testreasoningmatch_test_unknown_category_falls_back_gracefully",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_read_rows",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_split_values",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_style_identities",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_rationale_2",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_read_rows",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testaccessibilityguidance",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testaccessibilityguidance_test_motion_recipes_offer_reduced_motion_or_user_control",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testaccessibilityguidance_test_native_and_web_target_sizes_remain_distinct",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testaccessibilityguidance_test_wcag_22_topics_have_explicit_rows_and_are_retrievable",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testchartstypographyandicons",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testchartstypographyandicons_test_chart_risk_is_not_a_conformance_grade",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testchartstypographyandicons_test_icon_semantics_are_explicit_and_imports_are_concrete",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testchartstypographyandicons_test_mutated_accessibility_and_import_contracts_fail",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testchartstypographyandicons_test_named_fonts_match_google_import_css_import_and_tailwind_config",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testchartstypographyandicons_test_natural_accessibility_queries_are_retrievable",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testcurrentreactguidance",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testcurrentreactguidance_test_effect_event_is_scoped_and_community_use_latest_is_removed",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testsemanticcolors",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testsemanticcolors_test_declared_text_and_ui_pairs_meet_role_thresholds",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testsemanticcolors_test_destructive_tokens_are_not_success_green",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testgeneratedcatalogcontract",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testgeneratedcatalogcontract_load_json",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testgeneratedcatalogcontract_test_canonical_catalogs_and_provenance_are_release_ready",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testgeneratedcatalogcontract_test_curated_icon_and_summary_drift_fail_closed",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testgeneratedcatalogcontract_test_font_license_and_typography_drift_fail_closed",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testgeneratedcatalogcontract_test_font_source_revision_and_exclusion_policy_fail_closed",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testlandingandstackcontract",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testlandingandstackcontract_test_dataset_provenance_scope_binds_real_rows_and_fields",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testlandingandstackcontract_test_landing_sections_use_one_delimiter",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testlandingandstackcontract_test_provenance_rejects_bad_shapes_enums_and_hosts_without_crashing",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testlandingandstackcontract_test_provenance_sidecar_has_stable_shape",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testlandingandstackcontract_test_stack_schema_is_additive_and_uniform",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_canonical_style_priority_is_not_limited_to_bm25_top_three",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_constraints_reach_domain_queries",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_constraints_reach_domain_queries_capture",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_decision_rules_use_closed_array_grammar",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_duplicate_semantic_reasoning_labels_fail_validation",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_duplicate_unknown_keys_and_unknown_actions_fail_closed",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_every_exact_product_label_resolves_to_itself",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_every_known_product_generates_a_traceable_landing_pattern",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_generator_matches_reasoning_exactly_and_defaults_only_for_unknown",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_known_product_sets_match_exactly",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_must_have_and_explicit_signals_are_applied_and_reported",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_reasoning_patterns_reference_landing_identities",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_representative_new_products_generate_traceable_sources",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_style_aliases_have_one_exact_owner",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_teststyleidentitycontract",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_teststyleidentitycontract_setup",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_teststyleidentitycontract_test_every_product_and_reasoning_style_reference_resolves",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_teststyleidentitycontract_test_ids_aliases_status_and_parents_are_unambiguous"
+      "agents_skills_ui_ux_pro_max_scripts_validate_data",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_catalog_date",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_app_interface_contract",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_catalog_contract",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_catalog_summary",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_chart_contract",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_color_contract",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_core_data_contract",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_file",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_font_catalog",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_icon_contract",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_landing_claims",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_motion_contract",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_phosphor_catalog",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_provenance",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_react_contract",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_stack_freshness_contract",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_style_contract",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_typography_contract",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_ux_contract",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_configured_font_names",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_contrast_ratio",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_declared_weights",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_font_families",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_font_names",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_imported_weights",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_load_catalog_json",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_main",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_rationale_1000",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_rationale_158",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_rationale_3",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_rationale_802",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_read_rows",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_relative_luminance",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_split",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_valid_catalog_source_key",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_valid_confidence",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_valid_dataset_source_key",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_valid_date",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_valid_google_fonts_exclusion_source",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_valid_provenance_source",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_validate",
+      "ambiguous_python_import_22ae57affeeb",
+      "ambiguous_python_import_365b99e391fe",
+      "hashlib",
+      "math",
+      "re",
+      "statistics"
     ],
     "1": [
       "agents_skills_ui_styling_scripts_shadcn_add_main",
@@ -209,135 +213,6 @@
       "difflib"
     ],
     "3": [
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_rationale_2",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_read_rows",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testaccessibilityguidance",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testaccessibilityguidance_test_motion_recipes_offer_reduced_motion_or_user_control",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testaccessibilityguidance_test_native_and_web_target_sizes_remain_distinct",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testaccessibilityguidance_test_wcag_22_topics_have_explicit_rows_and_are_retrievable",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testchartstypographyandicons",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testchartstypographyandicons_test_chart_risk_is_not_a_conformance_grade",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testchartstypographyandicons_test_icon_semantics_are_explicit_and_imports_are_concrete",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testchartstypographyandicons_test_mutated_accessibility_and_import_contracts_fail",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testchartstypographyandicons_test_named_fonts_match_google_import_css_import_and_tailwind_config",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testchartstypographyandicons_test_natural_accessibility_queries_are_retrievable",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testcurrentreactguidance",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testcurrentreactguidance_test_effect_event_is_scoped_and_community_use_latest_is_removed",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testsemanticcolors",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testsemanticcolors_test_declared_text_and_ui_pairs_meet_role_thresholds",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_data_quality_testsemanticcolors_test_destructive_tokens_are_not_success_green",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_catalog_date",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_app_interface_contract",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_catalog_contract",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_catalog_summary",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_chart_contract",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_color_contract",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_core_data_contract",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_file",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_font_catalog",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_icon_contract",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_landing_claims",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_motion_contract",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_phosphor_catalog",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_provenance",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_react_contract",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_reasoning_contract",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_stack_freshness_contract",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_style_contract",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_typography_contract",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_ux_contract",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_configured_font_names",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_contrast_ratio",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_declared_weights",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_font_families",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_font_names",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_imported_weights",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_load_catalog_json",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_main",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_rationale_1000",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_rationale_158",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_rationale_3",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_rationale_802",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_read_rows",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_relative_luminance",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_split",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_valid_catalog_source_key",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_valid_confidence",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_valid_dataset_source_key",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_valid_date",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_valid_google_fonts_exclusion_source",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_valid_provenance_source",
-      "agents_skills_ui_ux_pro_max_scripts_validate_data_validate",
-      "ambiguous_python_import_22ae57affeeb",
-      "ambiguous_python_import_365b99e391fe",
-      "hashlib",
-      "math",
-      "re",
-      "statistics"
-    ],
-    "4": [
-      "agents_skills_ui_ux_pro_max_scripts_design_system_contrast_ratio",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_derive_dark_palette",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_filter_anti_patterns_for_mode",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_palette_is_dark",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_query_wants_dark",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_130",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_148",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_154",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_165",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_181",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_187",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_194",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_222",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_247",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_relative_luminance",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_resolve_color_mode",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_select_palette_for_mode",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_style_is_dark_primary",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_rationale_139",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_rationale_3",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testantipatterngating",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testantipatterngating_test_dark_clause_dropped_others_kept",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testantipatterngating_test_empty_input",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testantipatterngating_test_light_mode_is_a_no_op",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testantipatterngating_test_unrelated_anti_patterns_survive_dark_mode",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testendtoendcoherence",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testendtoendcoherence_test_dark_query_does_not_advise_against_dark_mode",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testendtoendcoherence_test_dark_query_foreground_is_lighter_than_background",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testendtoendcoherence_test_dark_query_gets_a_dark_background",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testendtoendcoherence_test_generator_exports_every_semantic_foreground_pair",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testendtoendcoherence_test_light_query_keeps_a_light_background",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testluminance",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testluminance_test_classifies_backgrounds_from_the_shipped_data",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testluminance_test_missing_background_is_not_dark",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testluminance_test_parses_six_and_three_digit_hex",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testluminance_test_returns_none_for_unparseable",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testmoderesolution",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testmoderesolution_test_dark_primary_style_detected",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testmoderesolution_test_dual_mode_style_is_not_dark_primary",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testmoderesolution_test_either_signal_resolves_dark",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testmoderesolution_test_query_keywords",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testpaletteselection",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testpaletteselection_test_category_identity_wins_over_unrelated_dark_palette",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testpaletteselection_test_dark_mode_falls_back_to_top_hit_when_no_dark_ramp_exists",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testpaletteselection_test_dark_mode_skips_light_palettes",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testpaletteselection_test_empty_results",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testpaletteselection_test_light_mode_keeps_the_existing_top_hit_behaviour",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_style_taxonomy_teststyletaxonomy",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_style_taxonomy_teststyletaxonomy_setupclass",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_style_taxonomy_teststyletaxonomy_test_claim_fields_use_controlled_non_guarantee_language",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_style_taxonomy_teststyletaxonomy_test_curated_state_distribution_is_explicit",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_style_taxonomy_teststyletaxonomy_test_deprecated_rows_never_appear_in_generic_results",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_style_taxonomy_teststyletaxonomy_test_every_style_name_and_alias_has_a_deterministic_destination",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_style_taxonomy_teststyletaxonomy_test_family_variants_and_mobile_intent_remain_distinct",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_style_taxonomy_teststyletaxonomy_test_new_rows_have_first_party_provenance",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_style_taxonomy_teststyletaxonomy_test_searchable_prompt_lengths_are_balanced",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_style_taxonomy_teststyletaxonomy_test_style_arbitration_does_not_steal_product_intent"
-    ],
-    "5": [
       "agents_skills_design_system_templates_design_tokens_starter_100_type",
       "agents_skills_design_system_templates_design_tokens_starter_100_value",
       "agents_skills_design_system_templates_design_tokens_starter_200_type",
@@ -392,7 +267,7 @@
       "agents_skills_design_system_templates_design_tokens_starter_white_value",
       "agents_skills_design_system_templates_design_tokens_starter_yellow_500"
     ],
-    "6": [
+    "4": [
       "agents_skills_design_system_templates_design_tokens_starter",
       "agents_skills_design_system_templates_design_tokens_starter_background_type",
       "agents_skills_design_system_templates_design_tokens_starter_background_value",
@@ -443,7 +318,7 @@
       "agents_skills_design_system_templates_design_tokens_starter_spacing_component",
       "agents_skills_design_system_templates_design_tokens_starter_spacing_section"
     ],
-    "7": [
+    "5": [
       "agents_skills_design_scripts_cip_core",
       "agents_skills_design_scripts_cip_core_bm25",
       "agents_skills_design_scripts_cip_core_bm25_fit",
@@ -490,7 +365,7 @@
       "agents_skills_design_scripts_logo_core_search_csv",
       "collections"
     ],
-    "8": [
+    "6": [
       "agents_skills_design_system_templates_design_tokens_starter_bg_type",
       "agents_skills_design_system_templates_design_tokens_starter_bg_value",
       "agents_skills_design_system_templates_design_tokens_starter_border_type",
@@ -537,7 +412,7 @@
       "agents_skills_design_system_templates_design_tokens_starter_shadow_type",
       "agents_skills_design_system_templates_design_tokens_starter_shadow_value"
     ],
-    "9": [
+    "7": [
       "agents_skills_design_system_scripts_search_slides",
       "agents_skills_design_system_scripts_search_slides_format_context",
       "agents_skills_design_system_scripts_search_slides_format_result",
@@ -583,44 +458,7 @@
       "agents_skills_design_system_scripts_slide_search_core_search_with_context",
       "agents_skills_design_system_scripts_slide_search_core_should_use_full_bleed"
     ],
-    "10": [
-      "package",
-      "package_dependencies",
-      "package_dependencies_lucide_react",
-      "package_dependencies_motion",
-      "package_dependencies_react",
-      "package_dependencies_react_dom",
-      "package_devdependencies",
-      "package_devdependencies_oxlint",
-      "package_devdependencies_playwright",
-      "package_devdependencies_tailwindcss",
-      "package_devdependencies_tailwindcss_vite",
-      "package_devdependencies_types_react",
-      "package_devdependencies_types_react_dom",
-      "package_devdependencies_vite",
-      "package_devdependencies_vitejs_plugin_react",
-      "package_name",
-      "package_private",
-      "package_scripts",
-      "package_scripts_build",
-      "package_scripts_dev",
-      "package_scripts_lint",
-      "package_scripts_preview",
-      "package_scripts_test",
-      "package_type",
-      "package_version",
-      "ref_motion",
-      "ref_oxlint",
-      "ref_react_dom",
-      "ref_tailwindcss",
-      "ref_tailwindcss_vite",
-      "ref_types_react",
-      "ref_types_react_dom",
-      "ref_vite",
-      "ref_vitejs_plugin_react",
-      "vite_config"
-    ],
-    "11": [
+    "8": [
       "agents_skills_design_system_templates_design_tokens_starter_0_type",
       "agents_skills_design_system_templates_design_tokens_starter_0_value",
       "agents_skills_design_system_templates_design_tokens_starter_10_type",
@@ -656,7 +494,79 @@
       "agents_skills_design_system_templates_design_tokens_starter_spacing_6",
       "agents_skills_design_system_templates_design_tokens_starter_spacing_8"
     ],
-    "12": [
+    "9": [
+      "package",
+      "package_dependencies",
+      "package_dependencies_lucide_react",
+      "package_dependencies_motion",
+      "package_dependencies_react",
+      "package_dependencies_react_dom",
+      "package_devdependencies",
+      "package_devdependencies_oxlint",
+      "package_devdependencies_playwright",
+      "package_devdependencies_tailwindcss",
+      "package_devdependencies_tailwindcss_vite",
+      "package_devdependencies_types_react",
+      "package_devdependencies_types_react_dom",
+      "package_devdependencies_vite",
+      "package_devdependencies_vitejs_plugin_react",
+      "package_name",
+      "package_private",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_scripts_lint",
+      "package_scripts_preview",
+      "package_scripts_test",
+      "package_type",
+      "package_version",
+      "ref_motion",
+      "ref_oxlint",
+      "ref_tailwindcss",
+      "ref_tailwindcss_vite",
+      "ref_types_react",
+      "ref_types_react_dom",
+      "ref_vite",
+      "ref_vitejs_plugin_react",
+      "vite_config"
+    ],
+    "10": [
+      "ref_node_assert",
+      "src_domain_csvexporter",
+      "src_domain_csvexporter_exportprojecttocsv",
+      "src_domain_csvexporter_sanitizecsvvalue",
+      "src_domain_progresscalculator_calculaterisklevel",
+      "src_domain_stagemachine",
+      "src_domain_stagemachine_cantransition",
+      "src_domain_stagemachine_getstageactions",
+      "src_domain_stagemachine_stage_status",
+      "tests_domain_test",
+      "tests_domain_test_approvestage2without1",
+      "tests_domain_test_cm",
+      "tests_domain_test_evs",
+      "tests_domain_test_gate0full",
+      "tests_domain_test_gate0partial",
+      "tests_domain_test_levels",
+      "tests_domain_test_logproject",
+      "tests_domain_test_mkstages",
+      "tests_domain_test_observewithoutnote",
+      "tests_domain_test_overdueproject",
+      "tests_domain_test_pend6",
+      "tests_domain_test_r1",
+      "tests_domain_test_r2",
+      "tests_domain_test_samplecsv",
+      "tests_domain_test_skip",
+      "tests_domain_test_studentapprove",
+      "tests_domain_test_teststages0",
+      "tests_domain_test_teststages1",
+      "tests_domain_test_teststages3",
+      "tests_domain_test_teststages6",
+      "tests_domain_test_tutorapprovecompletegate0",
+      "tests_domain_test_tutorapproveincompletegate0",
+      "tests_domain_test_validationfull",
+      "tests_domain_test_validationpartial"
+    ],
+    "11": [
       "agents_skills_design_scripts_icon_generate",
       "agents_skills_design_scripts_icon_generate_apply_color",
       "agents_skills_design_scripts_icon_generate_apply_viewbox_size",
@@ -690,7 +600,71 @@
       "os",
       "time"
     ],
+    "12": [
+      "agents_skills_brand_scripts_tests_test_sync_brand_to_tokens",
+      "agents_skills_brand_scripts_tests_test_sync_brand_to_tokens_rationale_1",
+      "agents_skills_brand_scripts_tests_test_sync_brand_to_tokens_test_sync_parses_bundled_starter_template",
+      "agents_skills_design_system_scripts_slide_token_validator",
+      "agents_skills_design_system_scripts_slide_token_validator_main",
+      "agents_skills_design_system_scripts_slide_token_validator_rationale_2",
+      "agents_skills_design_system_scripts_slide_token_validator_rationale_21",
+      "agents_skills_design_system_scripts_tests_test_validate_tokens",
+      "agents_skills_design_system_scripts_tests_test_validate_tokens_py_path",
+      "agents_skills_design_system_scripts_tests_test_validate_tokens_rationale_1",
+      "agents_skills_design_system_scripts_tests_test_validate_tokens_rationale_32",
+      "agents_skills_design_system_scripts_tests_test_validate_tokens_rationale_42",
+      "agents_skills_design_system_scripts_tests_test_validate_tokens_run",
+      "agents_skills_design_system_scripts_tests_test_validate_tokens_test_flags_hardcoded_hex_sharing_line_with_token",
+      "agents_skills_design_system_scripts_tests_test_validate_tokens_test_token_only_line_reports_no_violation",
+      "agents_skills_ui_styling_scripts_shadcn_add",
+      "agents_skills_ui_styling_scripts_shadcn_add_rationale_2",
+      "agents_skills_ui_styling_scripts_tailwind_config_gen",
+      "agents_skills_ui_styling_scripts_tailwind_config_gen_rationale_2",
+      "agents_skills_ui_styling_scripts_tests_test_shadcn_add",
+      "agents_skills_ui_styling_scripts_tests_test_shadcn_add_rationale_1",
+      "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen",
+      "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen_rationale_1",
+      "completedprocess",
+      "pathlib",
+      "pytest",
+      "shutil",
+      "subprocess",
+      "sys",
+      "typing"
+    ],
     "13": [
+      "agents_skills_ui_ux_pro_max_scripts_design_system",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_ansi_ljust",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_detect_page_type",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_format_ascii_box",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_format_ascii_box_wrap_text",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_format_master_md",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_format_page_override_md",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_generate_intelligent_overrides",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_hex_to_ansi",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_persist_design_system",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_py_path",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_1077",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_1382",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_1491",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_1597",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_3",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_612",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_626",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_634",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_641",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_91",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_962",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_973",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_997",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_resolve_dial",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_safe_slug",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_section_header",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_write_persisted_file",
+      "ambiguous_python_import_01dfb51305e3",
+      "tempfile"
+    ],
+    "14": [
       "agents_skills_design_system_scripts_html_token_validator",
       "agents_skills_design_system_scripts_html_token_validator_get_context",
       "agents_skills_design_system_scripts_html_token_validator_is_allowed_exception",
@@ -721,93 +695,190 @@
       "agents_skills_design_system_scripts_html_token_validator_validationresult_add_warning",
       "agents_skills_design_system_scripts_html_token_validator_validationresult_init"
     ],
-    "14": [
-      "agents_skills_ui_ux_pro_max_scripts_design_system",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_ansi_ljust",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_detect_page_type",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_format_ascii_box",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_format_ascii_box_wrap_text",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_format_master_md",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_format_page_override_md",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_generate_intelligent_overrides",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_hex_to_ansi",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_persist_design_system",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_1077",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_1382",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_1491",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_1597",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_3",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_612",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_626",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_634",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_641",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_962",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_997",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_safe_slug",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_section_header",
+    "15": [
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_catalog_refresh",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_catalog_refresh_rationale_2",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_native_desktop_stack_freshness",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_native_desktop_stack_freshness_rationale_2",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_style_taxonomy",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_style_taxonomy_rationale_2",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_style_taxonomy_read_rows",
-      "ambiguous_python_import_01dfb51305e3",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_text_layout_resilience",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_text_layout_resilience_rationale_2",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_text_layout_resilience_read_rows",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_text_layout_resilience_testtextlayoutdatacontracts",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_text_layout_resilience_testtextlayoutdatacontracts_setupclass",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_text_layout_resilience_testtextlayoutdatacontracts_test_new_tailwind_rows_are_unique_current_and_keep_required_utilities",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_text_layout_resilience_testtextlayoutdatacontracts_test_new_ux_rows_are_unique_sequential_and_keep_critical_guidance",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_text_layout_resilience_testtextlayoutdatacontracts_test_refined_rows_are_context_sensitive_not_universal_recipes",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_text_layout_resilience_testtextlayoutretrieval",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_text_layout_resilience_testtextlayoutretrieval_test_locked_queries_return_the_canonical_identity_first",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_text_layout_resilience_testtextlayoutretrieval_test_tailwind_query_returns_compact_label_layout_first",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_web_stack_freshness",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_web_stack_freshness_rationale_2",
+      "ambiguous_python_import_68fac8c332d7",
       "ambiguous_python_import_b6f388c36847",
-      "csv"
-    ],
-    "15": [
-      "docs_ux_sistema_diseno",
-      "docs_ux_sistema_diseno_1_filosofía_de_diseño_e_identidad_visual",
-      "docs_ux_sistema_diseno_2_tokens_de_diseño_css_variables",
-      "docs_ux_sistema_diseno_3_escala_tipográfica_y_jerarquía",
-      "docs_ux_sistema_diseno_4_1_stepper_de_las_6_etapas_académicas",
-      "docs_ux_sistema_diseno_4_2_badges_de_estado_semánticos",
-      "docs_ux_sistema_diseno_4_3_modal_de_fase_0_17_actividades_metodológicas",
-      "docs_ux_sistema_diseno_4_4_panel_de_auditoría_gate_0_14_criterios",
-      "docs_ux_sistema_diseno_4_5_portafolio_de_proyectos_vistas_tutor_y_administrador",
-      "docs_ux_sistema_diseno_4_componentes_y_patrones_ui",
-      "docs_ux_sistema_diseno_5_pruebas_de_contraste_y_validación_de_accesibilidad",
-      "docs_ux_sistema_diseno_principios_rectores",
-      "docs_ux_sistema_diseno_sistema_de_diseño_y_tokens_ui_seguimiento_académico_de_trabajos_de_grado",
-      "src_fichaproyecto",
-      "src_fichaproyecto_alerttriangleicon",
-      "src_fichaproyecto_bookopenicon",
-      "src_fichaproyecto_calendaricon",
-      "src_fichaproyecto_checkicon",
-      "src_fichaproyecto_clockicon",
-      "src_fichaproyecto_closeicon",
-      "src_fichaproyecto_downloadicon",
-      "src_fichaproyecto_fichaproyecto",
-      "src_fichaproyecto_filecheckicon",
-      "src_fichaproyecto_initial_gate0_items",
-      "src_fichaproyecto_initial_stages",
-      "src_fichaproyecto_lockicon",
-      "src_fichaproyecto_shieldcheckicon",
-      "src_fichaproyecto_uploadcloudicon",
-      "src_fichaproyecto_usericon"
+      "ambiguous_python_import_e1f9b4cfcaa1",
+      "ambiguous_python_import_f34558329d40",
+      "csv",
+      "unittest",
+      "urllib_parse"
     ],
     "16": [
-      "agents_skills_design_scripts_cip_search",
-      "agents_skills_design_scripts_cip_search_format_brief",
-      "agents_skills_design_scripts_cip_search_format_results",
-      "agents_skills_design_scripts_cip_search_main",
-      "agents_skills_design_scripts_cip_search_rationale_18",
-      "agents_skills_design_scripts_cip_search_rationale_3",
-      "agents_skills_design_scripts_cip_search_rationale_33",
-      "agents_skills_design_system_scripts_generate_slide_main",
-      "agents_skills_ui_styling_scripts_shadcn_add",
-      "agents_skills_ui_styling_scripts_shadcn_add_rationale_2",
-      "agents_skills_ui_styling_scripts_tailwind_config_gen",
-      "agents_skills_ui_styling_scripts_tailwind_config_gen_rationale_2",
-      "agents_skills_ui_ux_pro_max_scripts_search",
-      "agents_skills_ui_ux_pro_max_scripts_search_format_output",
-      "agents_skills_ui_ux_pro_max_scripts_search_rationale_3",
-      "agents_skills_ui_ux_pro_max_scripts_search_rationale_45",
-      "ambiguous_python_import_2b7400118cb1",
-      "ambiguous_python_import_d57a01d10920",
-      "argparse",
-      "io",
-      "json",
-      "typing"
+      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_extract_results",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_generate",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_multi_domain_search",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_resolve_style",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_select_best_match",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_321",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_409",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_446",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_451",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_read_rows",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testlandingandstackcontract",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testlandingandstackcontract_test_dataset_provenance_scope_binds_real_rows_and_fields",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testlandingandstackcontract_test_landing_sections_use_one_delimiter",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testlandingandstackcontract_test_provenance_rejects_bad_shapes_enums_and_hosts_without_crashing",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testlandingandstackcontract_test_provenance_sidecar_has_stable_shape",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testlandingandstackcontract_test_stack_schema_is_additive_and_uniform",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_canonical_style_priority_is_not_limited_to_bm25_top_three",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_constraints_reach_domain_queries",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_constraints_reach_domain_queries_capture",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_every_exact_product_label_resolves_to_itself",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_every_known_product_generates_a_traceable_landing_pattern",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_known_product_sets_match_exactly",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_reasoning_patterns_reference_landing_identities",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_representative_new_products_generate_traceable_sources",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_style_aliases_have_one_exact_owner"
     ],
     "17": [
+      "ref_react_dom",
+      "src_app",
+      "src_app_app",
+      "src_components_layout_adaptivecontextpanel_adaptivecontextpanel",
+      "src_components_layout_adaptivecontextpanel_adaptivecontextpanel_handlekeydown",
+      "src_components_layout_rolesidebar_rolesidebar",
+      "src_components_layout_topbarcompact_topbarcompact",
+      "src_data_demostorage",
+      "src_data_demostorage_cleardemoprojects",
+      "src_data_demostorage_clearseenflags",
+      "src_data_demostorage_demo_data_version",
+      "src_data_demostorage_hasseen",
+      "src_data_demostorage_loaddemoprojects",
+      "src_data_demostorage_markseen",
+      "src_data_demostorage_savedemoprojects",
+      "src_domain_csvexporter_downloadcsv",
+      "src_domain_gate0validator",
+      "src_domain_gate0validator_validategate0",
+      "src_domain_progresscalculator_describerisk",
+      "src_features_onboarding_guidedtour_guidedtour",
+      "src_features_onboarding_welcomescreen_welcomescreen",
+      "src_features_projects_evidencelist_evidencelist",
+      "src_index",
+      "src_main",
+      "src_routing_navigation_getsectionlabel"
+    ],
+    "18": [
+      "agents_skills_ui_ux_pro_max_scripts_design_system_contrast_ratio",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_derive_dark_palette",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_palette_is_dark",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_130",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_148",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_154",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_194",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_222",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_relative_luminance",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_select_palette_for_mode",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_rationale_3",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testluminance",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testluminance_test_classifies_backgrounds_from_the_shipped_data",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testluminance_test_missing_background_is_not_dark",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testluminance_test_parses_six_and_three_digit_hex",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testluminance_test_returns_none_for_unparseable",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testpaletteselection",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testpaletteselection_test_category_identity_wins_over_unrelated_dark_palette",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testpaletteselection_test_dark_mode_falls_back_to_top_hit_when_no_dark_ramp_exists",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testpaletteselection_test_dark_mode_skips_light_palettes",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testpaletteselection_test_empty_results",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testpaletteselection_test_light_mode_keeps_the_existing_top_hit_behaviour"
+    ],
+    "19": [
+      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_apply_reasoning",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_build_style_lookup",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_find_reasoning_rule",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_init",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_load_landing_patterns",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_load_reasoning",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_designsystemgenerator_load_styles",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_259",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_268",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_358",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_366",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testreasoningmatch",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testreasoningmatch_test_known_category_matches_exactly",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testreasoningmatch_test_unknown_category_falls_back_gracefully",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_generator_matches_reasoning_exactly_and_defaults_only_for_unknown",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_rationale_139",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testendtoendcoherence",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testendtoendcoherence_test_dark_query_does_not_advise_against_dark_mode",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testendtoendcoherence_test_dark_query_foreground_is_lighter_than_background",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testendtoendcoherence_test_dark_query_gets_a_dark_background",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testendtoendcoherence_test_generator_exports_every_semantic_foreground_pair",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testendtoendcoherence_test_light_query_keeps_a_light_background"
+    ],
+    "20": [
+      "agents_skills_ui_ux_pro_max_scripts_reasoning_contract",
+      "agents_skills_ui_ux_pro_max_scripts_reasoning_contract_apply_decision_rules",
+      "agents_skills_ui_ux_pro_max_scripts_reasoning_contract_object_without_duplicates",
+      "agents_skills_ui_ux_pro_max_scripts_reasoning_contract_parse_decision_rules",
+      "agents_skills_ui_ux_pro_max_scripts_reasoning_contract_rationale_102",
+      "agents_skills_ui_ux_pro_max_scripts_reasoning_contract_rationale_2",
+      "agents_skills_ui_ux_pro_max_scripts_reasoning_contract_rationale_68",
+      "agents_skills_ui_ux_pro_max_scripts_reasoning_contract_validate_action",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_rationale_2",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_split_values",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_style_identities",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_decision_rules_use_closed_array_grammar",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_duplicate_semantic_reasoning_labels_fail_validation",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_duplicate_unknown_keys_and_unknown_actions_fail_closed",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_testreasoningcontract_test_must_have_and_explicit_signals_are_applied_and_reported",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_teststyleidentitycontract",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_teststyleidentitycontract_setup",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_teststyleidentitycontract_test_every_product_and_reasoning_style_reference_resolves",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_teststyleidentitycontract_test_ids_aliases_status_and_parents_are_unambiguous",
+      "agents_skills_ui_ux_pro_max_scripts_validate_data_check_reasoning_contract",
+      "ambiguous_python_import_74ce98d1f845",
+      "copy"
+    ],
+    "21": [
+      "agents_skills_design_system_scripts_generate_slide",
+      "agents_skills_design_system_scripts_generate_slide_e",
+      "agents_skills_design_system_scripts_generate_slide_generate_chart_slide",
+      "agents_skills_design_system_scripts_generate_slide_generate_cta_slide",
+      "agents_skills_design_system_scripts_generate_slide_generate_deck",
+      "agents_skills_design_system_scripts_generate_slide_generate_metrics_slide",
+      "agents_skills_design_system_scripts_generate_slide_generate_problem_slide",
+      "agents_skills_design_system_scripts_generate_slide_generate_solution_slide",
+      "agents_skills_design_system_scripts_generate_slide_generate_testimonial_slide",
+      "agents_skills_design_system_scripts_generate_slide_generate_title_slide",
+      "agents_skills_design_system_scripts_generate_slide_main",
+      "agents_skills_design_system_scripts_generate_slide_rationale_17",
+      "agents_skills_design_system_scripts_generate_slide_rationale_22",
+      "agents_skills_design_system_scripts_generate_slide_rationale_3",
+      "agents_skills_design_system_scripts_generate_slide_rationale_429",
+      "agents_skills_design_system_scripts_generate_slide_rationale_448",
+      "agents_skills_design_system_scripts_generate_slide_rationale_479",
+      "agents_skills_design_system_scripts_generate_slide_rationale_524",
+      "agents_skills_design_system_scripts_generate_slide_rationale_555",
+      "agents_skills_design_system_scripts_generate_slide_rationale_638",
+      "agents_skills_design_system_scripts_generate_slide_safe_url",
+      "html"
+    ],
+    "22": [
       "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen_rationale_17",
       "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen_rationale_20",
       "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen_rationale_26",
@@ -831,119 +902,6 @@
       "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen_testtailwindconfiggenerator_test_init_framework",
       "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen_testtailwindconfiggenerator_test_init_javascript"
     ],
-    "18": [
-      "src_app",
-      "src_app_app",
-      "src_components_layout_adaptivecontextpanel_adaptivecontextpanel",
-      "src_components_layout_adaptivecontextpanel_adaptivecontextpanel_handlekeydown",
-      "src_components_layout_rolesidebar",
-      "src_components_layout_rolesidebar_rolesidebar",
-      "src_components_layout_topbarcompact",
-      "src_components_layout_topbarcompact_topbarcompact",
-      "src_components_layout_topbarcompact_topbarcompact_handleclickoutside",
-      "src_domain_csvexporter",
-      "src_domain_csvexporter_downloadcsv",
-      "src_domain_csvexporter_exportprojecttocsv",
-      "src_domain_csvexporter_sanitizecsvvalue",
-      "src_domain_gate0validator",
-      "src_domain_gate0validator_validategate0",
-      "src_features_admin_adminworkspace_adminworkspace",
-      "src_features_gate0_gate0modal",
-      "src_features_gate0_gate0modal_gate0modal",
-      "src_features_student_studentworkspace_studentworkspace",
-      "src_features_tutor_tutorworkspace_tutorworkspace",
-      "src_index",
-      "src_main"
-    ],
-    "19": [
-      "agents_skills_design_system_scripts_generate_slide",
-      "agents_skills_design_system_scripts_generate_slide_e",
-      "agents_skills_design_system_scripts_generate_slide_generate_chart_slide",
-      "agents_skills_design_system_scripts_generate_slide_generate_cta_slide",
-      "agents_skills_design_system_scripts_generate_slide_generate_deck",
-      "agents_skills_design_system_scripts_generate_slide_generate_metrics_slide",
-      "agents_skills_design_system_scripts_generate_slide_generate_problem_slide",
-      "agents_skills_design_system_scripts_generate_slide_generate_solution_slide",
-      "agents_skills_design_system_scripts_generate_slide_generate_testimonial_slide",
-      "agents_skills_design_system_scripts_generate_slide_generate_title_slide",
-      "agents_skills_design_system_scripts_generate_slide_rationale_17",
-      "agents_skills_design_system_scripts_generate_slide_rationale_22",
-      "agents_skills_design_system_scripts_generate_slide_rationale_3",
-      "agents_skills_design_system_scripts_generate_slide_rationale_429",
-      "agents_skills_design_system_scripts_generate_slide_rationale_448",
-      "agents_skills_design_system_scripts_generate_slide_rationale_479",
-      "agents_skills_design_system_scripts_generate_slide_rationale_524",
-      "agents_skills_design_system_scripts_generate_slide_rationale_555",
-      "agents_skills_design_system_scripts_generate_slide_rationale_638",
-      "agents_skills_design_system_scripts_generate_slide_safe_url",
-      "html"
-    ],
-    "20": [
-      "agents_skills_brand_scripts_tests_test_sync_brand_to_tokens",
-      "agents_skills_brand_scripts_tests_test_sync_brand_to_tokens_rationale_1",
-      "agents_skills_brand_scripts_tests_test_sync_brand_to_tokens_test_sync_parses_bundled_starter_template",
-      "agents_skills_design_system_scripts_tests_test_validate_tokens",
-      "agents_skills_design_system_scripts_tests_test_validate_tokens_py_path",
-      "agents_skills_design_system_scripts_tests_test_validate_tokens_rationale_1",
-      "agents_skills_design_system_scripts_tests_test_validate_tokens_rationale_32",
-      "agents_skills_design_system_scripts_tests_test_validate_tokens_rationale_42",
-      "agents_skills_design_system_scripts_tests_test_validate_tokens_run",
-      "agents_skills_design_system_scripts_tests_test_validate_tokens_test_flags_hardcoded_hex_sharing_line_with_token",
-      "agents_skills_design_system_scripts_tests_test_validate_tokens_test_token_only_line_reports_no_violation",
-      "agents_skills_ui_styling_scripts_tests_test_shadcn_add",
-      "agents_skills_ui_styling_scripts_tests_test_shadcn_add_rationale_1",
-      "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen",
-      "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen_rationale_1",
-      "completedprocess",
-      "pathlib",
-      "pytest",
-      "shutil",
-      "subprocess"
-    ],
-    "21": [
-      "ref_lucide_react",
-      "ref_react",
-      "src_components_contextdrawer",
-      "src_components_contextdrawer_contextdrawer",
-      "src_components_layout_adaptivecontextpanel",
-      "src_components_nextstepbanner",
-      "src_components_nextstepbanner_nextstepbanner",
-      "src_components_statusbadge",
-      "src_components_statusbadge_statusbadge",
-      "src_features_admin_adminworkspace",
-      "src_features_bitacora_bitacorasection",
-      "src_features_bitacora_bitacorasection_bitacorasection",
-      "src_features_evidence_evidencemanager",
-      "src_features_evidence_evidencemanager_evidencemanager",
-      "src_features_portfolio_projectportfolio",
-      "src_features_portfolio_projectportfolio_projectportfolio",
-      "src_features_stages_stagedetail",
-      "src_features_stages_stagedetail_stagedetail",
-      "src_features_student_studentworkspace",
-      "src_features_tutor_tutorworkspace"
-    ],
-    "22": [
-      "ref_node_assert",
-      "src_domain_stagemachine",
-      "src_domain_stagemachine_cantransition",
-      "src_domain_stagemachine_stage_definitions",
-      "src_domain_stagemachine_stage_status",
-      "tests_domain_test",
-      "tests_domain_test_approvestage2without1",
-      "tests_domain_test_gate0full",
-      "tests_domain_test_gate0partial",
-      "tests_domain_test_observewithoutnote",
-      "tests_domain_test_samplecsv",
-      "tests_domain_test_studentapprove",
-      "tests_domain_test_teststages0",
-      "tests_domain_test_teststages1",
-      "tests_domain_test_teststages3",
-      "tests_domain_test_teststages6",
-      "tests_domain_test_tutorapprovecompletegate0",
-      "tests_domain_test_tutorapproveincompletegate0",
-      "tests_domain_test_validationfull",
-      "tests_domain_test_validationpartial"
-    ],
     "23": [
       "agents_skills_design_system_scripts_fetch_background",
       "agents_skills_design_system_scripts_fetch_background_generate_css_for_background",
@@ -963,9 +921,93 @@
       "agents_skills_design_system_scripts_fetch_background_rationale_21",
       "agents_skills_design_system_scripts_fetch_background_rationale_239",
       "agents_skills_design_system_scripts_fetch_background_rationale_40",
-      "agents_skills_design_system_scripts_fetch_background_resolve_token_reference"
+      "agents_skills_design_system_scripts_fetch_background_resolve_token_reference",
+      "json"
     ],
     "24": [
+      "ref_react",
+      "src_components_layout_adaptivecontextpanel",
+      "src_components_statusbadge",
+      "src_components_statusbadge_badgebody",
+      "src_components_statusbadge_status_keys",
+      "src_components_statusbadge_statusbadge",
+      "src_components_term",
+      "src_components_term_term",
+      "src_data_glossary",
+      "src_data_glossary_glossary",
+      "src_domain_evidence",
+      "src_domain_evidence_getlatestevidence",
+      "src_domain_evidence_getstageevidences",
+      "src_features_projects_evidencelist",
+      "src_features_projects_stagesview",
+      "src_features_projects_stagesview_stagesview",
+      "src_features_student_studentworkspace",
+      "src_features_student_studentworkspace_studentworkspace",
+      "src_features_tutor_tutorworkspace",
+      "src_features_tutor_tutorworkspace_tutorworkspace"
+    ],
+    "25": [
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_rationale_2",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testfixturevalidation",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testfixturevalidation_test_rejects_bad_count_duplicate_id_and_grade",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testfixturevalidation_test_valid_schema",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testfixturevalidation_valid_fixture",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testmetricmath",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testmetricmath_test_ndcg_uses_graded_gain_and_handles_empty_ideal",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testmetricmath_test_precision_counts_missing_ranks_as_non_relevant",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testmetricmath_test_reciprocal_rank_stops_at_k",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testmetricmath_test_result_grades_match_identity_subsets",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testthresholdgate",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testthresholdgate_test_manifest_binds_oracle_and_validates_baseline_revision",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testthresholdgate_test_manifest_rejects_missing_contract_sections",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testthresholdgate_test_manifest_rejects_non_finite_and_invalid_sample_values",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testthresholdgate_test_metric_sample_and_locked_case_failures_are_actionable",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testthresholdgate_test_oracle_fingerprint_hashes_the_selected_cases_file",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testthresholdgate_test_runtime_fingerprint_binds_reasoning_contract",
+      "importlib_util"
+    ],
+    "26": [
+      "src_components_pageheader",
+      "src_components_pageheader_pageheader",
+      "src_domain_projectlog",
+      "src_domain_projectlog_getstagelog",
+      "src_domain_projectlog_listpendingcommitments",
+      "src_domain_projectlog_stageshortname",
+      "src_features_coordination_panoramapage",
+      "src_features_coordination_panoramapage_panoramapage",
+      "src_features_coordination_panoramapage_risk_color",
+      "src_features_coordination_panoramapage_risk_order",
+      "src_features_coordination_tutorspage",
+      "src_features_coordination_tutorspage_tutorspage",
+      "src_features_projects_projectlogview",
+      "src_features_projects_projectlogview_projectlogview",
+      "src_features_projects_projectlogview_timing",
+      "src_features_projects_projectlogview_timingbadge",
+      "src_features_tutor_commitmentspage",
+      "src_features_tutor_commitmentspage_commitmentspage"
+    ],
+    "27": [
+      "src_data_gate0catalog",
+      "src_data_gate0catalog_gate0_criteria",
+      "src_data_phase0catalog",
+      "src_data_phase0catalog_phase0_activities",
+      "src_data_pilotdata",
+      "src_data_pilotdata_admin_user",
+      "src_data_pilotdata_buildgate0",
+      "src_data_pilotdata_buildphase0",
+      "src_data_pilotdata_buildproject",
+      "src_data_pilotdata_buildstages",
+      "src_data_pilotdata_datefromtoday",
+      "src_data_pilotdata_isodate",
+      "src_data_pilotdata_longdate",
+      "src_data_pilotdata_pilot_projects",
+      "src_data_pilotdata_shortdate",
+      "src_data_pilotdata_stamp",
+      "src_data_pilotdata_tutorbyid",
+      "src_data_pilotdata_tutors"
+    ],
+    "28": [
       "agents_skills_design_scripts_cip_generate",
       "agents_skills_design_scripts_cip_generate_build_cip_prompt",
       "agents_skills_design_scripts_cip_generate_check_logo_required",
@@ -983,7 +1025,25 @@
       "agents_skills_design_scripts_cip_generate_rationale_90",
       "ambiguous_python_import_829f5a51e73b"
     ],
-    "25": [
+    "29": [
+      "agents_skills_design_scripts_cip_search",
+      "agents_skills_design_scripts_cip_search_format_brief",
+      "agents_skills_design_scripts_cip_search_format_results",
+      "agents_skills_design_scripts_cip_search_main",
+      "agents_skills_design_scripts_cip_search_rationale_18",
+      "agents_skills_design_scripts_cip_search_rationale_3",
+      "agents_skills_design_scripts_cip_search_rationale_33",
+      "agents_skills_design_scripts_logo_search",
+      "agents_skills_design_scripts_logo_search_format_output",
+      "agents_skills_design_scripts_logo_search_generate_design_brief",
+      "agents_skills_design_scripts_logo_search_rationale_16",
+      "agents_skills_design_scripts_logo_search_rationale_3",
+      "agents_skills_design_scripts_logo_search_rationale_38",
+      "ambiguous_python_import_2b7400118cb1",
+      "ambiguous_python_import_db0f9d74f894",
+      "argparse"
+    ],
+    "30": [
       "agents_skills_design_system_scripts_embed_tokens",
       "agents_skills_design_system_scripts_embed_tokens_args",
       "agents_skills_design_system_scripts_embed_tokens_extracttokens",
@@ -1001,7 +1061,7 @@
       "verify_app",
       "verify_app_runvisualverification"
     ],
-    "26": [
+    "31": [
       "agents_skills_design_system_templates_design_tokens_starter_2xl_type",
       "agents_skills_design_system_templates_design_tokens_starter_2xl_value",
       "agents_skills_design_system_templates_design_tokens_starter_3xl_type",
@@ -1019,7 +1079,7 @@
       "agents_skills_design_system_templates_design_tokens_starter_xs_type",
       "agents_skills_design_system_templates_design_tokens_starter_xs_value"
     ],
-    "27": [
+    "32": [
       "agents_skills_ui_styling_scripts_tailwind_config_gen_rationale_192",
       "agents_skills_ui_styling_scripts_tailwind_config_gen_rationale_203",
       "agents_skills_ui_styling_scripts_tailwind_config_gen_rationale_224",
@@ -1037,7 +1097,7 @@
       "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen_testtailwindconfiggenerator_test_generate_javascript_config",
       "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen_testtailwindconfiggenerator_test_generate_typescript_config"
     ],
-    "28": [
+    "33": [
       "agents_skills_ui_styling_scripts_tailwind_config_gen_rationale_268",
       "agents_skills_ui_styling_scripts_tailwind_config_gen_rationale_84",
       "agents_skills_ui_styling_scripts_tailwind_config_gen_tailwindconfiggenerator_add_colors",
@@ -1055,41 +1115,7 @@
       "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen_testtailwindconfiggenerator_test_write_config_creates_content",
       "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen_testtailwindconfiggenerator_test_write_config_invalid_path"
     ],
-    "29": [
-      "agents_skills_ui_ux_pro_max_scripts_design_system_format_markdown",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_generate_design_system",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_792",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_923",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_rationale_3",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testdiagnosticscontracts",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testdiagnosticscontracts_test_diagnostics_opt_in_is_additive_for_domain_search",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testdiagnosticscontracts_test_diagnostics_opt_in_is_additive_for_stack_search",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testpersistence",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testpersistence_test_concurrent_non_force_persist_has_one_writer",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testpersistence_test_persist_then_skip_then_force",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testpersistence_test_persist_writes_only_under_output_dir",
-      "ambiguous_python_import_46fe4438ebfa",
-      "ambiguous_python_import_b9df2565ea83"
-    ],
-    "30": [
-      "agents_skills_ui_ux_pro_max_scripts_design_system_py_path",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_973",
-      "agents_skills_ui_ux_pro_max_scripts_design_system_write_persisted_file",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_catalog_refresh",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_catalog_refresh_rationale_2",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_rationale_2",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_rationale_2",
-      "ambiguous_python_import_74ce98d1f845",
-      "copy",
-      "importlib_util",
-      "tempfile",
-      "unittest",
-      "unittest_mock"
-    ],
-    "31": [
+    "34": [
       "agents_skills_ui_ux_pro_max_scripts_tests_test_catalog_refresh_catalogrefreshtest",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_catalog_refresh_catalogrefreshtest_font_args",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_catalog_refresh_catalogrefreshtest_icon_args",
@@ -1106,7 +1132,7 @@
       "agents_skills_ui_ux_pro_max_scripts_tests_test_catalog_refresh_catalogrefreshtest_test_live_font_refresh_requires_environment_key",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_catalog_refresh_catalogrefreshtest_test_official_metadata_checkout_is_strict_and_reusable"
     ],
-    "32": [
+    "35": [
       "agents_skills_brand_scripts_extract_colors",
       "agents_skills_brand_scripts_extract_colors_calculatecompliance",
       "agents_skills_brand_scripts_extract_colors_colordistance",
@@ -1122,7 +1148,7 @@
       "agents_skills_brand_scripts_extract_colors_path",
       "agents_skills_brand_scripts_extract_colors_rgbtohex"
     ],
-    "33": [
+    "36": [
       "agents_skills_brand_scripts_validate_asset",
       "agents_skills_brand_scripts_validate_asset_checkmanifest",
       "agents_skills_brand_scripts_validate_asset_formatbytes",
@@ -1138,7 +1164,7 @@
       "agents_skills_brand_scripts_validate_asset_validatefilesize",
       "agents_skills_brand_scripts_validate_asset_validateformat"
     ],
-    "34": [
+    "37": [
       "agents_skills_find_skills_skill",
       "agents_skills_find_skills_skill_common_skill_categories",
       "agents_skills_find_skills_skill_find_skills",
@@ -1154,7 +1180,7 @@
       "agents_skills_find_skills_skill_when_no_skills_are_found",
       "agents_skills_find_skills_skill_when_to_use_this_skill"
     ],
-    "35": [
+    "38": [
       "agents_skills_ui_styling_scripts_tailwind_config_gen_rationale_23",
       "agents_skills_ui_styling_scripts_tailwind_config_gen_rationale_285",
       "agents_skills_ui_styling_scripts_tailwind_config_gen_rationale_97",
@@ -1170,7 +1196,7 @@
       "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen_testtailwindconfiggenerator_test_validate_config_no_content",
       "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen_testtailwindconfiggenerator_test_validate_config_valid"
     ],
-    "36": [
+    "39": [
       "agents_skills_ui_ux_pro_max_scripts_tests_test_web_stack_freshness_rows",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_web_stack_freshness_testwebstackfreshness",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_web_stack_freshness_testwebstackfreshness_test_active_rows_use_the_verified_current_applicability",
@@ -1186,7 +1212,7 @@
       "agents_skills_ui_ux_pro_max_scripts_tests_test_web_stack_freshness_testwebstackfreshness_test_svelte_current_and_legacy_queries_do_not_mix_generations",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_web_stack_freshness_testwebstackfreshness_test_web_rows_have_explicit_freshness_metadata"
     ],
-    "37": [
+    "40": [
       "agents_skills_ui_styling_scripts_tailwind_config_gen_rationale_149",
       "agents_skills_ui_styling_scripts_tailwind_config_gen_tailwindconfiggenerator_add_breakpoints",
       "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen_rationale_151",
@@ -1201,7 +1227,7 @@
       "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen_testtailwindconfiggenerator_test_add_breakpoints",
       "parametrize"
     ],
-    "38": [
+    "41": [
       "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testdomaindetection",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testdomaindetection_test_accessibility_keywords_route_to_ux",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testdomaindetection_test_ambiguous_query_returns_runner_up",
@@ -1216,7 +1242,7 @@
       "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testdomaindetection_test_router_prioritizes_typography_for_font_pairing_queries",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testdomaindetection_test_style_keywords_route_to_style"
     ],
-    "39": [
+    "42": [
       "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testsearchdomains",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testsearchdomains_test_accessibility_query_hits_ux",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testsearchdomains_test_chart_output_keeps_legacy_grade_during_risk_migration",
@@ -1231,7 +1257,52 @@
       "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testsearchdomains_test_unsupported_icon_library_abstains_instead_of_returning_other_library",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testsearchdomains_test_zero_result_query_reports_suggestions_not_error"
     ],
-    "40": [
+    "43": [
+      "docs_implementation_plan",
+      "docs_implementation_plan_1_1_incluido_en_el_mvp",
+      "docs_implementation_plan_1_2_exclusiones_explícitas_fuera_de_alcance",
+      "docs_implementation_plan_1_alcance_y_fronteras_del_mvp",
+      "docs_implementation_plan_2_1_código_a_preservar",
+      "docs_implementation_plan_2_2_refactorizaciones_mandatorias",
+      "docs_implementation_plan_2_estrategia_de_refactorización_y_evolución",
+      "docs_implementation_plan_3_arquitectura_modular_propuesta",
+      "docs_implementation_plan_4_plan_de_ejecución_por_hitos",
+      "docs_implementation_plan_5_matriz_de_criterios_de_aceptación_qa",
+      "docs_implementation_plan_6_riesgos_y_decisiones_técnicas_bloqueantes",
+      "docs_implementation_plan_detalle_de_los_hitos",
+      "docs_implementation_plan_plan_de_implementación_del_mvp_seguimiento_académico_de_trabajos_de_grado"
+    ],
+    "44": [
+      "docs_ux_sistema_diseno",
+      "docs_ux_sistema_diseno_1_filosofía_de_diseño_e_identidad_visual",
+      "docs_ux_sistema_diseno_2_tokens_de_diseño_css_variables",
+      "docs_ux_sistema_diseno_3_escala_tipográfica_y_jerarquía",
+      "docs_ux_sistema_diseno_4_1_stepper_de_las_6_etapas_académicas",
+      "docs_ux_sistema_diseno_4_2_badges_de_estado_semánticos",
+      "docs_ux_sistema_diseno_4_3_modal_de_fase_0_17_actividades_metodológicas",
+      "docs_ux_sistema_diseno_4_4_panel_de_auditoría_gate_0_14_criterios",
+      "docs_ux_sistema_diseno_4_5_portafolio_de_proyectos_vistas_tutor_y_administrador",
+      "docs_ux_sistema_diseno_4_componentes_y_patrones_ui",
+      "docs_ux_sistema_diseno_5_pruebas_de_contraste_y_validación_de_accesibilidad",
+      "docs_ux_sistema_diseno_principios_rectores",
+      "docs_ux_sistema_diseno_sistema_de_diseño_y_tokens_ui_seguimiento_académico_de_trabajos_de_grado"
+    ],
+    "45": [
+      "ref_lucide_react",
+      "src_components_layout_rolesidebar",
+      "src_components_layout_topbarcompact",
+      "src_data_toursteps",
+      "src_data_toursteps_tour_steps",
+      "src_domain_stagemachine_stage_definitions",
+      "src_features_onboarding_guidedtour",
+      "src_features_onboarding_welcomescreen",
+      "src_features_onboarding_welcomescreen_cycle",
+      "src_features_onboarding_welcomescreen_roles",
+      "src_routing_navigation",
+      "src_routing_navigation_nav_items",
+      "src_routing_navigation_role_labels"
+    ],
+    "46": [
       "agents_skills_design_scripts_cip_render_html",
       "agents_skills_design_scripts_cip_render_html_generate_html",
       "agents_skills_design_scripts_cip_render_html_get_deliverable_info",
@@ -1245,21 +1316,7 @@
       "base64",
       "datetime"
     ],
-    "41": [
-      "agents_skills_design_system_scripts_slide_token_validator",
-      "agents_skills_design_system_scripts_slide_token_validator_main",
-      "agents_skills_design_system_scripts_slide_token_validator_rationale_2",
-      "agents_skills_design_system_scripts_slide_token_validator_rationale_21",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_native_desktop_stack_freshness",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_native_desktop_stack_freshness_rationale_2",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_web_stack_freshness",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_web_stack_freshness_rationale_2",
-      "ambiguous_python_import_e1f9b4cfcaa1",
-      "ambiguous_python_import_f34558329d40",
-      "sys",
-      "urllib_parse"
-    ],
-    "42": [
+    "47": [
       "agents_skills_design_system_scripts_validate_tokens",
       "agents_skills_design_system_scripts_validate_tokens_extensions",
       "agents_skills_design_system_scripts_validate_tokens_formatreport",
@@ -1273,35 +1330,21 @@
       "agents_skills_design_system_scripts_validate_tokens_shouldskip",
       "agents_skills_design_system_scripts_validate_tokens_skippatterns"
     ],
-    "43": [
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_text_layout_resilience",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_text_layout_resilience_rationale_2",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_text_layout_resilience_read_rows",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_text_layout_resilience_testtextlayoutdatacontracts",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_text_layout_resilience_testtextlayoutdatacontracts_setupclass",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_text_layout_resilience_testtextlayoutdatacontracts_test_new_tailwind_rows_are_unique_current_and_keep_required_utilities",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_text_layout_resilience_testtextlayoutdatacontracts_test_new_ux_rows_are_unique_sequential_and_keep_critical_guidance",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_text_layout_resilience_testtextlayoutdatacontracts_test_refined_rows_are_context_sensitive_not_universal_recipes",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_text_layout_resilience_testtextlayoutretrieval",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_text_layout_resilience_testtextlayoutretrieval_test_locked_queries_return_the_canonical_identity_first",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_text_layout_resilience_testtextlayoutretrieval_test_tailwind_query_returns_compact_label_layout_first",
-      "ambiguous_python_import_68fac8c332d7"
+    "48": [
+      "agents_skills_ui_ux_pro_max_scripts_design_system_query_wants_dark",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_165",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_181",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_187",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_resolve_color_mode",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_style_is_dark_primary",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testmoderesolution",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testmoderesolution_test_dark_primary_style_detected",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testmoderesolution_test_dual_mode_style_is_not_dark_primary",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testmoderesolution_test_either_signal_resolves_dark",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testmoderesolution_test_query_keywords",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_style_taxonomy_teststyletaxonomy_test_claim_fields_use_controlled_non_guarantee_language"
     ],
-    "44": [
-      "docs_implementation_plan",
-      "docs_implementation_plan_1_1_incluido_en_el_mvp",
-      "docs_implementation_plan_1_2_exclusiones_explícitas_fuera_de_alcance",
-      "docs_implementation_plan_1_alcance_y_fronteras_del_mvp",
-      "docs_implementation_plan_2_1_código_a_preservar",
-      "docs_implementation_plan_2_2_refactorizaciones_mandatorias",
-      "docs_implementation_plan_2_estrategia_de_refactorización_y_evolución",
-      "docs_implementation_plan_3_arquitectura_modular_propuesta",
-      "docs_implementation_plan_4_plan_de_ejecución_por_hitos",
-      "docs_implementation_plan_5_matriz_de_criterios_de_aceptación_qa",
-      "docs_implementation_plan_6_riesgos_y_decisiones_técnicas_bloqueantes",
-      "docs_implementation_plan_plan_de_implementación_del_mvp_seguimiento_académico_de_trabajos_de_grado"
-    ],
-    "45": [
+    "49": [
       "agents_skills_brand_scripts_inject_brand_context",
       "agents_skills_brand_scripts_inject_brand_context_extractcolorsfromtable",
       "agents_skills_brand_scripts_inject_brand_context_extractcoreattributes",
@@ -1314,7 +1357,7 @@
       "agents_skills_brand_scripts_inject_brand_context_main",
       "agents_skills_brand_scripts_inject_brand_context_path"
     ],
-    "46": [
+    "50": [
       "agents_skills_design_system_templates_design_tokens_starter_duration_fast",
       "agents_skills_design_system_templates_design_tokens_starter_duration_normal",
       "agents_skills_design_system_templates_design_tokens_starter_duration_slow",
@@ -1327,7 +1370,7 @@
       "agents_skills_design_system_templates_design_tokens_starter_slow_type",
       "agents_skills_design_system_templates_design_tokens_starter_slow_value"
     ],
-    "47": [
+    "51": [
       "agents_skills_ui_styling_scripts_tailwind_config_gen_main",
       "agents_skills_ui_styling_scripts_tailwind_config_gen_rationale_123",
       "agents_skills_ui_styling_scripts_tailwind_config_gen_rationale_136",
@@ -1340,7 +1383,7 @@
       "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen_testtailwindconfiggenerator_test_add_spacing",
       "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen_testtailwindconfiggenerator_test_full_configuration_typescript"
     ],
-    "48": [
+    "52": [
       "agents_skills_ui_ux_pro_max_scripts_tests_test_native_desktop_stack_freshness_rows",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_native_desktop_stack_freshness_testnativedesktopstackfreshness",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_native_desktop_stack_freshness_testnativedesktopstackfreshness_test_current_mobile_contracts",
@@ -1353,33 +1396,7 @@
       "agents_skills_ui_ux_pro_max_scripts_tests_test_native_desktop_stack_freshness_testnativedesktopstackfreshness_test_standalone_current_and_deprecated_identifiers_resolve_replacement",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_native_desktop_stack_freshness_testnativedesktopstackfreshness_test_windows_current_and_maintenance_lanes_are_visible"
     ],
-    "49": [
-      "docs_implementation_plan_detalle_de_los_hitos",
-      "src_features_navigation_demonoticebanner",
-      "src_features_navigation_demonoticebanner_demonoticebanner",
-      "src_features_navigation_topnav",
-      "src_features_navigation_topnav_topnav",
-      "src_features_phase0_phase0modal",
-      "src_features_phase0_phase0modal_phase0modal",
-      "src_features_review_tutorreviewmodal",
-      "src_features_review_tutorreviewmodal_tutorreviewmodal",
-      "src_features_stages_stagestepper",
-      "src_features_stages_stagestepper_stagestepper"
-    ],
-    "50": [
-      "src_data_gate0catalog",
-      "src_data_gate0catalog_gate0_criteria",
-      "src_data_phase0catalog",
-      "src_data_phase0catalog_phase0_activities",
-      "src_data_pilotdata",
-      "src_data_pilotdata_admin_user",
-      "src_data_pilotdata_builddefaultgate0",
-      "src_data_pilotdata_builddefaultphase0",
-      "src_data_pilotdata_builddefaultstages",
-      "src_data_pilotdata_pilot_projects",
-      "src_data_pilotdata_tutors"
-    ],
-    "51": [
+    "53": [
       "agents_skills_brand_scripts_sync_brand_to_tokens",
       "agents_skills_brand_scripts_sync_brand_to_tokens_adjustbrightness",
       "agents_skills_brand_scripts_sync_brand_to_tokens_execfilesync",
@@ -1391,7 +1408,7 @@
       "agents_skills_brand_scripts_sync_brand_to_tokens_updatedesigntokens",
       "ref_child_process"
     ],
-    "52": [
+    "54": [
       "agents_skills_design_system_scripts_generate_tokens",
       "agents_skills_design_system_scripts_generate_tokens_flattentokens",
       "agents_skills_design_system_scripts_generate_tokens_fs",
@@ -1403,7 +1420,7 @@
       "agents_skills_design_system_scripts_generate_tokens_resolvereference",
       "agents_skills_design_system_scripts_generate_tokens_tocssvarname"
     ],
-    "53": [
+    "55": [
       "agents_skills_ui_styling_scripts_tailwind_config_gen_py_path",
       "agents_skills_ui_styling_scripts_tailwind_config_gen_rationale_31",
       "agents_skills_ui_styling_scripts_tailwind_config_gen_rationale_45",
@@ -1415,7 +1432,7 @@
       "agents_skills_ui_styling_scripts_tailwind_config_gen_tailwindconfiggenerator_init",
       "any"
     ],
-    "54": [
+    "56": [
       "docs_architecture_auditoria_inicial",
       "docs_architecture_auditoria_inicial_1_resumen_ejecutivo_de_la_auditoría",
       "docs_architecture_auditoria_inicial_2_1_configuración_y_dependencias_package_json",
@@ -1427,7 +1444,18 @@
       "docs_architecture_auditoria_inicial_6_dictamen_de_aprobación_de_fase_0",
       "docs_architecture_auditoria_inicial_auditoría_inicial_del_repositorio_y_contexto_técnico_lg_artifacts"
     ],
-    "55": [
+    "57": [
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_style_taxonomy_teststyletaxonomy",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_style_taxonomy_teststyletaxonomy_setupclass",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_style_taxonomy_teststyletaxonomy_test_curated_state_distribution_is_explicit",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_style_taxonomy_teststyletaxonomy_test_deprecated_rows_never_appear_in_generic_results",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_style_taxonomy_teststyletaxonomy_test_every_style_name_and_alias_has_a_deterministic_destination",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_style_taxonomy_teststyletaxonomy_test_family_variants_and_mobile_intent_remain_distinct",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_style_taxonomy_teststyletaxonomy_test_new_rows_have_first_party_provenance",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_style_taxonomy_teststyletaxonomy_test_searchable_prompt_lengths_are_balanced",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_style_taxonomy_teststyletaxonomy_test_style_arbitration_does_not_steal_product_intent"
+    ],
+    "58": [
       "readme",
       "readme_1_alcance_del_piloto_institucional_cohorte_2026_i",
       "readme_2_pila_tecnológica_stack",
@@ -1438,7 +1466,7 @@
       "readme_plataforma_de_seguimiento_académico_de_trabajos_de_grado_lg_artifacts",
       "readme_prerrequisitos"
     ],
-    "56": [
+    "59": [
       "agents_skills_design_system_templates_design_tokens_starter_default_type",
       "agents_skills_design_system_templates_design_tokens_starter_default_value",
       "agents_skills_design_system_templates_design_tokens_starter_full_type",
@@ -1448,7 +1476,27 @@
       "agents_skills_design_system_templates_design_tokens_starter_radius_full",
       "agents_skills_design_system_templates_design_tokens_starter_shadow_default"
     ],
-    "57": [
+    "60": [
+      "agents_skills_ui_ux_pro_max_scripts_design_system_format_markdown",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_generate_design_system",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_792",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_923",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testpersistence",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testpersistence_test_concurrent_non_force_persist_has_one_writer",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testpersistence_test_persist_then_skip_then_force",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testpersistence_test_persist_writes_only_under_output_dir"
+    ],
+    "61": [
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_rationale_3",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testdiagnosticscontracts",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testdiagnosticscontracts_test_diagnostics_opt_in_is_additive_for_domain_search",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testdiagnosticscontracts_test_diagnostics_opt_in_is_additive_for_stack_search",
+      "ambiguous_python_import_46fe4438ebfa",
+      "ambiguous_python_import_b9df2565ea83",
+      "unittest_mock"
+    ],
+    "62": [
       "opencode_roles_architect",
       "opencode_roles_architect_1_propósito_y_responsabilidades_del_rol",
       "opencode_roles_architect_2_pila_tecnológica_homologada",
@@ -1458,7 +1506,17 @@
       "opencode_roles_architect_adr_002_aislamiento_del_modo_demostración_sin_exposición_de_credenciales",
       "opencode_roles_architect_rol_arquitecto_de_software_y_base_de_datos_lg_artifacts"
     ],
-    "58": [
+    "63": [
+      "src_routing_hashroute",
+      "src_routing_hashroute_buildhash",
+      "src_routing_hashroute_default_route",
+      "src_routing_hashroute_default_section",
+      "src_routing_hashroute_parsehash",
+      "src_routing_hashroute_role_to_slug",
+      "src_routing_hashroute_slug_to_role",
+      "src_routing_hashroute_usehashroute"
+    ],
+    "64": [
       "agent_skills_spec_driven_development_skill",
       "agent_skills_spec_driven_development_skill_anti_rationalization_guardrails",
       "agent_skills_spec_driven_development_skill_spec_driven_development_sdd",
@@ -1467,16 +1525,7 @@
       "agent_skills_spec_driven_development_skill_step_2_review_validate",
       "agent_skills_spec_driven_development_skill_step_3_implement_to_spec"
     ],
-    "59": [
-      "agents_skills_design_scripts_logo_search",
-      "agents_skills_design_scripts_logo_search_format_output",
-      "agents_skills_design_scripts_logo_search_generate_design_brief",
-      "agents_skills_design_scripts_logo_search_rationale_16",
-      "agents_skills_design_scripts_logo_search_rationale_3",
-      "agents_skills_design_scripts_logo_search_rationale_38",
-      "ambiguous_python_import_db0f9d74f894"
-    ],
-    "60": [
+    "65": [
       "agents_skills_spec_driven_development_skill",
       "agents_skills_spec_driven_development_skill_anti_rationalization_guardrails",
       "agents_skills_spec_driven_development_skill_spec_driven_development_sdd",
@@ -1485,7 +1534,7 @@
       "agents_skills_spec_driven_development_skill_step_2_review_validate",
       "agents_skills_spec_driven_development_skill_step_3_implement_to_spec"
     ],
-    "61": [
+    "66": [
       "agents_skills_ui_styling_scripts_tailwind_config_gen_rationale_162",
       "agents_skills_ui_styling_scripts_tailwind_config_gen_tailwindconfiggenerator_add_plugins",
       "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen_rationale_173",
@@ -1494,16 +1543,16 @@
       "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen_testtailwindconfiggenerator_test_add_plugins_no_duplicates",
       "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen_testtailwindconfiggenerator_test_generate_config_with_plugins"
     ],
-    "62": [
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testthresholdgate",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testthresholdgate_test_manifest_binds_oracle_and_validates_baseline_revision",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testthresholdgate_test_manifest_rejects_missing_contract_sections",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testthresholdgate_test_manifest_rejects_non_finite_and_invalid_sample_values",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testthresholdgate_test_metric_sample_and_locked_case_failures_are_actionable",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testthresholdgate_test_oracle_fingerprint_hashes_the_selected_cases_file",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testthresholdgate_test_runtime_fingerprint_binds_reasoning_contract"
+    "67": [
+      "agents_skills_ui_ux_pro_max_scripts_design_system_filter_anti_patterns_for_mode",
+      "agents_skills_ui_ux_pro_max_scripts_design_system_rationale_247",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testantipatterngating",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testantipatterngating_test_dark_clause_dropped_others_kept",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testantipatterngating_test_empty_input",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testantipatterngating_test_light_mode_is_a_no_op",
+      "agents_skills_ui_ux_pro_max_scripts_tests_test_design_system_mode_testantipatterngating_test_unrelated_anti_patterns_survive_dark_mode"
     ],
-    "63": [
+    "68": [
       "opencode_context_business_logic",
       "opencode_context_business_logic_1_visión_general_del_dominio",
       "opencode_context_business_logic_2_entidades_principales_y_modelo_de_datos",
@@ -1512,7 +1561,7 @@
       "opencode_context_business_logic_flujo_1_revisión_y_aprobación_de_etapa_1_gate_0",
       "opencode_context_business_logic_lógica_de_negocio_y_dominio_académico_lg_artifacts"
     ],
-    "64": [
+    "69": [
       "opencode_specifications_workflow_spec",
       "opencode_specifications_workflow_spec_1_resumen_del_hito",
       "opencode_specifications_workflow_spec_3_escenarios_de_aceptación_críticos",
@@ -1521,7 +1570,16 @@
       "opencode_specifications_workflow_spec_escenario_3_progreso_exacto_en_base_6",
       "opencode_specifications_workflow_spec_especificación_del_flujo_de_trabajo_académico_lg_artifacts"
     ],
-    "65": [
+    "70": [
+      "src_domain_progresscalculator",
+      "src_domain_progresscalculator_calculateprogress",
+      "src_domain_progresscalculator_getcurrentstage",
+      "src_features_admin_adminworkspace",
+      "src_features_admin_adminworkspace_adminworkspace",
+      "src_features_projects_projecttable",
+      "src_features_projects_projecttable_projecttable"
+    ],
+    "71": [
       "agent_skills_find_skills",
       "agent_skills_find_skills_1_search_for_skills_non_interactively",
       "agent_skills_find_skills_2_install_a_skill_non_interactively",
@@ -1529,7 +1587,7 @@
       "agent_skills_find_skills_commands_procedures",
       "agent_skills_find_skills_find_and_install_agent_skills"
     ],
-    "66": [
+    "72": [
       "agents_skills_design_system_templates_design_tokens_starter_fontsize_sm",
       "agents_skills_design_system_templates_design_tokens_starter_primitive_shadow",
       "agents_skills_design_system_templates_design_tokens_starter_radius_sm",
@@ -1537,7 +1595,7 @@
       "agents_skills_design_system_templates_design_tokens_starter_sm_type",
       "agents_skills_design_system_templates_design_tokens_starter_sm_value"
     ],
-    "67": [
+    "73": [
       "agents_skills_find_skills",
       "agents_skills_find_skills_1_search_for_skills_non_interactively",
       "agents_skills_find_skills_2_install_a_skill_non_interactively",
@@ -1545,7 +1603,7 @@
       "agents_skills_find_skills_commands_procedures",
       "agents_skills_find_skills_find_and_install_agent_skills"
     ],
-    "68": [
+    "74": [
       "agents_skills_ui_styling_scripts_tailwind_config_gen_rationale_174",
       "agents_skills_ui_styling_scripts_tailwind_config_gen_tailwindconfiggenerator_recommend_plugins",
       "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen_rationale_182",
@@ -1553,7 +1611,15 @@
       "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen_testtailwindconfiggenerator_test_recommend_plugins",
       "agents_skills_ui_styling_scripts_tests_test_tailwind_config_gen_testtailwindconfiggenerator_test_recommend_plugins_nextjs"
     ],
-    "69": [
+    "75": [
+      "agents_skills_ui_ux_pro_max_scripts_search",
+      "agents_skills_ui_ux_pro_max_scripts_search_format_output",
+      "agents_skills_ui_ux_pro_max_scripts_search_rationale_3",
+      "agents_skills_ui_ux_pro_max_scripts_search_rationale_45",
+      "ambiguous_python_import_d57a01d10920",
+      "io"
+    ],
+    "76": [
       "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testtokenizer",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testtokenizer_test_boundary_safe_nav_normalization_preserves_existing_words",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testtokenizer_test_punctuation_and_uk_variants_normalize_to_canonical_tokens",
@@ -1561,7 +1627,7 @@
       "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testtokenizer_test_stopwords_removed",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testtokenizer_test_synonym_normalization"
     ],
-    "70": [
+    "77": [
       "opencode_context_constraints",
       "opencode_orchestration_orchestrator",
       "opencode_orchestration_orchestrator_1_modelo_de_orquestación",
@@ -1569,7 +1635,7 @@
       "opencode_orchestration_orchestrator_orquestación_de_agentes_y_flujo_operativo_lg_artifacts",
       "opencode_readme"
     ],
-    "71": [
+    "78": [
       "oxlintrc",
       "oxlintrc_plugins",
       "oxlintrc_rules",
@@ -1577,333 +1643,317 @@
       "oxlintrc_rules_react_rules_of_hooks",
       "oxlintrc_schema"
     ],
-    "72": [
+    "79": [
       "agent_rules_skills",
       "agent_rules_skills_1_skill_discovery_before_custom_implementation",
       "agent_rules_skills_2_non_interactive_cli_execution",
       "agent_rules_skills_3_skill_cataloging_post_install_auditing",
       "agent_rules_skills_skills_management_integration_policies"
     ],
-    "73": [
+    "80": [
       "agent_skills_code_review_and_quality_skill",
       "agent_skills_code_review_and_quality_skill_code_review_quality_assurance",
       "agent_skills_code_review_and_quality_skill_review_output_format",
       "agent_skills_code_review_and_quality_skill_standardized_severity_tags",
       "agent_skills_code_review_and_quality_skill_the_5_axis_review_framework"
     ],
-    "74": [
+    "81": [
       "agent_skills_test_driven_development_skill",
       "agent_skills_test_driven_development_skill_anti_rationalization_guardrails",
       "agent_skills_test_driven_development_skill_core_engineering_principles",
       "agent_skills_test_driven_development_skill_test_driven_development_tdd",
       "agent_skills_test_driven_development_skill_the_red_green_refactor_cycle"
     ],
-    "75": [
+    "82": [
       "agents_rules_skills",
       "agents_rules_skills_1_skill_discovery_before_custom_implementation",
       "agents_rules_skills_2_non_interactive_cli_execution",
       "agents_rules_skills_3_skill_cataloging_post_install_auditing",
       "agents_rules_skills_skills_management_integration_policies"
     ],
-    "76": [
+    "83": [
       "agents_skills_code_review_and_quality_skill",
       "agents_skills_code_review_and_quality_skill_code_review_quality_assurance",
       "agents_skills_code_review_and_quality_skill_review_output_format",
       "agents_skills_code_review_and_quality_skill_standardized_severity_tags",
       "agents_skills_code_review_and_quality_skill_the_5_axis_review_framework"
     ],
-    "77": [
+    "84": [
       "agents_skills_design_system_templates_design_tokens_starter_fontsize_lg",
       "agents_skills_design_system_templates_design_tokens_starter_lg_type",
       "agents_skills_design_system_templates_design_tokens_starter_lg_value",
       "agents_skills_design_system_templates_design_tokens_starter_radius_lg",
       "agents_skills_design_system_templates_design_tokens_starter_shadow_lg"
     ],
-    "78": [
+    "85": [
       "agents_skills_test_driven_development_skill",
       "agents_skills_test_driven_development_skill_anti_rationalization_guardrails",
       "agents_skills_test_driven_development_skill_core_engineering_principles",
       "agents_skills_test_driven_development_skill_test_driven_development_tdd",
       "agents_skills_test_driven_development_skill_the_red_green_refactor_cycle"
     ],
-    "79": [
+    "86": [
       "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testbm25corebehavior",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testbm25corebehavior_test_bm25_cache_rebuilds_after_file_mtime_changes",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testbm25corebehavior_test_empty_documents_produce_no_scores_or_vocab",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testbm25corebehavior_test_search_uses_one_verified_rows_and_index_snapshot",
       "agents_skills_ui_ux_pro_max_scripts_tests_test_core_testbm25corebehavior_test_search_uses_one_verified_rows_and_index_snapshot_replace_after_read"
     ],
-    "80": [
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testmetricmath",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testmetricmath_test_ndcg_uses_graded_gain_and_handles_empty_ideal",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testmetricmath_test_precision_counts_missing_ranks_as_non_relevant",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testmetricmath_test_reciprocal_rank_stops_at_k",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testmetricmath_test_result_grades_match_identity_subsets"
-    ],
-    "81": [
+    "87": [
       "docs_database_seguridad",
       "docs_database_seguridad_1_fronteras_mandatorias_de_seguridad_del_mvp",
       "docs_database_seguridad_2_reglas_de_integridad_y_autorización_en_base_de_datos_r_01_a_r_08",
       "docs_database_seguridad_3_políticas_de_row_level_security_rls_diseñadas_para_fase_autenticada",
       "docs_database_seguridad_arquitectura_de_seguridad_privacidad_y_rls_supabase"
     ],
-    "82": [
+    "88": [
       "opencode_agents_agent_registry",
       "opencode_agents_agent_registry_1_registry_overview",
       "opencode_agents_agent_registry_2_active_agent_directory",
       "opencode_agents_agent_registry_3_sub_agent_invocation_protocol",
       "opencode_agents_agent_registry_agent_registry"
     ],
-    "83": [
+    "89": [
       "opencode_context_constraints_1_límites_técnicos_y_dependencias_prohibidas",
       "opencode_context_constraints_2_anti_patrones_de_arquitectura_a_rechazar_activamente",
       "opencode_context_constraints_3_seguridad_y_exportación_csv",
       "opencode_context_constraints_4_elementos_explícitamente_fuera_de_alcance_out_of_scope",
       "opencode_context_constraints_restricciones_técnicas_y_anti_patrones_qué_no_hacer_lg_artifacts"
     ],
-    "84": [
+    "90": [
       "opencode_roles_designer",
       "opencode_roles_designer_1_propósito_y_responsabilidades_del_rol",
       "opencode_roles_designer_2_tokens_de_diseño_institucionales",
       "opencode_roles_designer_3_verificación_de_accesibilidad_wcag_2_2_aa",
       "opencode_roles_designer_rol_líder_de_diseño_ux_ui_y_accesibilidad_lg_artifacts"
     ],
-    "85": [
+    "91": [
       "opencode_specifications_workflow_spec_2_desglose_de_fases_y_tareas_técnicas",
       "opencode_specifications_workflow_spec_fase_0_auditoría_y_línea_base",
       "opencode_specifications_workflow_spec_fase_1_y_2_planificación_dominio_y_diseño",
       "opencode_specifications_workflow_spec_fase_3_implementación_de_frontend_modular",
       "opencode_specifications_workflow_spec_fase_4_arquitectura_de_base_de_datos_supabase"
     ],
-    "86": [
-      "src_domain_progresscalculator",
-      "src_domain_progresscalculator_calculateprogress",
-      "src_domain_progresscalculator_calculaterisklevel",
-      "src_features_projects_projectheader",
-      "src_features_projects_projectheader_projectheader"
-    ],
-    "87": [
+    "92": [
       "supabase_readme",
       "supabase_readme_1_estructura_de_directorios",
       "supabase_readme_2_aplicación_de_migraciones_locales_con_supabase_cli",
       "supabase_readme_3_políticas_de_seguridad_y_aislamiento_rls",
       "supabase_readme_arquitectura_de_base_de_datos_supabase_postgresql"
     ],
-    "88": [
+    "93": [
       "agent_rules_ponytail",
       "agent_rules_ponytail_lazy_never_negligent",
       "agent_rules_ponytail_ponytail_anti_overengineering_guidelines_mode_full",
       "agent_rules_ponytail_the_anti_overengineering_priority_ladder"
     ],
-    "89": [
+    "94": [
       "agents_rules_ponytail",
       "agents_rules_ponytail_lazy_never_negligent",
       "agents_rules_ponytail_ponytail_anti_overengineering_guidelines_mode_full",
       "agents_rules_ponytail_the_anti_overengineering_priority_ladder"
     ],
-    "90": [
+    "95": [
       "agents_skills_design_system_templates_design_tokens_starter_fontsize_xl",
       "agents_skills_design_system_templates_design_tokens_starter_radius_xl",
       "agents_skills_design_system_templates_design_tokens_starter_xl_type",
       "agents_skills_design_system_templates_design_tokens_starter_xl_value"
     ],
-    "91": [
+    "96": [
       "agents_skills_design_system_templates_design_tokens_starter_md_type",
       "agents_skills_design_system_templates_design_tokens_starter_md_value",
       "agents_skills_design_system_templates_design_tokens_starter_radius_md",
       "agents_skills_design_system_templates_design_tokens_starter_shadow_md"
     ],
-    "92": [
+    "97": [
       "agents_skills_design_system_templates_design_tokens_starter_none_type",
       "agents_skills_design_system_templates_design_tokens_starter_none_value",
       "agents_skills_design_system_templates_design_tokens_starter_radius_none",
       "agents_skills_design_system_templates_design_tokens_starter_shadow_none"
     ],
-    "93": [
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testfixturevalidation",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testfixturevalidation_test_rejects_bad_count_duplicate_id_and_grade",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testfixturevalidation_test_valid_schema",
-      "agents_skills_ui_ux_pro_max_scripts_tests_test_relevance_evaluator_testfixturevalidation_valid_fixture"
-    ],
-    "94": [
+    "98": [
       "docs_database_modelo_datos",
       "docs_database_modelo_datos_1_diagrama_de_entidad_relación_mermaid",
       "docs_database_modelo_datos_2_catálogo_de_las_12_entidades_relacionales",
       "docs_database_modelo_datos_modelo_de_datos_relacional_supabase_postgresql"
     ],
-    "95": [
+    "99": [
       "docs_readme",
       "docs_readme_1_documentos_disponibles",
       "docs_readme_2_mapa_de_trazabilidad_con_las_especificaciones_originales",
       "docs_readme_índice_de_documentación_del_proyecto_lg_artifacts"
     ],
-    "96": [
+    "100": [
       "opencode_readme_1_directory_structure",
       "opencode_readme_2_framework_navigation_lifecycle",
       "opencode_readme_3_populating_the_templates",
       "opencode_readme_opencode_agentic_vibe_coding_framework"
     ],
-    "97": [
+    "101": [
       "opencode_roles_developer",
       "opencode_roles_developer_1_propósito_y_responsabilidades_del_rol",
       "opencode_roles_developer_2_directrices_de_implementación",
       "opencode_roles_developer_rol_ingeniero_full_stack_frontend_lg_artifacts"
     ],
-    "98": [
+    "102": [
       "opencode_roles_reviewer",
       "opencode_roles_reviewer_1_propósito_y_responsabilidades_del_rol",
       "opencode_roles_reviewer_2_checklist_de_puertas_de_calidad_quality_gates",
       "opencode_roles_reviewer_rol_revisor_de_código_y_aseguramiento_de_calidad_qa_lg_artifacts"
     ],
-    "99": [
+    "103": [
       "agent_rules_graphify",
       "agent_rules_graphify_graphify_knowledge_graph_rule",
       "agent_rules_graphify_guidelines"
     ],
-    "100": [
+    "104": [
       "agent_workflows_graphify",
       "agent_workflows_graphify_execution_steps",
       "agent_workflows_graphify_graphify_rebuild_knowledge_graph"
     ],
-    "101": [
+    "105": [
       "agent_workflows_review",
       "agent_workflows_review_review_code_review_quality_gate_workflow",
       "agent_workflows_review_steps"
     ],
-    "102": [
+    "106": [
       "agent_workflows_spec",
       "agent_workflows_spec_spec_spec_driven_development_workflow",
       "agent_workflows_spec_steps"
     ],
-    "103": [
+    "107": [
       "agent_workflows_test",
       "agent_workflows_test_steps",
       "agent_workflows_test_test_test_driven_development_workflow"
     ],
-    "104": [
+    "108": [
       "agents_workflows_review",
       "agents_workflows_review_review_code_review_quality_gate_workflow",
       "agents_workflows_review_steps"
     ],
-    "105": [
+    "109": [
       "agents_workflows_spec",
       "agents_workflows_spec_spec_spec_driven_development_workflow",
       "agents_workflows_spec_steps"
     ],
-    "106": [
+    "110": [
       "agents_workflows_test",
       "agents_workflows_test_steps",
       "agents_workflows_test_test_test_driven_development_workflow"
     ]
   },
   "cohesion": {
-    "0": 0.053555750658472345,
+    "0": 0.06298904538341157,
     "1": 0.055178652193577565,
     "2": 0.05563093622795115,
-    "3": 0.06784260515603799,
-    "4": 0.05202661826981246,
-    "5": 0.05370101596516691,
-    "6": 0.041666666666666664,
-    "7": 0.0595959595959596,
-    "8": 0.0595959595959596,
-    "9": 0.07928118393234672,
-    "10": 0.06050420168067227,
-    "11": 0.058823529411764705,
-    "12": 0.10483870967741936,
-    "13": 0.12807881773399016,
-    "14": 0.09359605911330049,
-    "15": 0.10344827586206896,
-    "16": 0.12987012987012986,
-    "17": 0.09090909090909091,
-    "18": 0.1645021645021645,
-    "19": 0.13333333333333333,
-    "20": 0.18421052631578946,
-    "21": 0.18947368421052632,
-    "22": 0.11052631578947368,
+    "3": 0.05370101596516691,
+    "4": 0.041666666666666664,
+    "5": 0.0595959595959596,
+    "6": 0.0595959595959596,
+    "7": 0.07928118393234672,
+    "8": 0.058823529411764705,
+    "9": 0.062388591800356503,
+    "10": 0.07308377896613191,
+    "11": 0.10483870967741936,
+    "12": 0.12873563218390804,
+    "13": 0.0896551724137931,
+    "14": 0.12807881773399016,
+    "15": 0.09686609686609686,
+    "16": 0.11384615384615385,
+    "17": 0.16,
+    "18": 0.14624505928853754,
+    "19": 0.15019762845849802,
+    "20": 0.12648221343873517,
+    "21": 0.12987012987012986,
+    "22": 0.09090909090909091,
     "23": 0.15789473684210525,
-    "24": 0.19166666666666668,
-    "25": 0.13333333333333333,
-    "26": 0.125,
-    "27": 0.14166666666666666,
-    "28": 0.13333333333333333,
-    "29": 0.1523809523809524,
-    "30": 0.1523809523809524,
-    "31": 0.34285714285714286,
-    "32": 0.21978021978021978,
-    "33": 0.25274725274725274,
-    "34": 0.14285714285714285,
-    "35": 0.18681318681318682,
-    "36": 0.17582417582417584,
-    "37": 0.1794871794871795,
-    "38": 0.15384615384615385,
-    "39": 0.15384615384615385,
-    "40": 0.22727272727272727,
-    "41": 0.19696969696969696,
-    "42": 0.24242424242424243,
-    "43": 0.18181818181818182,
-    "44": 0.16666666666666666,
-    "45": 0.3090909090909091,
-    "46": 0.18181818181818182,
-    "47": 0.2,
-    "48": 0.21818181818181817,
-    "49": 0.18181818181818182,
-    "50": 0.21818181818181817,
-    "51": 0.28888888888888886,
-    "52": 0.35555555555555557,
-    "53": 0.2222222222222222,
-    "54": 0.2,
+    "24": 0.29473684210526313,
+    "25": 0.11695906432748537,
+    "26": 0.22875816993464052,
+    "27": 0.16339869281045752,
+    "28": 0.19166666666666668,
+    "29": 0.15,
+    "30": 0.13333333333333333,
+    "31": 0.125,
+    "32": 0.14166666666666666,
+    "33": 0.13333333333333333,
+    "34": 0.34285714285714286,
+    "35": 0.21978021978021978,
+    "36": 0.25274725274725274,
+    "37": 0.14285714285714285,
+    "38": 0.18681318681318682,
+    "39": 0.17582417582417584,
+    "40": 0.1794871794871795,
+    "41": 0.15384615384615385,
+    "42": 0.15384615384615385,
+    "43": 0.15384615384615385,
+    "44": 0.15384615384615385,
+    "45": 0.23076923076923078,
+    "46": 0.22727272727272727,
+    "47": 0.24242424242424243,
+    "48": 0.21212121212121213,
+    "49": 0.3090909090909091,
+    "50": 0.18181818181818182,
+    "51": 0.2,
+    "52": 0.21818181818181817,
+    "53": 0.28888888888888886,
+    "54": 0.35555555555555557,
     "55": 0.2222222222222222,
-    "56": 0.2857142857142857,
-    "57": 0.25,
-    "58": 0.2857142857142857,
+    "56": 0.2,
+    "57": 0.2222222222222222,
+    "58": 0.2222222222222222,
     "59": 0.2857142857142857,
     "60": 0.2857142857142857,
-    "61": 0.2857142857142857,
-    "62": 0.2857142857142857,
-    "63": 0.2857142857142857,
+    "61": 0.25,
+    "62": 0.25,
+    "63": 0.32142857142857145,
     "64": 0.2857142857142857,
-    "65": 0.3333333333333333,
-    "66": 0.4666666666666667,
-    "67": 0.3333333333333333,
-    "68": 0.3333333333333333,
-    "69": 0.3333333333333333,
-    "70": 0.3333333333333333,
+    "65": 0.2857142857142857,
+    "66": 0.2857142857142857,
+    "67": 0.42857142857142855,
+    "68": 0.2857142857142857,
+    "69": 0.2857142857142857,
+    "70": 0.7142857142857143,
     "71": 0.3333333333333333,
-    "72": 0.4,
-    "73": 0.4,
-    "74": 0.4,
-    "75": 0.4,
-    "76": 0.4,
-    "77": 0.6,
-    "78": 0.4,
+    "72": 0.4666666666666667,
+    "73": 0.3333333333333333,
+    "74": 0.3333333333333333,
+    "75": 0.3333333333333333,
+    "76": 0.3333333333333333,
+    "77": 0.3333333333333333,
+    "78": 0.3333333333333333,
     "79": 0.4,
     "80": 0.4,
     "81": 0.4,
     "82": 0.4,
     "83": 0.4,
-    "84": 0.4,
+    "84": 0.6,
     "85": 0.4,
-    "86": 0.6,
+    "86": 0.4,
     "87": 0.4,
-    "88": 0.5,
-    "89": 0.5,
-    "90": 0.6666666666666666,
-    "91": 0.6666666666666666,
-    "92": 0.6666666666666666,
-    "93": 0.8333333333333334,
+    "88": 0.4,
+    "89": 0.4,
+    "90": 0.4,
+    "91": 0.4,
+    "92": 0.4,
+    "93": 0.5,
     "94": 0.5,
-    "95": 0.5,
-    "96": 0.5,
-    "97": 0.5,
+    "95": 0.6666666666666666,
+    "96": 0.6666666666666666,
+    "97": 0.6666666666666666,
     "98": 0.5,
-    "99": 0.6666666666666666,
-    "100": 0.6666666666666666,
-    "101": 0.6666666666666666,
-    "102": 0.6666666666666666,
+    "99": 0.5,
+    "100": 0.5,
+    "101": 0.5,
+    "102": 0.5,
     "103": 0.6666666666666666,
     "104": 0.6666666666666666,
     "105": 0.6666666666666666,
-    "106": 0.6666666666666666
+    "106": 0.6666666666666666,
+    "107": 0.6666666666666666,
+    "108": 0.6666666666666666,
+    "109": 0.6666666666666666,
+    "110": 0.6666666666666666
   },
   "gods": [
     {
@@ -1927,6 +1977,11 @@
       "degree": 34
     },
     {
+      "id": "src_app_app",
+      "label": "App()",
+      "degree": 32
+    },
+    {
       "id": "agents_skills_ui_styling_scripts_tests_test_shadcn_add_testshadcninstaller",
       "label": "TestShadcnInstaller",
       "degree": 26
@@ -1934,7 +1989,7 @@
     {
       "id": "ref_react",
       "label": "react",
-      "degree": 24
+      "degree": 22
     },
     {
       "id": "agents_skills_ui_ux_pro_max_scripts_tests_test_data_contracts_read_rows",
@@ -1950,75 +2005,70 @@
       "id": "agents_skills_ui_ux_pro_max_scripts_tests_test_catalog_refresh_catalogrefreshtest",
       "label": "CatalogRefreshTest",
       "degree": 15
-    },
-    {
-      "id": "agents_skills_ui_ux_pro_max_scripts_core_search",
-      "label": "search()",
-      "degree": 15
     }
   ],
   "surprises": [
     {
-      "source": "Detalle de los Hitos:",
-      "target": "ProjectPortfolio()",
+      "source": "TestReasoningContract",
+      "target": "DesignSystemGenerator",
       "source_files": [
-        "docs/implementation/plan.md",
-        "src/features/portfolio/ProjectPortfolio.jsx"
+        ".agents/skills/ui-ux-pro-max/scripts/tests/test_data_contracts.py",
+        ".agents/skills/ui-ux-pro-max/scripts/design_system.py"
       ],
       "confidence": "INFERRED",
-      "relation": "references",
-      "why": "inferred connection - not explicitly stated in source; crosses file types (code ↔ doc); connects across different repos/directories; bridges separate communities"
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
     },
     {
-      "source": "Detalle de los Hitos:",
-      "target": "DemoNoticeBanner()",
+      "source": "TestTailwindConfigGenerator",
+      "target": "TailwindConfigGenerator",
       "source_files": [
-        "docs/implementation/plan.md",
-        "src/features/navigation/DemoNoticeBanner.jsx"
+        ".agents/skills/ui-styling/scripts/tests/test_tailwind_config_gen.py",
+        ".agents/skills/ui-styling/scripts/tailwind_config_gen.py"
       ],
       "confidence": "INFERRED",
-      "relation": "references",
-      "why": "inferred connection - not explicitly stated in source; crosses file types (code ↔ doc); connects across different repos/directories; peripheral node `DemoNoticeBanner()` unexpectedly reaches hub `Detalle de los Hitos:`"
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
     },
     {
-      "source": "Detalle de los Hitos:",
-      "target": "TopNav()",
+      "source": "TestGeneratedConfigIsValidJs",
+      "target": "TailwindConfigGenerator",
       "source_files": [
-        "docs/implementation/plan.md",
-        "src/features/navigation/TopNav.jsx"
+        ".agents/skills/ui-styling/scripts/tests/test_tailwind_config_gen.py",
+        ".agents/skills/ui-styling/scripts/tailwind_config_gen.py"
       ],
       "confidence": "INFERRED",
-      "relation": "references",
-      "why": "inferred connection - not explicitly stated in source; crosses file types (code ↔ doc); connects across different repos/directories; peripheral node `TopNav()` unexpectedly reaches hub `Detalle de los Hitos:`"
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source; bridges separate communities"
     },
     {
-      "source": "Detalle de los Hitos:",
-      "target": "StageStepper()",
+      "source": "levels",
+      "target": "calculateRiskLevel()",
       "source_files": [
-        "docs/implementation/plan.md",
-        "src/features/stages/StageStepper.jsx"
+        "tests/domain.test.mjs",
+        "src/domain/progressCalculator.js"
       ],
-      "confidence": "INFERRED",
-      "relation": "references",
-      "why": "inferred connection - not explicitly stated in source; crosses file types (code ↔ doc); connects across different repos/directories; peripheral node `StageStepper()` unexpectedly reaches hub `Detalle de los Hitos:`"
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "connects across different repos/directories"
     },
     {
-      "source": "Detalle de los Hitos:",
-      "target": "ProjectHeader()",
+      "source": "TestShadcnInstaller",
+      "target": "ShadcnInstaller",
       "source_files": [
-        "docs/implementation/plan.md",
-        "src/features/projects/ProjectHeader.jsx"
+        ".agents/skills/ui-styling/scripts/tests/test_shadcn_add.py",
+        ".agents/skills/ui-styling/scripts/shadcn_add.py"
       ],
       "confidence": "INFERRED",
-      "relation": "references",
-      "why": "inferred connection - not explicitly stated in source; crosses file types (code ↔ doc); connects across different repos/directories; bridges separate communities"
+      "relation": "uses",
+      "why": "inferred connection - not explicitly stated in source"
     }
   ],
   "questions": [
     {
       "type": "bridge_node",
-      "question": "Why does `TailwindConfigGenerator` connect `TailwindConfigGenerator` to `.recommend_plugins`, `.test_node_check_parses_generated_config`, `main`, `json`, `TestTailwindConfigGenerator`, `pathlib`, `._base_config`, `.generate_config_string`, `.add_colors`, `.add_plugins`?",
-      "why": "High betweenness centrality (0.041) - this node is a cross-community bridge."
+      "question": "Why does `TailwindConfigGenerator` connect `TailwindConfigGenerator` to `.generate_config_string`, `.add_colors`, `.add_plugins`, `.test_node_check_parses_generated_config`, `.recommend_plugins`, `pathlib`, `main`, `TestTailwindConfigGenerator`, `._base_config`?",
+      "why": "High betweenness centrality (0.042) - this node is a cross-community bridge."
     },
     {
       "type": "verify_inferred",
@@ -2032,13 +2082,13 @@
     },
     {
       "type": "low_cohesion",
-      "question": "Should `DesignSystemGenerator` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.053555750658472345 - nodes in this community are weakly interconnected."
+      "question": "Should `validate_data.py` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.06298904538341157 - nodes in this community are weakly interconnected."
     },
     {
       "type": "bridge_node",
-      "question": "Why does `primitive` connect `primitive` to `shadow`, `gray`, `color`, `spacing`, `radius`, `fontSize`?",
-      "why": "High betweenness centrality (0.021) - this node is a cross-community bridge."
+      "question": "Why does `main()` connect `main` to `.generate_config_string`, `.add_colors`, `.add_plugins`, `TailwindConfigGenerator`, `.test_node_check_parses_generated_config`, `.recommend_plugins`, `pathlib`, `argparse`?",
+      "why": "High betweenness centrality (0.023) - this node is a cross-community bridge."
     },
     {
       "type": "verify_inferred",
