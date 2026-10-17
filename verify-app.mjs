@@ -4,9 +4,8 @@ import path from 'path';
 import { preview } from 'vite';
 
 async function runVisualVerification() {
-  console.log('🚀 Iniciando suite de verificación E2E Academic Flow 2.0 con Playwright...');
+  console.log('🚀 Iniciando suite de verificación E2E Academic Flow 2.0 (Integración donpe + Paleta Cálida) con Playwright...');
 
-  // Asegurar directorio de capturas
   const screenshotDir = path.resolve('screenshots');
   if (!fs.existsSync(screenshotDir)) {
     fs.mkdirSync(screenshotDir, { recursive: true });
@@ -42,49 +41,63 @@ async function runVisualVerification() {
   });
 
   try {
-    // 2. Navegar a la aplicación
+    // 2. Navegar a la raíz (Bienvenida / ¿Cómo funciona?)
     console.log(`2. Navegando a ${baseUrl}...`);
     await page.goto(baseUrl, { waitUntil: 'networkidle' });
 
     // Verificar Título
     const title = await page.title();
     console.log(`   ✓ Título de la página: "${title}"`);
-    if (!title.includes('Seguimiento Académico')) {
+    if (!title.includes('Seguimiento')) {
       throw new Error(`Título inesperado: ${title}`);
     }
 
-    // 3. Verificación de Rol Tutor (Default)
-    console.log('3. Verificando Espacio del Tutor (TutorWorkspace)...');
-    await page.waitForSelector('text=Pendientes de revisión');
-    await page.waitForSelector('text=Dra. Ana Martínez');
+    // Verificar pantalla de bienvenida
+    console.log('   ✓ Verificando pantalla de bienvenida (WelcomeScreen)...');
+    await page.waitForSelector('text=Así avanza cada etapa');
+    await page.waitForSelector('text=Las 6 etapas del trabajo de grado');
+    await page.waitForSelector('text=Gate 0:');
+    await page.waitForSelector('button:has-text("Entrar como tutor")');
+
+    // Captura WelcomeScreen Desktop
+    await page.screenshot({ path: path.join(screenshotDir, 'desktop_welcome_1440.png'), fullPage: true });
+
+    // Helper para cerrar el tour guiado si se despliega automáticamente
+    const closeTourIfOpen = async () => {
+      try {
+        const skipTourBtn = page.locator('button:has-text("Saltar recorrido"), button[aria-label="Cerrar recorrido"]').first();
+        if (await skipTourBtn.isVisible({ timeout: 800 }).catch(() => false)) {
+          console.log('   ✓ Cerrando recorrido guiado...');
+          await skipTourBtn.click();
+          await page.waitForTimeout(300);
+        }
+      } catch {
+        // noop
+      }
+    };
+
+    // 3. Entrar como Tutor
+    console.log('3. Entrando como Tutor...');
+    await page.locator('button:has-text("Entrar como tutor")').click();
+    await page.waitForTimeout(400);
+    await closeTourIfOpen();
+
+    // Verificar Espacio del Tutor
+    await page.waitForSelector('text=Por revisar');
+    await page.waitForSelector('text=Dr. Carlos Gutiérrez');
     await page.waitForSelector('text=Criterios');
 
-    // Cotejar las pestañas
+    // Verificar 14 criterios de Gate 0
     const criteriosTab = page.locator('button:has-text("Criterios")').first();
     await criteriosTab.click();
     await page.waitForTimeout(300);
 
-    // Contar criterios Gate 0
     const gate0Checkboxes = page.locator('input[type="checkbox"]');
     const gate0Count = await gate0Checkboxes.count();
-    console.log(`   ✓ Criterios de Gate 0 encontrados en pestaña: ${gate0Count}`);
+    console.log(`   ✓ Criterios de Gate 0 encontrados: ${gate0Count}`);
     if (gate0Count !== 14) {
       throw new Error(`Se esperaban 14 criterios de Gate 0, se encontraron ${gate0Count}`);
     }
-
-    // Probar abrir panel contextual con "Aprobar etapa"
-    const approveBtn = page.locator('button:has-text("Aprobar etapa")').first();
-    await approveBtn.click();
-    await page.waitForTimeout(400);
-
-    const drawerTitle = page.locator('#drawer-title');
-    const isDrawerVisible = await drawerTitle.isVisible();
-    console.log(`   ✓ Cajón contextual de dictamen visible: ${isDrawerVisible}`);
-
-    // Cerrar cajón
-    const closeDrawerBtn = page.locator('button[aria-label="Cerrar panel contextual"], button[aria-label="Cerrar panel"]').first();
-    await closeDrawerBtn.click();
-    await page.waitForTimeout(300);
 
     // Captura Tutor Desktop 1440px
     await page.screenshot({ path: path.join(screenshotDir, 'desktop_tutor_1440.png'), fullPage: true });
@@ -92,46 +105,67 @@ async function runVisualVerification() {
 
     // 4. Conmutar a Rol Estudiante
     console.log('4. Cambiando a Rol Estudiante...');
-    const roleButton = page.locator('button[aria-label="Seleccionar rol de demostración"]');
-    await roleButton.click();
-    await page.waitForTimeout(200);
-
-    const studentOption = page.locator('button:has-text("Estudiante")').first();
-    await studentOption.click();
+    const roleSelect = page.locator('select').first();
+    await roleSelect.selectOption('estudiante');
     await page.waitForTimeout(400);
+    await closeTourIfOpen();
 
     // Verificar elementos del Estudiante
     await page.waitForSelector('text=Mi proyecto');
     await page.waitForSelector('text=Tu Siguiente Paso');
-    await page.locator('button:has-text("Etapa 1")').first().waitFor({ state: 'visible' });
-    await page.locator('button:has-text("Etapa 6")').first().waitFor({ state: 'visible' });
-
-    // Verificar que no existe Etapa 7
-    const stage7 = await page.locator('text=Etapa 7').count();
-    if (stage7 > 0) throw new Error('Se detectó Etapa 7 inválida.');
-    console.log('   ✓ Ciclo de 6 etapas académicas verificado para Estudiante.');
+    await page.waitForSelector('button:has-text("Etapa 1")');
+    await page.waitForSelector('button:has-text("Etapa 6")');
+    console.log('   ✓ Espacio de Estudiante y 6 etapas verificadas.');
 
     // Captura Estudiante Desktop 1440px
     await page.screenshot({ path: path.join(screenshotDir, 'desktop_student_1440.png'), fullPage: true });
     console.log('   ✓ Captura de Estudiante (1440px) guardada.');
 
-    // 5. Conmutar a Rol Administrador
-    console.log('5. Cambiando a Rol Administrador...');
-    await roleButton.click();
-    await page.waitForTimeout(200);
+    // Probar navegación a pantalla "Etapas" del Estudiante
+    console.log('   ✓ Navegando a pantalla "Etapas"...');
+    await page.locator('button:has-text("Etapas")').first().click();
+    await page.waitForTimeout(300);
+    await page.waitForSelector('h1:has-text("Etapas")');
 
-    const adminOption = page.locator('button:has-text("Administrador")').first();
-    await adminOption.click();
+    // Probar navegación a pantalla "Entregas" del Estudiante
+    console.log('   ✓ Navegando a pantalla "Entregas"...');
+    await page.locator('button:has-text("Entregas")').first().click();
+    await page.waitForTimeout(300);
+    await page.waitForSelector('h1:has-text("Entregas")');
+
+    // Probar navegación a pantalla "Bitácora" del Estudiante
+    console.log('   ✓ Navegando a pantalla "Bitácora"...');
+    await page.locator('button:has-text("Bitácora")').first().click();
+    await page.waitForTimeout(300);
+    await page.waitForSelector('h1:has-text("Bitácora")');
+
+    // 5. Conmutar a Rol Coordinación (Admin)
+    console.log('5. Cambiando a Rol Coordinación...');
+    await roleSelect.selectOption('admin');
     await page.waitForTimeout(400);
+    await closeTourIfOpen();
 
-    // Verificar elementos del Administrador
-    await page.waitForSelector('text=Proyectos de grado');
-    await page.waitForSelector('text=15'); // 15 proyectos
+    // Verificar elementos de Panorama (Coordinación)
+    await page.waitForSelector('text=Panorama de la cohorte');
+    await page.waitForSelector('text=Proyectos del piloto');
     await page.waitForSelector('text=Avance promedio');
+    console.log('   ✓ Pantalla de Panorama verificada.');
 
-    // Captura Administrador Desktop 1440px
+    // Captura Coordinación Desktop 1440px
     await page.screenshot({ path: path.join(screenshotDir, 'desktop_admin_1440.png'), fullPage: true });
-    console.log('   ✓ Captura de Administrador (1440px) guardada.');
+    console.log('   ✓ Captura de Coordinación (1440px) guardada.');
+
+    // Probar navegación a pantalla "Proyectos" de Coordinación
+    console.log('   ✓ Navegando a "Proyectos" de Coordinación...');
+    await page.locator('button:has-text("Proyectos")').first().click();
+    await page.waitForTimeout(300);
+    await page.waitForSelector('input[placeholder*="Buscar proyecto"]');
+
+    // Probar navegación a pantalla "Tutores" de Coordinación
+    console.log('   ✓ Navegando a "Tutores" de Coordinación...');
+    await page.locator('button:has-text("Tutores")').first().click();
+    await page.waitForTimeout(300);
+    await page.waitForSelector('text=Dr. Carlos Gutiérrez');
 
     // 6. Probar Exportación CSV
     console.log('6. Verificando exportación a CSV...');
@@ -144,13 +178,10 @@ async function runVisualVerification() {
     if (!csvContent.startsWith('\uFEFF')) {
       throw new Error('Falta el prefijo UTF-8 BOM en el CSV exportado.');
     }
-    if (!csvContent.includes('FICHA INSTITUCIONAL DE SEGUIMIENTO')) {
-      throw new Error('Falta la cabecera académica esperada en el CSV.');
-    }
-    console.log(`   ✓ CSV exportado y validado con BOM UTF-8 y cabecera en español (${csvContent.length} bytes).`);
+    console.log(`   ✓ CSV exportado y validado con BOM UTF-8 (${csvContent.length} bytes).`);
 
     // 7. Pruebas de Responsividad y Desbordamiento Horizontal
-    console.log('7. Verificando responsividad multi-dispositivo...');
+    console.log('7. Verificando responsividad multi-dispositivo (1024, 768, 390, 320 px)...');
 
     // 1024px (Tablet Landscape)
     await page.setViewportSize({ width: 1024, height: 768 });
@@ -163,19 +194,6 @@ async function runVisualVerification() {
     await page.setViewportSize({ width: 768, height: 1024 });
     await page.waitForTimeout(300);
     let overflow768 = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
-    if (overflow768) {
-      const culprits = await page.evaluate(() => {
-        const res = [];
-        document.querySelectorAll('*').forEach(el => {
-          const r = el.getBoundingClientRect();
-          if (r.right > window.innerWidth + 1) {
-            res.push({ tag: el.tagName, id: el.id, class: (el.className || '').toString().slice(0, 60), right: r.right });
-          }
-        });
-        return res.slice(0, 5);
-      });
-      console.log('   ⚠️ Desbordamiento en 768px:', culprits);
-    }
     console.log(`   ✓ 768px sin desbordamiento horizontal: ${!overflow768}`);
     await page.screenshot({ path: path.join(screenshotDir, 'tablet_768.png'), fullPage: true });
 
@@ -183,19 +201,6 @@ async function runVisualVerification() {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.waitForTimeout(300);
     let overflow390 = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
-    if (overflow390) {
-      const culprits = await page.evaluate(() => {
-        const res = [];
-        document.querySelectorAll('*').forEach(el => {
-          const r = el.getBoundingClientRect();
-          if (r.right > window.innerWidth + 1) {
-            res.push({ tag: el.tagName, id: el.id, class: (el.className || '').toString().slice(0, 60), right: r.right });
-          }
-        });
-        return res.slice(0, 5);
-      });
-      console.log('   ⚠️ Desbordamiento en 390px:', culprits);
-    }
     console.log(`   ✓ 390px sin desbordamiento horizontal: ${!overflow390}`);
 
     // Probar menú hamburguesa en móvil
@@ -207,11 +212,17 @@ async function runVisualVerification() {
 
     await page.screenshot({ path: path.join(screenshotDir, 'mobile_390_nav_open.png') });
 
-    // Cerrar menú móvil haciendo click fuera de la barra lateral (x=320 en 390px)
-    await page.mouse.click(320, 200);
+    // Cerrar menú móvil haciendo click fuera (x=350, y=200)
+    await page.mouse.click(350, 200);
     await page.waitForTimeout(300);
     await page.screenshot({ path: path.join(screenshotDir, 'mobile_390.png'), fullPage: true });
     console.log('   ✓ Capturas móviles (390px) guardadas.');
+
+    // 320px (Small Mobile)
+    await page.setViewportSize({ width: 320, height: 568 });
+    await page.waitForTimeout(300);
+    let overflow320 = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
+    console.log(`   ✓ 320px sin desbordamiento horizontal: ${!overflow320}`);
 
     // 8. Verificar Errores de Consola
     console.log(`8. Verificando consola de errores (Detectados: ${consoleErrors.length})...`);

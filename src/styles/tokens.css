@@ -1,71 +1,68 @@
 /* ==========================================================================
-   TOKENS DE DISEÑO INSTITUCIONAL — ACADEMIC FLOW (LG_ARTIFACTS 2.0)
-   Inspiración: Framer (artesanía editorial) + Kira (guía activa) + Gumloop (ergonomía)
+   TOKENS DE DISEÑO — IDENTIDAD VISUAL ACADÉMICA CÁLIDA (Fase 2)
+   Estilo editorial académico: pergamino, marrón profundo, terracota,
+   arena y carbón cálido. Conforme con WCAG 2.2 AA.
+
+   Todos los colores de la interfaz se derivan de estos tokens semánticos.
+   Los componentes usan clases semánticas como `bg-(--brand)` o `text-(--muted)`.
    ========================================================================== */
 
 :root {
-  /* Lienzo y Superficies de Trabajo */
-  --bg: #FBF9F5;
-  --surface: #FFFFFF;
-  --sand: #F5F1EA;
-  --hover: #EFE9DF;
-  --surface-subtle: #F7F4EE;
+  /* Marca Cálida Institucional */
+  --brand: #6E432F;          /* Marrón editorial primario (botones, cabeceras, títulos) */
+  --brand-hover: #553323;    /* Marrón hover más oscuro */
+  --sidebar-bg: #36241C;     /* Marrón profundo cálido para barra lateral */
+  --accent: #8E4928;         /* Terracota para enlaces, foco, detalles y destacados */
+  --accent-soft: #F6EDE8;    /* Fondo terracota suave para selección y resaltados */
+  --cyan: #8E4928;           /* Terracota para indicador activo de navegación (reemplaza al cian) */
+  --on-brand: #FFFFFF;
 
-  /* Compatibilidad con variables previas */
-  --color-app-bg: #FBF9F5;
-  --color-canvas: #FBF9F5;
-  --color-surface: #FFFFFF;
-  --color-surface-muted: #F5F1EA;
-  --color-surface-hover: #EFE9DF;
+  /* Lienzo y superficies cálidas */
+  --bg: #FBF9F5;             /* Pergamino cálido institucional */
+  --surface: #FFFFFF;        /* Superficie blanca limpia */
+  --surface-subtle: #FAF7F2; /* Superficie sutil */
+  --sand: #F5F1EA;           /* Arena cálida para tarjetas secundarias y barras */
+  --hover: #EDE4D8;          /* Hover cálido */
 
-  /* Tinta y Textos (Warm Charcoal / Piedra Natural) */
-  --ink: #1C1917;
-  --muted: #57534E;
-  --light: #6A625B;
-  --color-text: #1C1917;
-  --color-ink-primary: #1C1917;
-  --color-ink-secondary: #57534E;
-  --color-ink-muted: #6A625B;
+  /* Tipografía y texto (contraste verificado WCAG 2.2 AA) */
+  --ink: #1C1917;            /* Carbón profundo principal */
+  --muted: #57534E;          /* Texto secundario cálido */
+  --light: #78716C;          /* Texto suave y metadatos */
 
-  /* Identidad Institucional y Acentos */
-  --brand: #6E432F;
-  --brand-hover: #553323;
-  --accent: #8E4928;
-  --color-primary: #6E432F;
-  --color-primary-hover: #553323;
-  --color-accent: #8E4928;
+  /* Bordes de libro de archivo */
+  --line: #D8CEBF;           /* Borde principal cálido */
+  --line2: #C2B5A3;          /* Borde secundario */
 
-  /* Líneas y Bordes Orgánicos */
-  --line: #E8E1D5;
-  --line2: #D8CEBF;
-  --color-border: #D8CEBF;
-  --color-border-subtle: #E8E1D5;
-
-  /* Semántica Académica (Contrastes WCAG 2.2 AA Auditados) */
+  /* Semántica académica (contrastes WCAG 2.2 AA) */
   --green: #146C4F;
+  --green-hover: #0E523C;
   --green-bg: #EDF7F2;
-  --color-success: #146C4F;
-  --color-success-bg: #EDF7F2;
+  --green-line: #9CD5BE;
 
   --amber: #8A4B08;
   --amber-bg: #FFFBEB;
-  --color-warning: #8A4B08;
-  --color-warning-bg: #FFFBEB;
+  --amber-line: #FCD34D;
 
   --red: #B42318;
+  --red-hover: #991B1B;
   --red-bg: #FEF2F2;
-  --color-danger: #B42318;
-  --color-danger-bg: #FEF2F2;
+  --red-line: #FCA5A5;
 
   --pending: #475569;
   --pending-bg: #F1EFEA;
-  --color-locked: #475569;
-  --color-locked-bg: #F1EFEA;
 
-  /* Medidas de Maquetación */
+  --info: #8E4928;
+  --info-bg: #F6EDE8;
+  --info-line: #EAD7CA;
+
+  /* Pie de página cálido */
+  --footer-bg: #2C1D16;      /* Marrón oscuro cálido institucional */
+  --footer-ink: #E7DFD5;     /* Texto del pie de página cálido */
+
+  /* Medidas de maquetación */
   --sidebar-w: 236px;
   --sidebar-collapsed-w: 68px;
   --topbar-h: 61px;
-  --shadow: 0 8px 32px rgba(28, 25, 23, 0.035);
-  --shadow-editorial: 0 1px 3px rgba(28, 25, 23, 0.05), 0 4px 12px rgba(28, 25, 23, 0.03);
+  --radius: 6px;
+  --shadow: 0 1px 2px rgba(54, 36, 28, 0.08);
 }
